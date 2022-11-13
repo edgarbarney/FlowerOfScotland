@@ -1,0 +1,8 @@
+SCO_bringbackdominions = {
+	#valid_relation_trigger = {
+	#	ROOT = {
+	#		has_government = FROM
+	#	}
+	#}
+	intel_network_gain_factor = 25
+}

@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_report_biggerwindow"
+		texturefile = "gfx/interface/scripted_gui/foscot_biggerevent_window.dds"
+	}
+}

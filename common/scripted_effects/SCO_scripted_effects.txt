@@ -1,0 +1,504 @@
+SCO_start_civil_war = {
+	#if = {
+	#	limit = {
+	#		has_country_leader_with_trait = champion_of_peace_5
+	#	}
+	#	remove_country_leader_trait = champion_of_peace_5
+	#}
+	
+	SCO = {
+		add_ideas = scraping_the_barrel
+		
+		set_country_flag  = SCO_rebelion_imminent
+		
+		if = {
+			limit = {
+				has_completed_focus = SCO_focus_dominanceway
+			}
+			set_cosmetic_tag = SCO_dom_provision
+		}
+		
+		ENG = {
+			set_autonomy = {
+				target = SCO
+				autonomy_state = autonomy_free
+				end_wars = no
+				end_civil_wars = no
+			}
+			remove_from_faction = SCO
+			
+			declare_war_on = {
+				target = SCO
+				type = annex_everything
+			}
+			
+			#add_civil_war_target = SCO
+			
+			set_autonomy = {
+				target = WLS
+				autonomy_state = autonomy_free
+				end_wars = yes
+				end_civil_wars = yes
+			}
+			
+			set_autonomy = {
+				target = NIR
+				autonomy_state = autonomy_free
+				end_wars = yes
+				end_civil_wars = yes
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = SCO_council_nir_acc
+					}
+				}
+				annex_country = {
+					target = NIR
+					transfer_troops = no
+				}
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = SCO_council_wls_acc
+					}
+				}
+				annex_country = {
+					target = WLS
+					transfer_troops = no
+				}
+			}
+			
+			
+		}
+			
+		every_state = {
+			limit = {
+				is_owned_by = SCO
+			}
+			if = {
+				limit = {
+					any_neighbor_state = {
+						is_owned_by = ENG
+					}
+				}
+				add_to_array = { SCO.rebelion_cities_to_deploy = THIS }
+			}
+		}
+		
+		#add_to_array = { SCO.rebelion_divisions_to_deploy = "Infantry" }
+		
+		resize_array = {
+			array = SCO.rebelion_divisions_to_deploy
+			value = "Infantry"
+			size = rebelion_divs_orgrebels
+		}
+		
+		#for_each_loop = {
+		#	array = SCO.rebelion_cities_to_deploy
+		#}
+		
+		for_each_loop = {
+			array = SCO.rebelion_divisions_to_deploy
+			value = t_divis
+			index = i	
+			
+			random_scope_in_array = {
+				array = SCO.rebelion_cities_to_deploy
+				
+				create_unit = {
+					division = "name = \"Rebel Division\" division_template = \"Organised Rebel Division\" start_experience_factor = 0.5" 
+					owner = SCO
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = SCO_council_nir_acc
+			}
+			annex_country = {
+				target = NIR
+				transfer_troops = no
+			}
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = SCO_council_wls_acc
+			}
+			annex_country = {
+				target = WLS
+				transfer_troops = no
+			}
+		}
+		
+		# Bye bye, British Government
+		hidden_effect = {
+			kill_country_leader = yes
+		}
+		
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+			last_election = "1936.1.1"
+			election_frequency = 48
+		}
+		
+		create_country_leader = {
+			name = "Provisional British Government"
+			desc = "SCO_Archibald_Sinclair_desc"
+			picture = GFX_portrait_SCO_Archibald_Sinclair
+			expire = "1965.1.1"
+			ideology = liberalism
+			#traits = {
+			#	inexperienced_imperialist
+			#}
+		}
+		
+	}
+}
+
+# Country Flag
+SCO_setflag_default = {
+	SCO = {
+		set_variable = { SCO_currentcflag = 0 } #Default
+		set_cosmetic_tag = SCO_dom
+	}
+}
+SCO_setflag_variant1 = {
+	SCO = {
+		set_variable = { SCO_currentcflag = 1 } #VAR
+		set_cosmetic_tag = SCO_dom_VAR
+	}
+}
+SCO_setflag_variant2 = {
+	SCO = {
+		set_variable = { SCO_currentcflag = 2 } #VAR2
+		set_cosmetic_tag = SCO_dom_VAR2
+	}
+}
+
+# Naval jack, Puppet FLags
+SCO_setjack_default = {
+	SCO = {
+		set_variable = { SCO_currentjack = 0 } #Default
+	}
+}
+SCO_setjack_variant1 = {
+	SCO = {
+		set_variable = { SCO_currentjack = 1 } #VAR
+	}
+}
+SCO_setjack_variant2 = {
+	SCO = {
+		set_variable = { SCO_currentjack = 2 } #VAR2
+	}
+}
+
+SCO_puppet_setcosmetics = {
+	if = {
+		limit = { 
+			AND = { 
+				TAG = SCO
+				is_subject_of = GER
+				}
+			}
+		set_cosmetic_tag = SCO_influenced_ger
+	}
+	
+	if = {
+		limit = { 
+			AND = { 
+				TAG = SCO
+				is_subject_of = SOV
+				}
+			 }
+		set_cosmetic_tag = SCO_influenced_sov
+	}
+	
+	if = {
+		limit = { 
+			AND = { 
+				TAG = SCO
+				is_subject_of = USA
+				}
+			 }
+		set_cosmetic_tag = SCO_influenced_usa
+	}
+}
+
+SCO_subjects_setcosmetics = {
+	every_country =  {
+		
+		#Default
+		if = {
+			limit = {
+				SCO = {
+					has_completed_focus = SCO_focus_dominanceway
+					check_variable = { SCO_currentjack = 0 }
+				}
+			}
+			if = {
+				limit = {
+					AND = { 
+						original_tag = AST
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = AST_SCOUK
+			}
+
+			if = {
+				limit = {
+					AND = { 
+						original_tag = CAN
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = CAN_SCOUK
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = NZL
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = NZL_SCOUK
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = RAJ
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = RAJ_SCOUK
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = PAK
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = PAK_SCOUK
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = BRM
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = BRM_SCOUK
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = BAN
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = BAN_SCOUK
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = SAF
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = SAF_SCOUK
+			}
+		}
+		
+		# Variant 1
+		else_if = {
+			limit = {
+				SCO = {
+					has_completed_focus = SCO_focus_dominanceway
+					check_variable = { SCO_currentjack = 1 }
+				}
+			}
+			if = {
+				limit = {
+					AND = { 
+						original_tag = AST
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = AST_SCOUK_VAR
+			}
+
+			if = {
+				limit = {
+					AND = { 
+						original_tag = CAN
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = CAN_SCOUK_VAR
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = NZL
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = NZL_SCOUK_VAR
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = RAJ
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = RAJ_SCOUK_VAR
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = PAK
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = PAK_SCOUK_VAR
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = BRM
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = BRM_SCOUK_VAR
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = BAN
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = BAN_SCOUK_VAR
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = SAF
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = SAF_SCOUK_VAR
+			}
+		}
+		
+		# Variant 2
+		else_if = {
+			limit = {
+				SCO = {
+					has_completed_focus = SCO_focus_dominanceway
+					check_variable = { SCO_currentjack = 2 }
+				}
+			}
+			if = {
+				limit = {
+					AND = { 
+						original_tag = AST
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = AST_SCOUK_VAR2
+			}
+
+			if = {
+				limit = {
+					AND = { 
+						original_tag = CAN
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = CAN_SCOUK_VAR2
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = NZL
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = NZL_SCOUK_VAR2
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = RAJ
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = RAJ_SCOUK_VAR2
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = PAK
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = PAK_SCOUK_VAR2
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = BRM
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = BRM_SCOUK_VAR2
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = BAN
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = BAN_SCOUK_VAR2
+			}
+			
+			if = {
+				limit = {
+					AND = { 
+						original_tag = SAF
+						is_subject_of = SCO
+					}
+				}
+				set_cosmetic_tag = SAF_SCOUK_VAR2
+			}
+		}
+	}
+}

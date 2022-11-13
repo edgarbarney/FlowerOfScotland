@@ -1,0 +1,1039 @@
+#search_filter_prios = {
+#	FOCUS_FILTER_POLITICAL = 1010
+#
+#	
+# 
+#	
+#	
+#	FOCUS_FILTER_RESEARCH = 522
+#
+#	
+#	FOCUS_FILTER_INDUSTRY = 509
+#
+#	FOCUS_FILTER_SOV_POLITICAL_PARANOIA = 111
+#	FOCUS_FILTER_PROPAGANDA = 110
+#	FOCUS_FILTER_ARMY_XP = 103
+#	FOCUS_FILTER_NAVY_XP = 102
+#	FOCUS_FILTER_AIR_XP = 101
+#
+#}
+
+# Focus Tree for Skottland
+
+focus_tree = {
+	id = foscot_scottish_focus
+	
+	#country = {
+	#	factor = 1
+	#}
+	#
+	#default = yes
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 50
+			tag = SCO
+		}
+	}
+	default = no
+	
+	reset_on_civilwar = no
+
+	initial_show_position = {
+		focus = SCO_industrial_effort
+	}
+	
+	# ============
+	# START OF THE INDUSTRY FOCUSES
+	# ============
+	
+	shared_focus = SCO_industrial_effort
+	shared_focus = SCO_construction_effort
+	shared_focus = SCO_production_effort
+	shared_focus = SCO_construction_effort_2
+	shared_focus = SCO_production_effort_2
+	shared_focus = SCO_infrastructure_effort
+	shared_focus = SCO_production_effort_3
+	shared_focus = SCO_infrastructure_effort_2
+	shared_focus = SCO_construction_effort_3
+	
+	# ============
+	# START OF THE UNIONIST WAY
+	# ============
+	
+	focus = {
+		id = SCO_focus_unionistway
+		mutually_exclusive = { focus = SCO_focus_influencedway focus = SCO_focus_ambitiousway }
+		
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = -10
+		y = 0
+		
+		offset = {
+			x = 5
+			y = 0
+			trigger = {
+				SCO = {
+					AND = {
+						has_country_flag = SCO_hidefocus_influenced
+						has_country_flag = SCO_hidefocus_ambitious
+					}
+				}
+			}
+		}
+		
+		cost = 10
+		
+		allow_branch  = {
+			SCO = {
+				NOT = {
+					has_country_flag = SCO_hidefocus_unionist
+				}
+			}
+		}
+		
+		completion_reward = {
+			mark_focus_tree_layout_dirty = yes
+			SCO = {
+				set_country_flag = SCO_hidefocus_influenced
+				set_country_flag = SCO_hidefocus_ambitious
+			}
+			#hidden_effect = {
+			#	set_cosmetic_tag = SCO_unionist
+			#}
+		}
+	}
+
+	focus = {
+		id = SCO_focus_homerule
+		prerequisite = { focus = SCO_focus_unionistway }
+		#mutually_exclusive = { focus = SCO_focus_loneway focus = SCO_focus_celticway }
+		
+		icon = GFX_focus_chi_british_cooperation
+		x = -2
+		y = 1
+		relative_position_id = SCO_focus_unionistway
+		cost = 1
+		
+		completion_reward = {
+			hidden_effect = {
+				unlock_national_focus = SCO_focus_dominanceway_inter
+			}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_coop_independence
+		prerequisite = { focus = SCO_focus_unionistway }
+		#mutually_exclusive = { focus = SCO_focus_loneway focus = SCO_focus_celticway }
+		
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 2
+		y = 1
+		relative_position_id = SCO_focus_unionistway
+		cost = 1
+		
+		completion_reward = {
+			hidden_effect = {
+				unlock_national_focus = SCO_focus_dominanceway_inter
+			}
+		}
+	}
+
+	# ============
+	# START OF THE AMBITIOUS WAY
+	# ============
+	
+	focus = {
+		id = SCO_focus_ambitiousway
+		mutually_exclusive = { focus = SCO_focus_influencedway focus = SCO_focus_unionistway }
+		
+		icon = GFX_focus_attack_britain
+		x = 5
+		y = 0
+		
+		offset = {
+			x = -15
+			y = 0
+			trigger = {
+				SCO = {
+					AND = {
+						has_country_flag = SCO_hidefocus_unionist
+						has_country_flag = SCO_hidefocus_influenced
+					}
+				}
+			}
+		}
+		
+		cost = 5
+		
+		allow_branch  = {
+			SCO = {
+				NOT = {
+					has_country_flag = SCO_hidefocus_ambitious
+				}
+			}
+		}
+		
+		completion_reward = {
+			mark_focus_tree_layout_dirty = yes
+			SCO = {
+				set_country_flag = SCO_hidefocus_unionist
+				set_country_flag = SCO_hidefocus_influenced
+			}
+		}
+		
+	}
+	
+	focus = {
+		id = SCO_focus_dominanceway
+		prerequisite = { focus = SCO_focus_ambitiousway }
+		mutually_exclusive = { focus = SCO_focus_loneway focus = SCO_focus_celticway }
+		
+		icon = GFX_focus_eng_the_sun_never_sets
+		x = 0
+		y = 1
+		relative_position_id = SCO_focus_ambitiousway
+		cost = 1
+		
+		completion_reward = {
+			hidden_effect = {
+				unlock_national_focus = SCO_focus_dominanceway_inter
+			}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_loneway
+		prerequisite = { focus = SCO_focus_ambitiousway }
+		mutually_exclusive = { focus = SCO_focus_dominanceway focus = SCO_focus_celticway focus = SCO_focus_ambicommune }
+		
+		icon = GFX_goal_generic_demand_territory
+		x = -3
+		y = 1
+		
+		relative_position_id = SCO_focus_ambitiousway
+		cost = 1
+		
+		completion_reward = {
+			custom_effect_tooltip = SCO_nocumnist_tt
+			hidden_effect = {
+				unlock_national_focus = SCO_focus_loneway_inter
+			}
+		}
+		
+	}
+	
+	focus = {
+		id = SCO_focus_celticway
+		prerequisite = { focus = SCO_focus_ambitiousway }
+		mutually_exclusive = { focus = SCO_focus_dominanceway focus = SCO_focus_loneway focus = SCO_focus_demofascist }
+		
+		icon = GFX_goal_generic_national_unity
+		x = 3
+		y = 1
+		relative_position_id = SCO_focus_ambitiousway
+		cost = 1
+		
+		completion_reward = {
+			custom_effect_tooltip = SCO_nofascist_tt
+			hidden_effect = {
+				unlock_national_focus = SCO_focus_celticway_inter
+			}
+		}
+	}
+	
+	
+	focus = {
+		id = SCO_focus_statecommits
+		prerequisite = { focus = SCO_focus_dominanceway focus = SCO_focus_loneway focus = SCO_focus_celticway }
+		#mutually_exclusive = { focus = SCO_focus_loneway focus = SCO_focus_celticway }
+		
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 1
+		relative_position_id = SCO_focus_dominanceway
+		cost = 5
+	}
+	
+	
+	
+	focus = {
+		id = SCO_focus_demofascist
+		prerequisite = { focus = SCO_focus_statecommits }
+		mutually_exclusive = { focus = SCO_focus_ambicommune focus = SCO_focus_democracy focus = SCO_focus_monarchy focus = SCO_focus_celticway }
+		
+		icon = GFX_goal_support_fascism
+		x = 2
+		y = 1
+		relative_position_id = SCO_focus_statecommits
+		cost = 10
+		
+		completion_reward = {
+			
+			set_party_name = { ideology = fascism long_name = SCO_ambitious_fascist_party_longname name = SCO_ambitious_fascist_party_name }
+			
+			create_country_leader = {
+				name = "William W. Gilmour"
+				desc = "SCO_William_Gilmour_desc"
+				picture = GFX_portrait_SCO_William_Gilmour
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					inexperienced_imperialist
+				}
+			}
+		
+			hidden_effect = {
+				#set_cosmetic_tag = SCO_ambitious
+			}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_monarchy
+		prerequisite = { focus = SCO_focus_statecommits }
+		mutually_exclusive = { focus = SCO_focus_demofascist focus = SCO_focus_ambicommune focus = SCO_focus_democracy }
+		
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 6
+		y = 1
+		relative_position_id = SCO_focus_statecommits
+		cost = 10
+		
+		completion_reward = {
+			
+			set_party_name = { ideology = neutrality long_name = SCO_ambitious_neutrality_party_name name = SCO_ambitious_neutrality_party_longname }
+			
+			create_country_leader = {
+				name = "James Maxton"
+				desc = "SCO_James_Maxton_desc"
+				picture = GFX_portrait_SCO_James_Maxton
+				expire = "1965.1.1"
+				ideology = leninism
+				traits = {
+					inexperienced_imperialist
+				}
+			}
+		
+			hidden_effect = {
+				#set_cosmetic_tag = SCO_ambitious
+			}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_democracy
+		prerequisite = { focus = SCO_focus_statecommits }
+		mutually_exclusive = { focus = SCO_focus_demofascist focus = SCO_focus_ambicommune focus = SCO_focus_monarchy }
+		
+		icon = GFX_goal_support_democracy
+		x = -2
+		y = 1
+		relative_position_id = SCO_focus_statecommits
+		cost = 10
+		
+		completion_reward = {
+			
+			set_party_name = { ideology = democratic long_name = SCO_ambitious_democratic_party_longname name = SCO_ambitious_democratic_party_name }
+			
+			hidden_effect = {
+				kill_country_leader = yes
+			}
+			
+			create_country_leader = {
+				name = "Archibald H. Sinclair"
+				desc = "SCO_Archibald_Sinclair_desc"
+				picture = GFX_portrait_SCO_Archibald_Sinclair
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = {
+					inexperienced_imperialist
+				}
+			}
+			
+			hidden_effect = {
+				#set_cosmetic_tag = SCO_ambitious
+			}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_ambicommune
+		prerequisite = { focus = SCO_focus_statecommits }
+		mutually_exclusive = { focus = SCO_focus_demofascist focus = SCO_focus_monarchy focus = SCO_focus_democracy focus = SCO_focus_loneway }
+		
+		icon = GFX_goal_support_communism
+		x = -6
+		y = 1
+		relative_position_id = SCO_focus_statecommits
+		cost = 10
+		
+		completion_reward = {
+			
+			set_party_name = { ideology = communism long_name = SCO_ambitious_communism_party_longname name = SCO_ambitious_communism_party_name }
+			
+			create_country_leader = {
+				name = "James Maxton"
+				desc = "SCO_James_Maxton_desc"
+				picture = GFX_portrait_SCO_James_Maxton
+				expire = "1965.1.1"
+				ideology = leninism
+				traits = {
+					inexperienced_imperialist
+				}
+			}
+		
+			hidden_effect = {
+				#set_cosmetic_tag = SCO_ambitious
+			}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_appointking
+		prerequisite = { focus = SCO_focus_democracy focus = SCO_focus_demofascist focus = SCO_focus_monarchy }
+		mutually_exclusive = { focus = SCO_focus_exileroyals }
+		
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 0
+		y = 1
+		relative_position_id = SCO_focus_demofascist
+		cost = 10
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_retakedominions
+		prerequisite = { focus = SCO_focus_appointking }
+		
+		icon = GFX_focus_eng_bring_the_dominions_back_into_the_fold
+		x = 0
+		y = 1
+		relative_position_id = SCO_focus_appointking
+		cost = 10
+		
+		available = {
+			has_done_agency_upgrade = upgrade_psycho_warfare
+		}
+		
+		completion_reward = {
+		
+			add_ideas = SCO_idea_bring_dominions_SCO
+			CAN = {
+				add_ideas = SCO_idea_bring_dominions
+			}
+			AST = {
+				add_ideas = SCO_idea_bring_dominions
+			}
+			NZL = {
+				add_ideas = SCO_idea_bring_dominions
+			}
+			SAF = {
+				add_ideas = SCO_idea_bring_dominions
+			}
+			
+			create_operative_leader = {
+				name = "Adam 'Ontarian' McLogger"
+				GFX = GFX_portrait_jacques_duclos
+				#traits = { operative_infiltrator operative_natural_orator }
+				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
+				bypass_recruitment = yes
+				available_to_spy_master = no
+				nationalities = { SCO CAN }
+			}
+			
+			create_operative_leader = {
+				name = "Bruce 'Anti-Gravity' Shane"
+				GFX = GFX_portrait_jacques_duclos
+				#traits = { operative_infiltrator operative_natural_orator }
+				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
+				bypass_recruitment = yes
+				available_to_spy_master = no
+				nationalities = { SCO AST }
+			}
+			
+			create_operative_leader = {
+				name = "Oliver 'Kiwi' Twister"
+				GFX = GFX_portrait_jacques_duclos
+				#traits = { operative_infiltrator operative_natural_orator }
+				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
+				bypass_recruitment = yes
+				available_to_spy_master = no
+				nationalities = { SCO NZL }
+			}
+			
+			create_operative_leader = {
+				name = "Johannes 'Mzantsi' Lizzie"
+				GFX = GFX_portrait_jacques_duclos
+				#traits = { operative_infiltrator operative_natural_orator }
+				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
+				bypass_recruitment = yes
+				available_to_spy_master = no
+				nationalities = { SCO SAF }
+			}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_exileroyals
+		prerequisite = { focus = SCO_focus_democracy focus = SCO_focus_demofascist focus = SCO_focus_ambicommune }
+		mutually_exclusive = { focus = SCO_focus_appointking }
+		
+		icon = GFX_focus_rom_abdicate
+		x = 0
+		y = 1
+		relative_position_id = SCO_focus_democracy
+		cost = 10
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	# ============
+	# START OF THE INFLUENCED WAY
+	# ============
+	
+	focus = {
+		id = SCO_focus_influencedway
+		mutually_exclusive = { focus = SCO_focus_unionistway focus = SCO_focus_ambitiousway }
+		
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		x = 20
+		y = 0
+		
+		offset = {
+			x = -30
+			y = 0
+			trigger = {
+				SCO = {
+					OR = {
+						has_country_flag = SCO_hidefocus_influenced
+						
+						AND = {
+							has_country_flag = SCO_hidefocus_unionist
+							has_country_flag = SCO_hidefocus_ambitious
+						}
+					}
+				}
+			}
+		}
+		
+		cost = 10
+		
+		allow_branch  = {
+			SCO = {
+				NOT = {
+					has_country_flag = SCO_hidefocus_influenced
+				}
+			}
+		}
+		
+		completion_reward = {
+			mark_focus_tree_layout_dirty = yes
+			
+			SCO = {
+				set_country_flag = SCO_hidefocus_unionist
+				set_country_flag = SCO_hidefocus_ambitious
+			}
+			
+			#hidden_effect = {
+			#	set_cosmetic_tag = SCO_influenced
+			#}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_influencedcommunist
+		mutually_exclusive = { focus = SCO_focus_influenceddemocrat focus = SCO_focus_influencedfascist }
+		prerequisite = { focus = SCO_focus_influencedway }
+		
+		available = {
+			AND = {
+				country_exists = SOV
+				SOV = {
+					has_government = communism
+					has_war = no
+				}
+			}
+		}
+		
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = -2
+		y = 1
+		relative_position_id = SCO_focus_influencedway
+		cost = 10
+		
+		completion_reward = {
+		
+			set_party_name = { ideology = communism long_name = SCO_influenced_communism_party_longname name = SCO_influenced_communism_party_name }
+			
+			create_country_leader = {
+				name = "Hugh MacDiarmid"
+				desc = "SCO_Hugh_MacDiarmid_desc"
+				picture = GFX_portrait_SCO_Hugh_MacDiarmid
+				expire = "1965.1.1"
+				ideology = stalinism
+				traits = {
+					inexperienced_imperialist
+				}
+			}
+		
+			hidden_effect = {
+				set_cosmetic_tag = SCO_influenced
+			}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_empowerincoms
+		prerequisite = { focus = SCO_focus_influencedcommunist }
+		
+		available = {
+			AND = {
+				has_government = communism
+				country_exists = SOV
+				SOV = {
+					has_government = communism
+				}
+			}
+		}
+		
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 0
+		y = 1
+		relative_position_id = SCO_focus_influencedcommunist
+		cost = 10
+		
+		completion_reward = {
+			#hidden_effect = {
+			#	set_cosmetic_tag = SCO_influenced
+			#}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_empowerincoms_2
+		prerequisite = { focus = SCO_focus_empowerincoms }
+		
+		available = {
+			AND = {
+				has_government = communism
+				country_exists = SOV
+				SOV = {
+					has_government = communism
+				}
+			}
+		}
+		
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 0
+		y = 2
+		relative_position_id = SCO_focus_empowerincoms
+		cost = 10
+		
+		completion_reward = {
+			#hidden_effect = {
+			#	set_cosmetic_tag = SCO_influenced
+			#}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_influencedfascist
+		mutually_exclusive = { focus = SCO_focus_influenceddemocrat focus = SCO_focus_influencedcommunist }
+		prerequisite = { focus = SCO_focus_influencedway }
+		
+		available = {
+			AND = {
+				country_exists = GER
+				GER = {
+					has_government = fascism
+					has_war = no
+				}
+			}
+		}
+		
+		icon = GFX_focus_chi_mission_to_germany
+		x = 0
+		y = 1
+		relative_position_id = SCO_focus_influencedway
+		cost = 10
+		
+		completion_reward = {
+			#hidden_effect = {
+			#	set_cosmetic_tag = SCO_influenced
+			#}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_empowerinffascs
+		prerequisite = { focus = SCO_focus_influencedfascist }
+		
+		available = {
+			AND = {
+				has_government = fascism
+				country_exists = GER
+				GER = {
+					has_government = fascism
+				}
+			}
+		}
+		
+		icon = GFX_focus_chi_mission_to_germany
+		x = 0
+		y = 1
+		relative_position_id = SCO_focus_influencedfascist
+		cost = 10
+		
+		completion_reward = {
+			#hidden_effect = {
+			#	set_cosmetic_tag = SCO_influenced
+			#}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_sackthepoet
+		prerequisite = { focus = SCO_focus_empowerinffascs focus = SCO_focus_empowerincoms }
+		
+		icon = GFX_focus_chi_mission_to_germany
+		x = -1
+		y = 1
+		relative_position_id = SCO_focus_empowerinffascs
+		cost = 10
+		
+		completion_reward = {
+			#hidden_effect = {
+			#	set_cosmetic_tag = SCO_influenced
+			#}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_empowerinffascs_2
+		prerequisite = { focus = SCO_focus_empowerinffascs }
+		
+		available = {
+			AND = {
+				country_exists = GER
+				GER = {
+					has_government = fascism
+				}
+			}
+		}
+		
+		icon = GFX_focus_chi_mission_to_germany
+		x = 0
+		y = 2
+		relative_position_id = SCO_focus_empowerinffascs
+		cost = 10
+		
+		completion_reward = {
+			hidden_effect = {
+				ENG = {
+					set_autonomy = {
+						target = SCO
+						autonomy_state = autonomy_free
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+			}
+			
+			GER = {
+					set_autonomy = {
+						target = SCO
+						autonomy_state = autonomy_reichskommissariat
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+				
+			hidden_effect = {
+				set_cosmetic_tag = SCO_influenced_ger
+			}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_influenceddemocrat
+		mutually_exclusive = { focus = SCO_focus_influencedcommunist focus = SCO_focus_influencedfascist }
+		prerequisite = { focus = SCO_focus_influencedway }
+		
+		available = {
+			AND = {
+				country_exists = USA
+				USA = {
+					has_government = democratic
+					has_war = no
+				}
+			}
+		}
+		
+		icon = GFX_focus_chi_mission_to_the_us
+		x = 2
+		y = 1
+		relative_position_id = SCO_focus_influencedway
+		cost = 10
+		
+		completion_reward = {
+			hidden_effect = {
+				set_cosmetic_tag = SCO_influenced
+			}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_empowerindemocrats
+		prerequisite = { focus = SCO_focus_influenceddemocrat }
+		
+		available = {
+			AND = {
+				country_exists = USA
+				USA = {
+					has_government = democratic
+					has_war = no
+				}
+			}
+		}
+		
+		icon = GFX_focus_chi_mission_to_germany
+		x = 0
+		y = 1
+		relative_position_id = SCO_focus_influenceddemocrat
+		cost = 10
+		
+		completion_reward = {
+			#hidden_effect = {
+			#	set_cosmetic_tag = SCO_influenced
+			#}
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_empowerindemocrats_2
+		prerequisite = { focus = SCO_focus_empowerindemocrats }
+		
+		available = {
+			AND = {
+				country_exists = USA
+				USA = {
+					has_government = democratic
+					has_war = no
+				}
+			}
+		}
+		icon = GFX_focus_chi_mission_to_germany
+		x = 0
+		y = 2
+		relative_position_id = SCO_focus_empowerindemocrats
+		cost = 10
+		
+		completion_reward = {
+			hidden_effect = {
+				ENG = {
+					set_autonomy = {
+						target = SCO
+						autonomy_state = autonomy_free
+						end_wars = no
+						end_civil_wars = no
+					}
+				}
+			}
+			
+			USA = {
+				set_autonomy = {
+					target = SCO
+					autonomy_state = autonomy_puppet
+					end_wars = no
+					end_civil_wars = no
+				}
+			}
+				
+			hidden_effect = {
+				set_cosmetic_tag = SCO_influenced_usa
+			}
+		}
+	}
+	
+	# =============
+	# START OF THE INTERVENTIONIST WAY
+	# =============
+	
+	focus = {
+		id = SCO_focus_intervention
+		mutually_exclusive = { focus = SCO_focus_nonintervention }
+		
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 28
+		y = 0
+		cost = 10
+		
+		relative_position_id = SCO_focus_ambitiousway
+	}
+	
+	focus = {
+		id = SCO_focus_dominanceway_inter
+		prerequisite = { focus = SCO_focus_intervention }
+		mutually_exclusive = { focus = SCO_focus_loneway_inter focus = SCO_focus_celticway_inter }
+		available = { SCO = { has_completed_focus = SCO_focus_dominanceway } }
+		bypass = { SCO = { has_completed_focus = SCO_focus_dominanceway } }	
+		
+		icon = GFX_focus_eng_the_sun_never_sets
+		x = 0
+		y = 1
+		relative_position_id = SCO_focus_intervention
+		cost = 1
+	}
+	
+	focus = {
+		id = SCO_focus_loneway_inter
+		prerequisite = { focus = SCO_focus_intervention }
+		mutually_exclusive = { focus = SCO_focus_dominanceway_inter focus = SCO_focus_celticway_inter }
+		available = { SCO = { has_completed_focus = SCO_focus_loneway } }
+		bypass = { SCO = { has_completed_focus = SCO_focus_loneway } }
+		
+		icon = GFX_goal_generic_demand_territory
+		x = -3
+		y = 1
+		
+		relative_position_id = SCO_focus_intervention
+		cost = 1	
+	}
+	
+	focus = {
+		id = SCO_focus_celticway_inter
+		prerequisite = { focus = SCO_focus_intervention }
+		mutually_exclusive = { focus = SCO_focus_dominanceway_inter focus = SCO_focus_loneway_inter }
+		available = { SCO = { has_completed_focus = SCO_focus_celticway } }
+		bypass = { SCO = { has_completed_focus = SCO_focus_celticway } }
+		
+		icon = GFX_goal_generic_national_unity
+		x = 3
+		y = 1
+		relative_position_id = SCO_focus_intervention
+		cost = 1
+	}
+	
+	#focus = {
+	#	id = SCO_focus_nonintervention
+	#	mutually_exclusive = { focus = SCO_focus_intervention }
+	#	
+	#	available = {
+	#		AND = {
+	#			any_owned_state = { is_controlled_by = PREV arms_factory > 1 }
+	#			
+	#			NOT = {
+	#				337 = {
+	#					owner = {
+	#						original_tag = SCO
+	#					}
+	#					controller = {
+	#						original_tag = SCO
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	#	
+	#	bypass = {
+	#		OR = {
+	#			337 = {
+	#				owner = {
+	#					original_tag = SCO
+	#				}
+	#				controller = {
+	#					original_tag = SCO
+	#				}
+	#			}
+	#			has_country_flag = SCO_nonint_sale_337
+	#		}
+	#	}
+	#	
+	#	icon = GFX_goal_generic_improve_relations
+	#	x = 4
+	#	y = 0
+	#	cost = 10
+	#	
+	#	relative_position_id = SCO_focus_intervention
+	#	
+	#	completion_reward = {
+	#		337 = {
+	#			owner = {
+	#				country_event = foscot.exp_nonint.0
+	#			}
+	#		}
+	#	}
+	#}
+
+	#focus = {
+	#	id = SCO_focus_demofascist
+	#	icon = GFX_goal_generic_allies_build_infantry
+	#	x = 1
+	#	y = 0
+	#	cost = 10
+	#	search_filters = { FOCUS_FILTER_RESEARCH }
+	#	
+	#	available_if_capitulated = yes
+	#
+	#	completion_reward = {
+	#		set_party_name = { ideology = fascism long_name = SCO_ambitious_fascist_party_longname name = SCO_ambitious_fascist_party_name }
+	#		hidden_effect = {
+	#			kill_country_leader = yes
+	#		}
+	#		set_cosmetic_tag = SCO_ambitious
+	#		create_country_leader = {
+	#			name = "William W. Gilmour"
+	#			desc = "SCO_William_Gilmour_desc"
+	#			picture = GFX_portrait_SCO_William_Gilmour
+	#			expire = "1965.1.1"
+	#			ideology = fascism_ideology
+	#			traits = {
+	#				inexperienced_imperialist
+	#			}
+	#		}
+	#		set_politics = { ruling_party = fascism elections_allowed = yes }
+	#		add_popularity = { ideology = fascism popularity = 0.15 }
+	#	}
+	#}
+	#
+	#focus = {
+	#	id = SCO_focus_ambicommune
+	#	icon = GFX_goal_generic_allies_build_infantry
+	#	x = 4
+	#	y = 0
+	#	cost = 10
+	#	search_filters = { FOCUS_FILTER_RESEARCH }
+	#	
+	#	available_if_capitulated = yes
+	#
+	#	completion_reward = {
+	#		set_party_name = { ideology = communism long_name = SCO_ambitious_communism_party_longname name = SCO_ambitious_communism_party_name }
+	#		hidden_effect = {
+	#			kill_country_leader = yes
+	#		}
+	#		set_cosmetic_tag = SCO_ambitious
+	#		create_country_leader = {
+	#			name = "James Maxton"
+	#			desc = "SCO_James_Maxton_desc"
+	#			picture = GFX_portrait_SCO_James_Maxton
+	#			expire = "1965.1.1"
+	#			ideology = leninism
+	#			traits = {
+	#				inexperienced_imperialist
+	#			}
+	#		}
+	#		set_politics = { ruling_party = communism elections_allowed = yes }
+	#		add_popularity = { ideology = communism popularity = 0.15 }
+	#	}
+	#}
+	
+}

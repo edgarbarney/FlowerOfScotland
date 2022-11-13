@@ -1,0 +1,215 @@
+capital = 121
+
+#oob = ""
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	
+	tech_support = 1
+	tech_engineers = 1
+	motorised_infantry = 1
+	
+	gw_artillery = 1
+	
+	#interwar_antiair = 1
+	early_fighter = 1
+	#early_bomber = 1
+	
+	basic_train = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
+	
+	#radio_detection = 1
+	fuel_silos = 1
+	#fuel_refining = 1
+	
+	gwtank_chassis = 1
+	
+	basic_torpedo = 1
+	early_ship_hull_cruiser = 1
+	early_ship_hull_submarine = 1
+	
+	sonar = 1
+}
+
+set_research_slots = 3
+
+set_convoys = 80
+
+#recruit_character = SCO_ncm
+#recruit_character = SCO_acd2
+#recruit_character = SCO_democratic_guy
+#recruit_character = SCO_fascist_guy
+#recruit_character = SCO_coi
+#recruit_character = SCO_ar
+#recruit_character = SCO_aa2
+#recruit_character = SCO_awt
+#recruit_character = SCO_acgs
+#recruit_character = SCO_mt
+#recruit_character = SCO_nccr
+#recruit_character = SCO_aco2
+#recruit_character = SCO_nt
+#recruit_character = SCO_communist_guy
+#recruit_character = SCO_pot
+#recruit_character = SCO_acas
+#recruit_character = SCO_acr
+#recruit_character = SCO_stc
+#recruit_character = SCO_ai2
+recruit_character = SCO_jock_campbell
+recruit_character = SCO_alan_brooke
+
+
+ENG = {
+	retire_character = ENG_jock_campbell
+	retire_character = ENG_alan_brooke
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.11.14"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 97
+	fascism = 2
+	communism = 1
+}
+
+create_country_leader = {
+	name = "British Government"
+	desc = "SCO_British_Government_desc"
+	picture = GFX_portrait_SCO_British_Government
+	expire = "1965.1.1"
+	ideology = liberalism
+	traits = {
+		power_of_the_british_empire
+	}
+}
+
+create_country_leader = {
+	name = "British Government"
+	desc = "SCO_British_Government_desc"
+	picture = GFX_portrait_SCO_British_Government
+	expire = "1965.1.1"
+	ideology = oligarchism
+	traits = {
+		power_of_the_british_empire_2
+	}
+}
+
+create_country_leader = {
+	name = "British Government"
+	desc = "SCO_British_Government_desc"
+	picture = GFX_portrait_SCO_British_Government
+	expire = "1965.1.1"
+	ideology = gen_nazism
+	traits = {
+		power_of_the_british_empire_2
+	}
+}
+
+create_country_leader = {
+	name = "British Government"
+	desc = "SCO_British_Government_desc"
+	picture = GFX_portrait_SCO_British_Government
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		power_of_the_british_empire_2
+	}
+}
+
+#set_party_name = { ideology = democratic long_name = SCO_default_democratic_party_longname name = SCO_default_democratic_party_name }
+#
+#create_country_leader = {
+#	name = "John Gilmour"
+#	desc = "SCO_John_Gilmour_desc"
+#	picture = GFX_portrait_SCO_John_Gilmour
+#	expire = "1965.1.1"
+#	ideology = liberalism
+#	#traits = {
+#	#	inexperienced_imperialist
+#	#}
+#}
+#
+#set_party_name = { ideology = fascism long_name = SCO_default_fascist_party_longname name = SCO_default_fascist_party_name }
+#
+#create_country_leader = {
+#	name = "Andrew Dewar Gibb"
+#	desc = "SCO_Andrew_Dewar_Gibb_desc"
+#	picture = GFX_portrait_SCO_Andrew_Dewar_Gibb
+#	expire = "1965.1.1"
+#	ideology = rexism
+#	#traits = {
+#	#	inexperienced_imperialist
+#	#}
+#}
+#
+#}
+
+#if = {
+#	limit = { has_dlc = "Together for Victory" }
+#
+#	add_to_tech_sharing_group = commonwealth_research
+#}
+
+add_to_tech_sharing_group = commonwealth_research
+
+oob = "SCO_1936"
+#set_naval_oob = "SCO_1936_Naval"
+
+#if = {
+#    limit = { has_dlc = "Man the Guns" }
+#    set_naval_oob = "SCO_1936_Naval"
+#}
+#else = {
+#    set_naval_oob = "SCO_1936_Naval_Legacy"
+#}
+
+ENG = {
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = {
+			target = SCO
+			#autonomous_state = autonomy_dominion
+			autonomous_state = autonomy_verge_of_release
+		}
+	}
+	else = {
+		puppet = SCO
+	}
+	
+	add_to_faction = SCO		# Must be after puppet
+	
+	set_cosmetic_tag = ENG_england
+	set_global_flag = ENG_became_england
+}
+
+add_ideas = {
+	SCO_idea_english_push
+}
+country_lock_all_division_template = yes
+
+# Initialise some variables, just in case
+
+set_variable = { engsus = 0 }
+
+# Used to set target to yellow and red zones.
+# When you pass a certain point, you cannae go back
+set_variable = { engsus_min = 0 } 
+
+set_variable = { engsus_yellowzone = 35 }
+set_variable = { engsus_redzone = 70 }
+set_variable = { last_english_sus = 0 } #Just Used For Texts
+set_variable = { rebelion_divs_orgrebels = 0 }
+set_variable = { rebelion_divs_marines = 0 }
+#add_timed_idea = { idea = SCO_idea_freedom days = 366 }
+
+#set_variable = { rebellion_max_eq = 21600 }
+set_variable = { rebellion_max_divs = 24 }

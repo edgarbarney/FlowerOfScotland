@@ -1,0 +1,68 @@
+characters={
+#####################
+# England Overrides
+#####################
+
+	SCO_jock_campbell={
+		name=SCO_jock_campbell
+		portraits={
+			army={
+				large=GFX_portrait_SCO_jock_campbell
+				small=GFX_portrait_SCO_jock_campbell_small
+			}
+		}
+		
+		
+		corps_commander={
+			traits={ armor_officer }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=4
+			legacy_id=0
+		}
+	}
+	
+	SCO_alan_brooke={
+		name=SCO_alan_brooke
+		portraits={
+			army={
+				small="GFX_idea_alan_brooke"
+			}
+			army={
+				large=GFX_portrait_SCO_alan_brooke
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = alan_brooke
+			allowed = {
+				original_tag = SCO
+			}
+			#available = {
+			#	NOT = {
+			#		has_completed_focus = SCO_eliminate_the_upper_class
+			#	}
+			#}
+			traits = {
+				army_chief_maneuver_3
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		field_marshal={
+			traits={ career_officer trait_cautious defensive_doctrine }
+			skill=5
+			attack_skill=3
+			defense_skill=5
+			planning_skill=5
+			logistics_skill=3
+			#legacy_id=997 English Brooke uses this
+		}
+	}
+}
+

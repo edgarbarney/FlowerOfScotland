@@ -1,0 +1,67 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_portrait_SCO_William_Gilmour"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_William_Gilmour.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_James_Maxton"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_James_Maxton.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_George_I"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_George_I.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_Edward_I"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_Edward_I.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_Archibald_Sinclair"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_Archibald_Sinclair.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_John_MacCormick"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_John_MacCormick.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_John_I"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_John_I.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_Arthur_Donaldson"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_Arthur_Donaldson.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_Hugh_MacDiarmid"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_Hugh_MacDiarmid.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_Willie_Gallacher"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_Willie_Gallacher.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_John_Gilmour"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_John_Gilmour.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_Andrew_Dewar_Gibb"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_Andrew_Dewar_Gibb.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_British_Government"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_British_Government.dds"
+	}
+}

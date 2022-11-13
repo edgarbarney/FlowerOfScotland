@@ -1,0 +1,191 @@
+#Unionists
+SCO_unionist = {
+	color = rgb { 0  0  255 }
+	color_ui = rgb { 255 255 155 }
+}
+
+#trying new things
+SCO_ambitious = {
+	color = rgb { 15  150  180 }
+	color_ui = rgb { 255 255 155 }
+}
+
+#influenced by germany, soviets etc.
+SCO_influenced_sov = {
+	color = rgb { 190  150  35 }
+	color_ui = rgb { 255 255 155 }
+}
+
+SCO_influenced_ger = {
+	color = rgb { 190  150  35 }
+	color_ui = rgb { 255 255 155 }
+}
+
+SCO_influenced_usa = {
+	color = rgb { 190  150  35 }
+	color_ui = rgb { 255 255 155 }
+}
+
+#great britain, scottish dominance
+
+SCO_dom = {
+	color = rgb { 40  40  215 }
+	color_ui = rgb { 255 255 155 }
+}
+
+# Variant flag
+SCO_dom_VAR = {
+	color = rgb { 40  40  215 }
+	color_ui = rgb { 255 255 155 }
+}
+
+# Variant flag, Old union jack
+#Fascist :Red background, Blue Blot
+SCO_dom_VAR2 = {
+	color = rgb { 40  40  215 }
+	color_ui = rgb { 255 255 155 }
+}
+
+#Civil Var
+SCO_dom_provision = {
+	color = rgb { 40  40  215 }
+	color_ui = rgb { 255 255 155 }
+}
+
+#
+#Subjects
+#
+
+#Australia, Dominated by 'United Kingdom'
+AST_SCOUK = {
+	color = { 57  143  97 }
+	color_ui = rgb { 155 62 51 }
+}
+
+AST_SCOUK_VAR = {
+	color = { 57  143  97 }
+	color_ui = rgb { 155 62 51 }
+}
+
+AST_SCOUK_VAR2 = {
+	color = { 57  143  97 }
+	color_ui = rgb { 155 62 51 }
+}
+
+#Canada, Dominated by 'United Kingdom'
+CAN_SCOUK = {
+	color = rgb { 119 48 39 }
+	color_ui = rgb { 155 62 51 }
+}
+
+CAN_SCOUK_VAR = {
+	color = rgb { 119 48 39 }
+	color_ui = rgb { 155 62 51 }
+}
+
+CAN_SCOUK_VAR2 = {
+	color = rgb { 119 48 39 }
+	color_ui = rgb { 155 62 51 }
+}
+
+#New Zealand, Dominated by 'United Kingdom'
+NZL_SCOUK = {
+	color = { 152  130  191 }
+	color_ui = rgb { 155 62 51 }
+}
+
+NZL_SCOUK_VAR = {
+	color = { 152  130  191 }
+	color_ui = rgb { 155 62 51 }
+}
+
+NZL_SCOUK_VAR2 = {
+	color = { 152  130  191 }
+	color_ui = rgb { 155 62 51 }
+}
+
+#Raj, Dominated by 'United Kingdom'
+RAJ_SCOUK = {
+	color = rgb { 170  10  10 }
+	color_ui = rgb { 200  10  10 }
+}
+
+RAJ_SCOUK_VAR = {
+	color = rgb { 170  10  10 }
+	color_ui = rgb { 200  10  10 }
+}
+
+
+RAJ_SCOUK_VAR2 = {
+	color = rgb { 170  10  10 }
+	color_ui = rgb { 200  10  10 }
+}
+
+
+#Pakistan, Dominated by 'United Kingdom'
+PAK_SCOUK = {
+	color = { 170  50  150 }
+	color_ui = rgb { 200  10  10 }
+}
+
+PAK_SCOUK_VAR = {
+	color = { 170  50  150 }
+	color_ui = rgb { 200  10  10 }
+}
+
+
+PAK_SCOUK_VAR2 = {
+	color = { 170  50  150 }
+	color_ui = rgb { 200  10  10 }
+}
+
+
+#Burma, Dominated by 'United Kingdom'
+BRM_SCOUK = {
+	color = rgb { 76 153 0 }
+	color_ui = rgb { 200  10  10 }
+}
+
+BRM_SCOUK_VAR = {
+	color = rgb { 76 153 0 }
+	color_ui = rgb { 200  10  10 }
+}
+
+
+BRM_SCOUK_VAR2 = {
+	color = rgb { 76 153 0 }
+	color_ui = rgb { 200  10  10 }
+}
+
+
+#Bangladesh, Dominated by 'United Kingdom'
+BAN_SCOUK = {
+	color = rgb { 204 204 0 }
+	color_ui = rgb { 200  10  10 }
+}
+
+BAN_SCOUK_VAR = {
+	color = rgb { 204 204 0 }
+	color_ui = rgb { 200  10  10 }
+}
+
+BAN_SCOUK_VAR2 = {
+	color = rgb { 204 204 0 }
+	color_ui = rgb { 200  10  10 }
+}
+
+#South Africa, Dominated by 'United Kingdom'
+SAF_SCOUK = {
+	color = rgb { 152 130 191 }
+	color_ui = rgb { 200  10  10 }
+}
+
+SAF_SCOUK_VAR = {
+	color = rgb { 152 130 191 }
+	color_ui = rgb { 200  10  10 }
+}
+
+SAF_SCOUK_VAR2 = {
+	color = rgb { 152 130 191 }
+	color_ui = rgb { 200  10  10 }
+}

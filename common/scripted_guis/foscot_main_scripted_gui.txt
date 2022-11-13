@@ -1,0 +1,55 @@
+scripted_gui = {
+  SCO_flagchange_gui = {
+    window_name = "SCO_flagchange_gui_window"
+    context_type = player_context
+
+    visible = {
+		has_country_flag = SCO_flagchange_democrat
+    }
+
+    effects = {
+		
+		event_option_3_click = {
+			#FROM = {
+				clr_country_flag = SCO_flagchange_democrat
+			#}
+		}
+	
+    }
+
+    triggers = {
+    }
+
+    dynamic_lists = {
+		#options_gridbox = {
+		#	array = ROOT.longereventbox
+		#	entry_container = options_grid_entry
+		#	change_scope = yes
+		#}
+	}
+
+    properties = {
+	
+		#event_picture = {
+		#	image = GFX_report_event_jack_change
+		#}
+	
+    }
+
+    ai_enabled = {
+		always = no
+    }
+
+    ai_test_interval = 290  # The higher, the long it takes the ai to do actions
+	ai_test_variance = 0.5
+
+    ai_check = {
+    }
+
+    ai_check_scope = {
+    }
+
+    ai_weights = {
+    }
+  }
+}

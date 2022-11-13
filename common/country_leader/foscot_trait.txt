@@ -1,0 +1,68 @@
+leader_traits = {
+	liberal_warrior = {
+		random = no
+		war_support_factor = 0.2
+		political_power_factor = 0.2
+		subversive_activites_upkeep = -0.25
+		consumer_goods_factor = 0.05
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+	}
+	
+	democratic_fascist = {
+		random = no
+		trade_laws_cost_factor = -0.33
+		economy_cost_factor = -0.33
+		consumer_goods_factor = -0.05
+		political_power_factor = 0.2
+		subversive_activites_upkeep = -0.25
+		drift_defence_factor = 0.15
+		fascism_drift = 0.012
+		democratic_drift = 0.01
+		communism_drift = -0.04
+		neutrality_drift = -0.01
+	}
+	
+	ironfist_leninist = {
+		random = no
+		industrial_capacity_factory = 0.1
+		drift_defence_factor = 0.15
+		war_support_factor = 0.05
+		subversive_activites_upkeep = -0.25
+		fascism_drift = -0.01
+		communism_drift = 0.01
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+	}
+	
+	imperial_ambitionist = {
+		random = no
+		war_support_factor = 0.05
+		enemy_justify_war_goal_time = 0.2
+		political_power_factor = 0.2
+		subversive_activites_upkeep = -0.25
+		drift_defence_factor = 0.15
+	}
+	
+	power_of_the_british_empire = {
+		random = no
+		political_power_gain = 4
+		subversive_activites_upkeep = -1
+		#ai_will_do = {
+		#	factor = 1
+		#}
+	}
+	
+	power_of_the_british_empire_2 = {
+		random = no
+		subversive_activites_upkeep = -1
+		#ai_will_do = {
+		#	factor = 1
+		#}
+	}
+}
+

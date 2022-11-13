@@ -1,0 +1,325 @@
+add_namespace = foscot
+add_namespace = foscot.exp_int
+add_namespace = foscot.exp_nonint
+
+add_namespace = foscot.eng_beforecivil
+add_namespace = foscot.flagchange
+add_namespace = foscot.celtcon
+
+# Namespace:
+## foscot
+#
+
+# Liberal Party replaced Demcorat party in Scotland
+#news_event = {
+#	id = foscot.0
+#	title = foscot.0.title
+#	desc = foscot.0.desc
+#	
+#	#major = yes
+#	
+#    picture = GFX_news_event_generic_read_write
+#	trigger = {
+#		#NOT = { has_global_flag = SCO_liberal_changed }
+#		#SCO = {	has_government = liberalism }
+#		#OR = {
+#			SCO = { has_completed_focus = SCO_focus_democracy }
+#		#}
+#	}
+#
+#	immediate = {
+#		set_global_flag = SCO_liberal_changed
+#	}
+#
+#	mean_time_to_happen = { days = 2 }
+#
+#	option = { 
+#		name = foscot.0.choice_1
+#	}
+#}
+
+# Namespace:
+## foscot.exp_nonint
+#
+
+country_event = {
+	id = foscot.flagchange.0
+	title = foscot.flagchange.0.basetitle
+	desc = foscot.flagchange.0.basedesc
+	
+	#major = yes
+	
+    picture = GFX_report_report_event_flag_change
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 0 }
+
+	#option = { 
+	#	name = foscot.flagchange.0.choice_1
+	#	
+	#	ai_chance = {
+	#		factor = 0
+	#	}
+	#	
+	#	hidden_effect = {
+	#		SCO_setflag_default = yes
+	#		SCO_setjack_default = yes
+	#	}
+	#}
+	option = { 
+		name = foscot.flagchange.0.basechoice_1
+		
+		ai_chance = {
+			factor = 10
+		}
+		
+		hidden_effect = {
+			SCO = {
+				set_country_flag = SCO_flagchange_democrat #Temporary
+			}
+		}
+	}
+	#option = { 
+	#	name = foscot.flagchange.0.choice_3
+	#	
+	#	ai_chance = {
+	#		factor = 0
+	#	}
+	#	
+	#	hidden_effect = {
+	#		SCO_setflag_variant2 = yes
+	#		SCO_setjack_variant2 = yes
+	#	}
+	#}
+}
+
+country_event = {
+	id = foscot.exp_nonint.0
+	title = foscot.exp_nonint.0.title
+	desc = foscot.exp_nonint.0.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 1 }
+	
+	fire_only_once = yes
+	
+	option = { 
+		name = foscot.exp_nonint.0.choice_1
+		
+		ai_chance = {
+			factor = 65
+		}
+		
+		custom_effect_tooltip = foscot.exp_nonint.0_tt
+		
+		add_offsite_building = { type = industrial_complex level = 1 }
+		
+		SCO = {
+			# Need to remove 2 factories, no need for array
+			random_owned_controlled_state = { 
+				limit = { arms_factory > 0 }
+				remove_building = { type = arms_factory  level = 1 }				
+			}
+			#random_owned_controlled_state = { 
+			#	limit = { arms_factory > 0 }
+			#	remove_building = { type = arms_factory  level = 1 }				
+			#}
+			
+			country_event = foscot.exp_nonint.1
+			
+		}
+	}
+	
+	option = {
+		name = foscot.exp_nonint.0.choice_2
+		
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 0.8
+				has_opinion = { target = SCO value > 0 }
+			}
+			modifier = {
+				factor = 0.8
+				has_opinion = { target = SCO value > 25 }
+			}
+			modifier = {
+				factor = 0.8
+				has_opinion = { target = SCO value > 50 }
+			}
+			modifier = {
+				factor = 0.8
+				has_opinion = { target = SCO value > 75 }
+			}
+        }
+		
+		SCO = {
+			
+			country_event = foscot.exp_nonint.2
+			
+			set_country_flag = SCO_nonint_sale_337
+		}
+	}
+}
+
+country_event = {
+	id = foscot.exp_nonint.1
+	title = foscot.exp_nonint.1.title
+	desc = foscot.exp_nonint.1.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 0 }
+
+	option = { 
+		name = foscot.exp_nonint.1.choice_1
+		
+		337 = {
+			transfer_state_to = SCO
+		}
+	}
+}
+
+country_event = {
+	id = foscot.exp_nonint.2
+	title = foscot.exp_nonint.2.title
+	desc = foscot.exp_nonint.2.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 0 }
+
+	option = { 
+		name = foscot.exp_nonint.2.choice_1
+	}
+}
+
+# Namespace:
+## foscot.eng_beforecivil
+#
+
+country_event = {
+	id = foscot.eng_beforecivil.0
+	title = foscot.eng_beforecivil.0.title
+	desc = foscot.eng_beforecivil.0.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 0 }
+
+	option = { 
+		name = foscot.eng_beforecivil.0.choice_1
+		
+		SCO = {
+			set_country_flag = SCO_council_nir_acc
+		}
+	}
+}
+
+# Namespace:
+## foscot.celtcon
+#
+
+# N. Ireland accepted
+country_event = {
+	id = foscot.celtcon.0
+	title = foscot.celtcon.0.title
+	desc = foscot.celtcon.0.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 0 }
+
+	option = { 
+		name = foscot.celtcon.0.choice_1
+		
+		SCO = {
+			set_country_flag = SCO_council_nir_acc
+		}
+	}
+}
+
+# N. Ireland rejected
+country_event = {
+	id = foscot.celtcon.1
+	title = foscot.celtcon.1.title
+	desc = foscot.celtcon.1.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 0 }
+
+	option = { 
+		name = foscot.celtcon.1.choice_1
+		
+	}
+}
+
+# Wales accepted
+country_event = {
+	id = foscot.celtcon.2
+	title = foscot.celtcon.2.title
+	desc = foscot.celtcon.2.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 0 }
+
+	option = { 
+		name = foscot.celtcon.2.choice_1
+		
+		SCO = {
+			set_country_flag = SCO_council_wls_acc
+		}
+	}
+}
+
+# Wales rejected
+country_event = {
+	id = foscot.celtcon.3
+	title = foscot.celtcon.3.title
+	desc = foscot.celtcon.3.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 0 }
+
+	option = { 
+		name = foscot.celtcon.3.choice_1
+		
+	}
+}

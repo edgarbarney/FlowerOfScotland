@@ -1,0 +1,4 @@
+#just in case
+#SCO = "countries/Scotland.txt"
+
+WSX = "countries/Wessex.txt"

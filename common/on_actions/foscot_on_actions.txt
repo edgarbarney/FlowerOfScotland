@@ -1,0 +1,307 @@
+on_actions = {
+
+	on_puppet = {
+		effect = {
+			SCO_puppet_setcosmetics = yes
+			SCO_subjects_setcosmetics = yes
+		}
+	}
+
+	on_release_as_puppet = {
+		effect = {
+			SCO_puppet_setcosmetics = yes
+			SCO_subjects_setcosmetics = yes
+		}
+	}
+
+	on_subject_autonomy_level_change = {
+		effect = {
+			SCO_puppet_setcosmetics = yes
+			SCO_subjects_setcosmetics = yes
+		}
+	}
+	
+	#on_civil_war_end = {
+	#	effect = {
+	#		if = {
+	#			limit = {
+	#				ROOT = {
+	#					original_tag = SCO
+	#					has_country_flag  = SCO_rebelion_imminent
+	#				}
+	#				FROM = {
+	#					original_tag = ENG
+	#				}
+	#				
+	#			}
+	#			
+	#			# In all ways
+	#			ROOT = {
+	#				add_ideas = volunteer_only
+	#				country_lock_all_division_template = no
+	#				set_country_flag = SCO_civilwar_over
+	#				set_country_flag = SCO_flagchange_democrat #Temporary
+	#			}
+	#			
+	#			if = {
+	#				limit = {
+	#					ROOT = {
+	#						has_completed_focus = SCO_focus_dominanceway
+	#					}
+	#				}
+	#				
+	#				ROOT = {
+	#					country_event = { id = foscot.flagchange.0 days = 1 }
+	#				}
+	#				
+	#				every_state = {
+	#					if = {
+	#						limit = {
+	#							is_core_of = SCO
+	#						}
+	#						remove_core_of = ENG
+	#					}
+	#					if = {
+	#						limit = {
+	#							is_core_of = WLS
+	#						}
+	#						remove_core_of = ENG
+	#						add_core_of = SCO
+	#					}
+	#					if = {
+	#						limit = {
+	#							is_core_of = NIR
+	#						}
+	#						remove_core_of = ENG
+	#						add_core_of = SCO
+	#					}
+	#					if = {
+	#						limit = {
+	#							is_core_of = ENG
+	#						}
+	#						add_core_of = SCO
+	#					}
+	#				} 
+	#			}
+	#		}
+	#		
+	#		# Check for cosmetics
+	#		SCO_subjects_setcosmetics = yes
+	#	}
+	#}
+	
+	on_capitulation_immediate = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SCO
+						has_country_flag  = SCO_rebelion_imminent
+					}
+					ROOT = {
+						original_tag = ENG
+					}
+					
+				}
+				
+				# In all ways
+				FROM = {
+					add_ideas = volunteer_only
+					country_lock_all_division_template = no
+					set_country_flag = SCO_civilwar_over
+					set_country_flag = after_first_independence_war
+					white_peace = ENG
+				}
+				
+				if = {
+					limit = {
+						FROM = {
+							has_completed_focus = SCO_focus_dominanceway
+						}
+					}
+					
+					FROM = {
+						country_event = { id = foscot.flagchange.0 days = 1 }
+					}
+					
+					every_state = {
+						if = {
+							limit = {
+								is_core_of = SCO
+							}
+							remove_core_of = ENG
+						}
+						if = {
+							limit = {
+								is_core_of = WLS
+							}
+							remove_core_of = ENG
+							add_core_of = SCO
+						}
+						if = {
+							limit = {
+								is_core_of = NIR
+							}
+							remove_core_of = ENG
+							add_core_of = SCO
+						}
+						if = {
+							limit = {
+								is_core_of = ENG
+							}
+							add_core_of = SCO
+						}
+					} 
+				}
+			}
+			
+			# Check for cosmetics
+			SCO_subjects_setcosmetics = yes
+		}
+	}
+	
+	# Daily Civil War Checks
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					tag = SCO
+					SCO = {
+						has_completed_focus = SCO_focus_ambitiousway
+					}
+				}
+				
+				if = {
+					limit = {
+						SCO = {
+							OR = {
+								has_completed_focus = SCO_focus_loneway
+								has_completed_focus = SCO_focus_celticway
+							}
+						}
+					}
+					
+					if = {
+						limit = {
+							ENG = {
+								has_war_with = SCO
+								surrender_progress > 0.8
+							}
+						}
+						ENG = {
+							every_core_state = {
+								if = {
+									limit = {
+										is_core_of = SCO
+									}
+									remove_core_of = ENG
+									transfer_state_to = SCO
+								}
+							}
+						}
+						SCO = {
+							set_country_flag = after_first_independence_war
+							white_peace = ENG
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						OR = {
+							check_variable = { rebelion_divs_orgrebels > rebellion_max_divs }
+							#has_equipment = { infantry_equipment > rebellion_max_eq }
+							
+							date > 1937.01.01
+						}
+					}
+					
+					set_country_flag  = SCO_rebelion_imminent
+					
+					#swap_ruler_traits = { remove = power_of_the_british_empire add = power_of_the_british_empire_2 }
+				}
+				
+				#log = "Eben: [?engsus]"
+				#log = "EbenSCO: [?SCO.engsus]"
+				
+				if = {
+					limit = {
+						check_variable = { engsus > engsus_yellowzone }
+					}
+					set_variable = { engsus_min = engsus_yellowzone }
+					
+					#log = "[?engsus_yellowzone]"
+				}
+				if = {
+					limit = {
+						check_variable = { engsus > engsus_redzone }
+					}
+					set_variable = { engsus_min = engsus_redzone }
+					#log = "[?engsus_redzone]"
+				}
+			}
+		}
+	}
+	
+	#Weekly fit the government
+	on_weekly = {
+		effect = {
+			
+		
+			if = {
+				limit = {
+					has_autonomy_state = autonomy_verge_of_release
+				}
+				
+				overlord = {
+					set_variable = { global.at_state_dp = party_popularity_100@democratic }
+				
+					set_variable = { global.at_state_fs = party_popularity_100@fascism }
+					
+					set_variable = { global.at_state_cm = party_popularity_100@communism }
+					
+					set_variable = { global.at_state_na = party_popularity_100@neutrality }
+				}
+				
+				set_popularities = {
+					democratic = global.at_state_dp
+					fascism = global.at_state_fs
+					communism = global.at_state_cm
+					neutrality = global.at_state_na
+				}
+				
+				if = {
+					limit = {
+						NOT = {
+							ENG = {
+								has_idea = ENG_the_war_to_end_all_wars
+							}
+						}
+						NOT = {
+							SCO = {
+								has_completed_focus = SCO_focus_ambitiousway
+							}
+						}
+					}
+					
+					ENG = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_free
+							end_wars = no
+							end_civil_wars = no
+						}
+						
+						remove_from_faction = PREV
+						
+						annex_country = {
+							target = PREV
+							transfer_troops = yes
+						}
+						log = "[Prev.GetName]"
+					}
+				}
+			}
+		}
+	}
+}

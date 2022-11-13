@@ -1,0 +1,675 @@
+﻿l_english:
+
+#
+# Defnied Macros
+#
+
+DEFINE_newline: " \n"
+
+#
+# Vanilla Overrides
+#
+
+FOSCOT_BLITZKRIEG_NAME: "§R( NOT SUPPORTED ) §OBlitzkrieg"
+
+#
+# Autonomy
+#
+
+autonomy_verge_of_release: "Constituent Country"
+autonomy_verge_of_release_desc: "One of the founder countries of the [overlord.GetName]"
+
+# ==========================
+# Other Celts
+# ==========================
+
+#
+# Countries
+#
+
+WSX: "Wessex"
+WSX_DEF: "Wessex"
+WSX_ADJ: "Wessexian"
+
+#
+# Focus Tree
+#
+
+celtic_naval_effort: "Naval Effort"
+celtic_naval_effort_tt: "Not enough building slots for §YNaval Dockyards§!"
+celtic_naval_effort_desc: "The expansion of our navy should be our first priority. Assign all available resources to new Dockyards and research into light surface ships."
+
+celtic_industrial_effort: "Industrial Effort"
+celtic_industrial_effort_desc: "Focus all our political efforts on building up the civilian industry in a great leap forward."
+celtic_industrial_effort_2: "Industrial Effort II"
+celtic_industrial_effort_2_desc: "With iron will and a relentless work ethic, we can mobilize the people in another great industrial effort."
+celtic_construction_effort: "Construction Effort"
+celtic_construction_effort_tt: "Not enough building slots for §YCivilian Factories§!"
+celtic_construction_effort_desc: "Civilian industrial capacity must not be underestimated even when war looms over the world."
+celtic_production_effort: "Armament Effort"
+celtic_production_effort_tt: "Not enough building slots for §YMilitary Factory§!"
+celtic_production_effort_desc: "If you can build tractors, you can build tanks! We must not allow our military production capacity to lag behind."
+celtic_construction_effort_2: "Construction Effort II"
+celtic_construction_effort_2_desc: "Continuing to expand our factories will allow us to speed up production of goods for trade and further construction efforts."
+celtic_production_effort_2: "Armament Effort II"
+celtic_production_effort_2_desc: "Trying to adapt civilian factories to produce military equipment is inefficient. We should focus on preparing military production now."
+celtic_production_effort_3: "Armament Effort III"
+celtic_production_effort_3_desc: "Continued efforts to expand our military factories are necessary to meet the demands for new equipment."
+celtic_infrastructure_effort: "Infrastructure Effort"
+celtic_infrastructure_effort_desc: "A country without proper infrastructure cannot pursue advanced projects or constructions."
+celtic_infrastructure_effort_tt: "Not enough building slots for §YInfrastructure§!"
+celtic_infrastructure_effort_2: "Infrastructure Effort II"
+celtic_infrastructure_effort_2_desc: "Extending our infrastructure further will enable the transports and communications necessary for high-tech clandestine projects."
+celtic_construction_effort_3: "Construction Effort III"
+celtic_construction_effort_3_desc: "Expansion of our infrastructure network has significantly improved our capacity for construction."
+
+# ==========================
+# SCOTLAND
+# ==========================
+
+SCO_GATHERING_STORM_DESC: "Unlike Ireland, Scotland stood loyal to the United Kingdom after the Great War. \n\nAlthough people seem relatively calm, it seems like the 'War To End All Wars' did not end anything at all. If another peace-breaking chain of events occurs, Scotland may have a change of heart."
+
+#
+# Unionists
+#
+
+SCO_British_Government: "British Government"
+SCO_British_Government_desc: "His Majesty's Government"
+
+SCO: "Scotland"
+SCO_DEF: "Scotland"
+SCO_ADJ: "Scottish"
+
+SCO_fascism: "Caledonia"
+SCO_fascism_DEF: "Caledonia"
+SCO_fascism_ADJ: "Caledonian"
+
+SCO_democratic: "Scotland"
+SCO_democratic_DEF: "Scotland"
+SCO_democratic_ADJ: "Scottish"
+
+SCO_neutrality: "Kingdom of Scotland"
+SCO_neutrality_DEF: "the Kingdom of Scotland"
+SCO_neutrality_ADJ: "Scottish"
+
+SCO_communism: "Commonwealth of Alba"
+SCO_communism_DEF: "the Commonwealth of Alba"
+SCO_communism_ADJ: "Alban"
+
+# Puppets
+
+AST_SCOUK: "Australia"
+AST_SCOUK_DEF: "Australia"
+AST_SCOUK_ADJ: "Australian"
+AST_SCOUK_autonomy_dominion: "Australia"
+AST_SCOUK_autonomy_dominion_DEF: "the Dominion of Australia"
+AST_SCOUK_subject: "$OVERLORDADJ$ Territories of Australia"
+AST_SCOUK_subject_DEF: "$OVERLORDADJ$ Australia"
+#Ughh
+AST_SCOUK_VAR: "Australia"
+AST_SCOUK_VAR_DEF: "Australia"
+AST_SCOUK_VAR_ADJ: "Australian"
+AST_SCOUK_VAR_autonomy_dominion: "Australia"
+AST_SCOUK_VAR_autonomy_dominion_DEF: "the Dominion of Australia"
+AST_SCOUK_VAR_subject: "$OVERLORDADJ$ Territories of Australia"
+AST_SCOUK_VAR_subject_DEF: "$OVERLORDADJ$ Australia"
+#Ughh2
+AST_SCOUK_VAR2: "Australia"
+AST_SCOUK_VAR2_DEF: "Australia"
+AST_SCOUK_VAR2_ADJ: "Australian"
+AST_SCOUK_VAR2_autonomy_dominion: "Australia"
+AST_SCOUK_VAR2_autonomy_dominion_DEF: "the Dominion of Australia"
+AST_SCOUK_VAR2_subject: "$OVERLORDADJ$ Territories of Australia"
+AST_SCOUK_VAR2_subject_DEF: "$OVERLORDADJ$ Australia"
+
+CAN_SCOUK: "Canada"
+CAN_SCOUK_DEF: "Canada"
+CAN_SCOUK_ADJ: "Canadian"
+CAN_SCOUK_autonomy_dominion: "Dominion of Canada"
+CAN_SCOUK_autonomy_dominion_DEF: "the Dominion of Canada"
+CAN_SCOUK_autonomy_colony: "Canadian Confederation"
+CAN_SCOUK_autonomy_colony_DEF: "the Canadian Confederation"
+CAN_SCOUK_autonomy_puppet: "Province of Canada"
+CAN_SCOUK_autonomy_puppet_DEF: "the Province of Canada"
+CAN_SCOUK_autonomy_integrated_puppet_DEF: "British Canadaian Territories"
+CAN_SCOUK_autonomy_integrated_puppet_DEF: "the British Canadaian Territories"
+CAN_SCOUK_subject: "$OVERLORDADJ$ Canada"
+CAN_SCOUK_subject_DEF: "$OVERLORDADJ$ Canada"
+#Ughh
+CAN_SCOUK_VAR: "Canada"
+CAN_SCOUK_VAR_DEF: "Canada"
+CAN_SCOUK_VAR_ADJ: "Canadian"
+CAN_SCOUK_VAR_autonomy_dominion: "Dominion of Canada"
+CAN_SCOUK_VAR_autonomy_dominion_DEF: "the Dominion of Canada"
+CAN_SCOUK_VAR_autonomy_colony: "Canadian Confederation"
+CAN_SCOUK_VAR_autonomy_colony_DEF: "the Canadian Confederation"
+CAN_SCOUK_VAR_autonomy_puppet: "Province of Canada"
+CAN_SCOUK_VAR_autonomy_puppet_DEF: "the Province of Canada"
+CAN_SCOUK_VAR_autonomy_integrated_puppet_DEF: "British Canadaian Territories"
+CAN_SCOUK_VAR_autonomy_integrated_puppet_DEF: "the British Canadaian Territories"
+CAN_SCOUK_VAR_subject: "$OVERLORDADJ$ Canada"
+CAN_SCOUK_VAR_subject_DEF: "$OVERLORDADJ$ Canada"
+#Ughh2
+CAN_SCOUK_VAR2: "Canada"
+CAN_SCOUK_VAR2_DEF: "Canada"
+CAN_SCOUK_VAR2_ADJ: "Canadian"
+CAN_SCOUK_VAR2_autonomy_dominion: "Dominion of Canada"
+CAN_SCOUK_VAR2_autonomy_dominion_DEF: "the Dominion of Canada"
+CAN_SCOUK_VAR2_autonomy_colony: "Canadian Confederation"
+CAN_SCOUK_VAR2_autonomy_colony_DEF: "the Canadian Confederation"
+CAN_SCOUK_VAR2_autonomy_puppet: "Province of Canada"
+CAN_SCOUK_VAR2_autonomy_puppet_DEF: "the Province of Canada"
+CAN_SCOUK_VAR2_autonomy_integrated_puppet_DEF: "British Canadaian Territories"
+CAN_SCOUK_VAR2_autonomy_integrated_puppet_DEF: "the British Canadaian Territories"
+CAN_SCOUK_VAR2_subject: "$OVERLORDADJ$ Canada"
+CAN_SCOUK_VAR2_subject_DEF: "$OVERLORDADJ$ Canada"
+
+NZL_SCOUK: "New Zealand"
+NZL_SCOUK_DEF: "the New Zealand"
+NZL_SCOUK_ADJ: "Kiwi"
+NZL_SCOUK_autonomy_dominion: "New Zealand"
+NZL_SCOUK_autonomy_dominion_DEF: "the Dominion of New Zealand"
+NZL_SCOUK_subject: "$OVERLORDADJ$ Territories of New Zealand"
+NZL_SCOUK_subject_DEF: "$OVERLORDADJ$ New Zealand"
+#Ughh
+NZL_SCOUK_VAR: "New Zealand"
+NZL_SCOUK_VAR_DEF: "the New Zealand"
+NZL_SCOUK_VAR_ADJ: "Kiwi"
+NZL_SCOUK_VAR_autonomy_dominion: "New Zealand"
+NZL_SCOUK_VAR_autonomy_dominion_DEF: "the Dominion of New Zealand"
+NZL_SCOUK_VAR_subject: "$OVERLORDADJ$ Territories of New Zealand"
+NZL_SCOUK_VAR_subject_DEF: "$OVERLORDADJ$ New Zealand"
+#Ughh2
+NZL_SCOUK_VAR2: "New Zealand"
+NZL_SCOUK_VAR2_DEF: "the New Zealand"
+NZL_SCOUK_VAR2_ADJ: "Kiwi"
+NZL_SCOUK_VAR2_autonomy_dominion: "New Zealand"
+NZL_SCOUK_VAR2_autonomy_dominion_DEF: "the Dominion of New Zealand"
+NZL_SCOUK_VAR2_subject: "$OVERLORDADJ$ Territories of New Zealand"
+NZL_SCOUK_VAR2_subject_DEF: "$OVERLORDADJ$ New Zealand"
+
+RAJ_SCOUK: "Raj"
+RAJ_SCOUK_DEF: "the Raj"
+#RAJ_SCOUK_ADJ: "Indian"
+RAJ_SCOUK_subject: "$OVERLORDADJ$ Raj"
+RAJ_SCOUK_subject_DEF: "$OVERLORDADJ$ Raj"
+#Ughh
+RAJ_SCOUK_VAR: "Raj"
+RAJ_SCOUK_VAR_DEF: "the Raj"
+#RAJ_SCOUK_VAR_ADJ: "Indian"
+RAJ_SCOUK_VAR_subject: "$OVERLORDADJ$ Raj"
+RAJ_SCOUK_VAR_subject_DEF: "$OVERLORDADJ$ Raj"
+#Ughh2
+RAJ_SCOUK_VAR2: "Raj"
+RAJ_SCOUK_VAR2_DEF: "the Raj"
+#RAJ_SCOUK_VAR2_ADJ: "Indian"
+RAJ_SCOUK_VAR2_subject: "$OVERLORDADJ$ Raj"
+RAJ_SCOUK_VAR2_subject_DEF: "$OVERLORDADJ$ Raj"
+
+PAK_SCOUK: "Pakistan"
+PAK_SCOUK_DEF: "Pakistan"
+#PAK_SCOUK_ADJ: "Paki"
+PAK_SCOUK_subject: "$OVERLORDADJ$ Pakistan"
+PAK_SCOUK_subject_DEF: "$OVERLORDADJ$ Pakistan"
+#Ughh
+PAK_SCOUK_VAR: "Pakistan"
+PAK_SCOUK_VAR_DEF: "Pakistan"
+#PAK_SCOUK_VAR_ADJ: "Paki"
+PAK_SCOUK_VAR_subject: "$OVERLORDADJ$ Pakistan"
+PAK_SCOUK_VAR_subject_DEF: "$OVERLORDADJ$ Pakistan"
+#Ughh2
+PAK_SCOUK_VAR2: "Pakistan"
+PAK_SCOUK_VAR2_DEF: "Pakistan"
+#PAK_SCOUK_VAR2_ADJ: "Paki"
+PAK_SCOUK_VAR2_subject: "$OVERLORDADJ$ Pakistan"
+PAK_SCOUK_VAR2_subject_DEF: "$OVERLORDADJ$ Pakistan"
+
+BRM_SCOUK: "$SCO_ADJ$ Burma"
+BRM_SCOUK_DEF: "the $SCO_ADJ$ Burma"
+#BRM_SCOUK_ADJ: "Indian"
+BRM_SCOUK_subject: "$OVERLORDADJ$ Burma"
+BRM_SCOUK_subject_DEF: "$OVERLORDADJ$ Burma"
+#Ughh
+BRM_SCOUK_VAR: "$SCO_ADJ$ Burma"
+BRM_SCOUK_VAR_DEF: "the $SCO_ADJ$ Burma"
+#BRM_SCOUK_VAR_ADJ: "Indian"
+BRM_SCOUK_VAR_subject: "$OVERLORDADJ$ Burma"
+BRM_SCOUK_VAR_subject_DEF: "$OVERLORDADJ$ Burma"
+#Ughh2
+BRM_SCOUK_VAR2: "$SCO_ADJ$ Burma"
+BRM_SCOUK_VAR2_DEF: "the $SCO_ADJ$ Burma"
+#BRM_SCOUK_VAR2_ADJ: "Indian"
+BRM_SCOUK_VAR2_subject: "$OVERLORDADJ$ Burma"
+BRM_SCOUK_VAR2_subject_DEF: "$OVERLORDADJ$ Burma"
+
+BAN_SCOUK: "$SCO_ADJ$ Bangladesh"
+BAN_SCOUK_DEF: "the $SCO_ADJ$ Bangladesh"
+#BAN_SCOUK_ADJ: "Bungee"
+BAN_SCOUK_subject: "$OVERLORDADJ$ Bangladesh"
+BAN_SCOUK_subject_DEF: "$OVERLORDADJ$ Bangladesh"
+#Ughh
+BAN_SCOUK_VAR: "$SCO_ADJ$ Bangladesh"
+BAN_SCOUK_VAR_DEF: "the $SCO_ADJ$ Bangladesh"
+#BAN_SCOUK_VAR_ADJ: "Bungee"
+BAN_SCOUK_VAR_subject: "$OVERLORDADJ$ Bangladesh"
+BAN_SCOUK_VAR_subject_DEF: "$OVERLORDADJ$ Bangladesh"
+#Ughh2
+BAN_SCOUK_VAR2: "$SCO_ADJ$ Bangladesh"
+BAN_SCOUK_VAR2_DEF: "the $SCO_ADJ$ Bangladesh"
+#BAN_SCOUK_VAR2_ADJ: "Bungee"
+BAN_SCOUK_VAR2_subject: "$OVERLORDADJ$ Bangladesh"
+BAN_SCOUK_VAR2_subject_DEF: "$OVERLORDADJ$ Bangladesh"
+
+SAF_SCOUK: "South Africa"
+SAF_SCOUK_DEF: "South Africa"
+SAF_SCOUK_ADJ: "South African"
+SAF_SCOUK_autonomy_dominion: "South Africa"
+SAF_SCOUK_autonomy_dominion_DEF: "the Dominion of South Africa"
+SAF_SCOUK_subject: "$OVERLORDADJ$ South Africa"
+SAF_SCOUK_subject_DEF: "$OVERLORDADJ$ South Africa"
+#Ughh
+SAF_SCOUK_VAR: "South Africa"
+SAF_SCOUK_VAR_DEF: "South Africa"
+SAF_SCOUK_VAR_ADJ: "South African"
+SAF_SCOUK_VAR_autonomy_dominion: "South Africa"
+SAF_SCOUK_VAR_autonomy_dominion_DEF: "the Dominion of South Africa"
+SAF_SCOUK_VAR_subject: "$OVERLORDADJ$ South Africa"
+SAF_SCOUK_VAR_subject_DEF: "$OVERLORDADJ$ South Africa"
+#Ughh2
+SAF_SCOUK_VAR2: "South Africa"
+SAF_SCOUK_VAR2_DEF: "South Africa"
+SAF_SCOUK_VAR2_ADJ: "South African"
+SAF_SCOUK_VAR2_autonomy_dominion: "South Africa"
+SAF_SCOUK_VAR2_autonomy_dominion_DEF: "the Dominion of South Africa"
+SAF_SCOUK_VAR2_subject: "$OVERLORDADJ$ South Africa"
+SAF_SCOUK_VAR2_subject_DEF: "$OVERLORDADJ$ South Africa"
+
+# Parties
+
+#SCO_Andrew_Dewar_Gibb_name: "Andrew Dewar Gibb"
+SCO_Andrew_Dewar_Gibb_desc: "Dislikes United States"
+SCO_default_fascist_party_name: "SNP"
+SCO_default_fascist_party_longname: "Scottish Nationalist Party"
+
+#SCO_James_Maxton_name: "James Maxton"
+#SCO_James_Maxton_desc: "Ambitious Leninist"
+SCO_default_communism_party_name: "Communist Party"
+SCO_default_communism_party_longname: "Communist Party"
+
+#SCO_Archibald_Sinclair_name: "John Gilmour"
+SCO_John_Gilmour_desc: "Unionist Uncle"
+SCO_default_democratic_party_name: "Unionist Party"
+SCO_default_democratic_party_longname: "Unionist Party"
+
+#SCO_John_MacCormick_name: "John MacCormick"
+#SCO_John_MacCormick_desc: "Ambitious Loyalist"
+SCO_default_neutrality_party_name: "Conservative Party"
+SCO_default_neutrality_party_longname: "Conservative Party"
+
+#
+# Ambitious ways
+#
+
+SCO_ambitious_fascism: "Poblachd na h-Alba"
+SCO_ambitious_fascism_DEF: "the Poblachd na h-Alba"
+SCO_ambitious_fascism_ADJ: "Albannach"
+#SCO_William_Gilmour_name: "William W. Gilmour"
+SCO_William_Gilmour_desc: "Ambitious Democrat Fascist"
+SCO_ambitious_fascist_party_name: "SDFP"
+SCO_ambitious_fascist_party_longname: "Scottish Democratic Fascist Party"
+
+SCO_ambitious_communism: "Scottish Commune"
+SCO_ambitious_communism_DEF: "Scottish Commune"
+SCO_ambitious_communism_ADJ: "Scottish"
+#SCO_James_Maxton_name: "James Maxton"
+SCO_James_Maxton_desc: "Ambitious Leninist"
+SCO_ambitious_communism_party_name: "SLP"
+SCO_ambitious_communism_party_longname: "Scottish Labour Party"
+
+SCO_ambitious_democratic: "Republic of Scotland"
+SCO_ambitious_democratic_DEF: "Republic of Scotland"
+SCO_ambitious_democratic_ADJ: "Scottish"
+#SCO_Archibald_Sinclair_name: "Archibald H. Sinclair"
+SCO_Archibald_Sinclair_desc: "Ambitious Liberal"
+SCO_ambitious_democratic_party_name: "LPS"
+SCO_ambitious_democratic_party_longname: "Liberal Party of Scotland"
+
+SCO_ambitious_neutrality: "Kingdom of Scotland"
+SCO_ambitious_neutrality_DEF: "Kingdom of Scotland"
+SCO_ambitious_neutrality_ADJ: "Scottish"
+#SCO_John_MacCormick_name: "John MacCormick"
+SCO_John_MacCormick_desc: "Ambitious Loyalist"
+SCO_ambitious_neutrality_party_name: "KP"
+SCO_ambitious_neutrality_party_longname: "The King's Party"
+
+#
+# Dominant Ways of Ambitious
+#
+
+SCO_dom_fascism: "Great British Empire"
+SCO_dom_fascism_DEF: "the Great British Empire"
+SCO_dom_fascism_ADJ: "British"
+
+SCO_dom_communism: "Union of Britain"
+SCO_dom_communism_DEF: "Union of Britain"
+SCO_dom_communism_ADJ: "Unibrit"
+
+SCO_dom_democratic: "United Kingdom"
+SCO_dom_democratic_DEF: "the United Kingdom"
+SCO_dom_democratic_ADJ: "British"
+
+SCO_dom_neutrality: "Empire of Britain"
+SCO_dom_neutrality_DEF: "the Empire of Britain"
+SCO_dom_neutrality_ADJ: "Imperial"
+
+# Ughh
+SCO_dom_VAR_fascism: "Great British Empire"
+SCO_dom_VAR_fascism_DEF: "the Great British Empire"
+SCO_dom_VAR_fascism_ADJ: "British"
+
+SCO_dom_VAR_communism: "Union of Britain"
+SCO_dom_VAR_communism_DEF: "Union of Britain"
+SCO_dom_VAR_communism_ADJ: "Unibrit"
+
+SCO_dom_VAR_democratic: "United Kingdom"
+SCO_dom_VAR_democratic_DEF: "the United Kingdom"
+SCO_dom_VAR_democratic_ADJ: "British"
+
+SCO_dom_VAR_neutrality: "Empire of Britain"
+SCO_dom_VAR_neutrality_DEF: "the Empire of Britain"
+SCO_dom_VAR_neutrality_ADJ: "Imperial"
+# Ughh V2
+SCO_dom_VAR2_fascism: "Great British Empire"
+SCO_dom_VAR2_fascism_DEF: "the Great British Empire"
+SCO_dom_VAR2_fascism_ADJ: "British"
+
+SCO_dom_VAR2_communism: "Union of Britain"
+SCO_dom_VAR2_communism_DEF: "Union of Britain"
+SCO_dom_VAR2_communism_ADJ: "Unibrit"
+
+SCO_dom_VAR2_democratic: "United Kingdom"
+SCO_dom_VAR2_democratic_DEF: "the United Kingdom"
+SCO_dom_VAR2_democratic_ADJ: "British"
+
+SCO_dom_VAR2_neutrality: "Empire of Britain"
+SCO_dom_VAR2_neutrality_DEF: "the Empire of Britain"
+SCO_dom_VAR2_neutrality_ADJ: "Imperial"
+
+#Civil war
+SCO_dom_provision_fascism: "British Fascist Comitee"
+SCO_dom_provision_fascism_DEF: "the British Fascist Comitee"
+SCO_dom_provision_fascism_ADJ: "British"
+
+SCO_dom_provision_communism: "Union of Britain"
+SCO_dom_provision_communism_DEF: "Union of Britain"
+SCO_dom_provision_communism_ADJ: "British"
+
+SCO_dom_provision_democratic: "Provisional British Government"
+SCO_dom_provision_democratic_DEF: "the United Kingdom"
+SCO_dom_provision_democratic_ADJ: "British"
+
+SCO_dom_provision_neutrality: "Provisional British Government"
+SCO_dom_provision_neutrality_DEF: "Provisional British Government"
+SCO_dom_provision_neutrality_ADJ: "British"
+
+# 
+# Influenced ways
+# 
+
+SCO_influenced_sov_autonomy_dominion: "Scottish $OVERLORDADJ$ Republic"
+SCO_influenced_sov_autonomy_dominion_DEF: "the Scottish $OVERLORDADJ$ Republic"
+
+SCO_influenced_sov_autonomy_colony: "Scottish $OVERLORDADJ$ Republic"
+SCO_influenced_sov_autonomy_colony_DEF: "the Scottish $OVERLORDADJ$ Republic"
+
+SCO_influenced_sov_autonomy_puppet: "Scottish $OVERLORDADJ$ Republic"
+SCO_influenced_sov_autonomy_puppet_DEF: "the Scottish $OVERLORDADJ$ Republic"
+
+SCO_influenced_sov_autonomy_integrated_puppet: "Scottish $OVERLORDADJ$ Territories"
+SCO_influenced_sov_autonomy_integrated_puppet_DEF: "the Scottish $OVERLORDADJ$ Territories"
+
+
+
+SCO_influenced_ger_autonomy_dominion: "Scottish Reich"
+SCO_influenced_ger_autonomy_dominion_DEF: "the Scottish Reich"
+
+SCO_influenced_ger_autonomy_colony: "Reichsland Schottland"
+SCO_influenced_ger_autonomy_colony_DEF: "the Scottish Confederation"
+
+SCO_influenced_ger_autonomy_puppet: "Reichsprotektorat Schottland"
+SCO_influenced_ger_autonomy_puppet_DEF: "the Reichsprotektorat Schottland"
+
+SCO_influenced_ger_autonomy_integrated_puppet: "Reichskommissariat Schottland"
+SCO_influenced_ger_autonomy_integrated_puppet_DEF: "the Reichskommissariat Schottland"
+
+SCO_influenced_ger_autonomy_satellite: "Reichsland Schottland"
+SCO_influenced_ger_autonomy_satellite_DEF: "the Reichsland Schottland"
+
+SCO_influenced_ger_autonomy_reichsprotectorate: "Reichsprotektorat Schottland"
+SCO_influenced_ger_autonomy_reichsprotectorate_DEF: "the Reichsprotektorat Schottland"
+
+SCO_influenced_ger_autonomy_reichskommissariat: "Reichskommissariat Schottland"
+SCO_influenced_ger_autonomy_reichskommissariat_DEF: "the Reichskommissariat Schottland"
+
+
+
+SCO_influenced_usa_autonomy_dominion: "$OVERLORDADJ$ Mandate of Scotland"
+SCO_influenced_usa_autonomy_dominion_DEF: "the $OVERLORDADJ$ Mandate of Scotland"
+
+SCO_influenced_usa_autonomy_colony: "Scottish Confederation"
+SCO_influenced_usa_autonomy_colony_DEF: "the Scottish Confederation"
+
+SCO_influenced_usa_autonomy_puppet: "$OVERLORDADJ$ Province of Scotland"
+SCO_influenced_usa_autonomy_puppet_DEF: "the $OVERLORDADJ$ Province of Scotland"
+
+SCO_influenced_usa_autonomy_integrated_puppet: "$OVERLORDADJ$ Scotland"
+SCO_influenced_usa_autonomy_integrated_puppet_DEF: "$OVERLORDADJ$ Scotland"
+
+#SCO_autonomy_dominion: "$OVERLORDADJ$ Mandate of Scotland"
+#SCO_autonomy_dominion_DEF: "the $OVERLORDADJ$ Mandate of Scotland"
+#
+#SCO_autonomy_colony: "Scottish Confederation"
+#SCO_autonomy_colony_DEF: "the Scottish Confederation"
+#
+#SCO_autonomy_puppet: "$OVERLORDADJ$ Province of Scotland"
+#SCO_autonomy_puppet_DEF: "the $OVERLORDADJ$ Province of Scotland"
+#
+#SCO_autonomy_integrated_puppet: "$OVERLORDADJ$ Scotland"
+#SCO_autonomy_integrated_puppet_DEF: "$OVERLORDADJ$ Scotland"
+
+#
+# Ideas
+#
+
+SCO_idea_freedom: "Fresh Liberty"
+SCO_idea_freedom_desc: "By spritiual boost of newly gained home rule, citizens are working harder for a greater nation."
+
+SCO_idea_english_push: "British Defense"
+SCO_idea_english_push_desc: ""
+
+SCO_idea_bring_dominions: "British Domination"
+SCO_idea_bring_dominions_desc: "After the civil-war, we have to rebuild the empire. We'll influence dominions highly, so that we can drift them into our ways."
+
+SCO_idea_bring_dominions_SCO: "British Domination"
+SCO_idea_bring_dominions_SCO_desc: "The British, after the civil-war, are seeking rebulding of the empire. We're being infleunced highly, watched closely."
+
+#
+# Leader Traits
+#
+
+power_of_the_british_empire: "Power of the British Empire"
+power_of_the_british_empire_2: "Power of the British Empire"
+
+# 
+# Focus tree
+# 
+
+SCO_focus_basic_industry: "Ignite the Fuse of Growth"
+SCO_focus_basic_industry_desc: "Our nation is old but our state is young. For now, our factories are only enough to keep current waters flow. We should empower our industry for a promising growth."
+
+SCO_focus_powering_up: "Powering Up the Industury"
+SCO_focus_powering_up_desc: "With recent developments on the petrol refining and electrical engineering, we can make our industrial research fast and efficient."
+
+SCO_focus_unionistway: "Way of Steadiness"
+SCO_focus_unionistway_desc: "We've got to stay loyal to homeland, Great Britain. Scottish and English are powerful together. We may want our internal government, or want to be independent. Either way, we'll co-operate with England in best of ways."
+
+SCO_focus_coop_independence: "Cooperated Independence"
+SCO_focus_coop_independence_desc: "We shall gradually walk towards independence. We should be rulers of ourselves, but go with the Commonwealth."
+
+SCO_focus_homerule: "Devolution"
+SCO_focus_homerule_desc: "We're British, but we're not Great Britain. As Scotland, we should do as we should for our land, rather than a centralised decision mechanism doing it for us. But from outside, England and Scotland, are still foundations of the Great Britain."
+
+SCO_focus_dominanceway: "Domination Switch"
+SCO_focus_dominanceway_desc: "Brits are powerful together, but enough with this English rule! We should take over Britain and Britannia shall rule the waves again!"
+SCO_focus_dominanceway_inter: "Domination Switch"
+SCO_focus_dominanceway_inter_desc: "Brits are powerful together, but enough with this English rule! We should take over Britain and Britannia shall rule the waves again!"
+
+SCO_focus_loneway: "Lone Land of Scots"
+SCO_focus_loneway_desc: "English can shove their land up their arse, dominions can do whatever they want. We need no allies, we need no aid. We only want our precious Scotland, and we will take it."
+SCO_focus_loneway_inter: "Lone Land of Scots"
+SCO_focus_loneway_inter_desc: "English can shove their land up their arse, dominions can do whatever they want. We need no allies, we need no aid. We only want our precious Scotland, and we will take it."
+
+SCO_focus_celticway: "Unite Celts"
+SCO_focus_celticway_desc: "We shall unite Celtic people together. Unity brings power. We'll be strong together."
+SCO_focus_celticway_inter: "Unite Celts"
+SCO_focus_celticway_inter_desc: "We shall unite Celtic people together. Unity brings power. We'll be strong together."
+
+SCO_focus_statecommits: "Establish a Government"
+SCO_focus_statecommits_desc: "Since civil-war is over, we can now arrange a referendum, elect our first government and tell the world what we'll do."
+
+SCO_focus_influencedway: "Seek Influence"
+SCO_focus_influencedway_desc: "We're fed up with this English rule! We'll get back to those selfish pricks, even if it means following another power!"
+
+SCO_focus_ambitiousway: "A Different Approach"
+SCO_focus_ambitiousway_desc: "Chose ambitious ways for Scotland. Try new and different ways to refresh unity for independent and strong Scotland."
+
+SCO_focus_demofascist: "Democra-Fascism"
+SCO_focus_demofascist_desc: "An ambitious man, called William Gilmour, thinks fascism can co-exist without blocking the democratic elections."
+
+SCO_focus_ambicommune: "The Way of Lenin"
+SCO_focus_ambicommune_desc: "Led by James Maxton, Leninism will take us further as the workers unite."
+
+SCO_focus_democracy: "Establish The Great Liberal Party"
+SCO_focus_democracy_desc: "It is the era of Liberty and Democracies. We've gotta adapt to the times. For a free and democratic country, we've gotta establish a party for liberty."
+
+SCO_focus_monarchy: "God Save The King"
+SCO_focus_monarchy_desc: "Democracy has 'proven' it's 'usefulness' in Britain. It's time to adopt new things backed up by safe and proven-useful system. Therefore, God save the King and Scotland!"
+
+#
+# Flags
+#
+
+SCO_liberal_changed: "Scots established the new Liberal Party"
+
+SCO_nonint_sale_337: "[337.owner.GetName] refused the sale of [337.GetNameWithFlag]" # Faroe islands
+
+#
+# Tooltips
+#
+
+#SCO_focus_nonintervention_tt: "[337.owner.GetNameWithFlag] will get the event '[From.GetName] is interested in the sale of [337.GetName]'\n"
+foscot.exp_nonint.0_tt: "[337.GetName] will be owned by [SCO.GetName]"
+
+SCO_nofascist_tt: "§RDue to policies of William W. Gilmour, you cannot follow the Democra-Fascism path together with Celtic Unity path!§!\n"
+SCO_nocumnist_tt: "§RDue to policies of James Maxton, you cannot follow the Communist path together with Lone Scotland path!§!\n"
+
+SCO_english_sus_tt_inc: "§W\nincrease in English Suspicion by $RIGHT|-$§R"
+SCO_english_sus_tt_dec: "§W\ndecrease in English Suspicion by $RIGHT|+$§R"
+
+SCO_rebelion_disclosure_tt: "Decreases Recruitment Oversuspicion Chance."
+SCO_rebelion_divs_orgrebels_tt_inc: "§WGain $RIGHT|+0$ Organised Rebel Division to Deploy After Civil War.\n"
+SCO_rebelion_divs_orgrebels_tt_dec: "§WLose $RIGHT|-0$ Organised Rebel Division to Deploy After Civil War.\n"
+
+#
+# Events
+#
+
+foscot.0.title: "Drastic [From.GetAdjective] Government Change"
+foscot.0.desc: "[From.GetAdjective] Democratic Party merged into newly established Liberal Party of Scotland. As a result, new cabinet was formed and Archibald Sinclair became the new Prime Minister. \n\nLet's see how this change will affect [From.GetNameDef]."
+foscot.0.choice_1: "OK."
+
+foscot.exp_nonint.0.title: "[From.GetName] is interested in the sale of [337.GetName]"
+foscot.exp_nonint.0.desc: "[From.GetAdjective] government is interested in the sale of [337.GetName]. They are ready to transfer some of their industrial complexes that can be beneficial to us. This can also create a great foundation for future relations."
+foscot.exp_nonint.0.choice_1: "Sure. Why not. This will benefit both of us."
+foscot.exp_nonint.0.choice_2: "It's not in our interests at the moment"
+
+foscot.exp_nonint.1.title: "[337.owner.GetName] accepted the sale of [337.GetName]!"
+foscot.exp_nonint.1.desc: "[337.owner.GetAdjective] government accepted the sale. They say it will be beneficial to both parties."
+foscot.exp_nonint.1.choice_1: "Great."
+foscot.exp_nonint.2.title: "[337.owner.GetName] refused the sale of [337.GetName]!"
+foscot.exp_nonint.2.desc: "[337.owner.GetAdjective] government refused the sale. They say it's not in their interests at the moment."
+foscot.exp_nonint.2.choice_1: "Unfortunate."
+
+foscot.flagchange.0.basetitle: "Flag Change"
+foscot.flagchange.0.basedesc: "We should choose a new flag for our nation."
+foscot.flagchange.0.baseoption_1: "Let's see our options."
+
+foscot.flagchange.0.title: "Flag Change"
+foscot.flagchange.0.desc: "United Kingdom should choose it's new identity. Which one should be our flag?"
+foscot.flagchange.0.option_1: "§WWe should just take the saltire on top."
+foscot.flagchange.0.option_2: "§WWe should change the flag a bit\nwith the same design ideas."
+foscot.flagchange.0.option_3: "§WWe should keep the same\ngood old Union Flag."
+
+foscot.eng_beforecivil.0.title: "British Armed Forces Request Manpower"
+foscot.eng_beforecivil.0.desc: "EVENT TEST"
+
+#
+# Decisions
+#
+
+SCO_civil_war_prep: "Road to Independence"
+SCO_civil_war_prep_desc: "We've got to choose our own path in the new world. Our nation should be free at all costs!\nWe must prepare for the inevitable. Though, we should be careful. If the English get suspicious, they can start taking hurtful measures. \n\n [SCO_english_sus_desc_main] \n §WTotal Divisions: §G[?SCO.rebelion_divs_orgrebels] \n\n§WBe careful. When Total Divisions exceed §R[?SCO.rebellion_max_divs]§W, English Suspicion reach §R100%§W or the date comes to §R1937§W, the English will start accelerated preparation. When that happens, we should stop our underground preparations and start our own side."
+
+SCO_english_sus_desc_grn: "English Suspicion: §G[?SCO.engsus]%  §W(Minimum: §R[?SCO.engsus_min]%)"
+SCO_english_sus_desc_ylw: "English Suspicion: §Y[?SCO.engsus]%  §W(Minimum: §R[?SCO.engsus_min]%)"
+SCO_english_sus_desc_red: "English Suspicion: §R[?SCO.engsus]%  §W(Minimum: §R[?SCO.engsus_min]%)"
+
+SCO_engsus_greater_five_tt: "Need at least least §Y5%§W English Suspicion\n"
+SCO_engsus_greater_nein_tt: "Need at least least §Y9%§W English Suspicion\n"
+SCO_engsus_greater_fiftein_tt: "Need at least least §Y15%§W English Suspicion\n"
+SCO_rebel_division_atleastone_tt: "Need at least §Y2§W Organised Rebel Division\n"
+
+SCO_fake_arrest: "Arrange Fake Arrests"
+SCO_fake_arrest_desc: "To ease English suspicion, we have to throw some bait.\nArresting volunteers for our cause (They will be pardoned after we got our independence, of course) can help resolving this issue."
+SCO_discredit_rebels: "Discredit Rebels"
+SCO_discredit_rebels_desc: "To ease English suspicion, we have to throw some bait.\nPublicly discrediting rebels can destabilise our people a bit, but the English can calm down a bit, too."
+SCO_fake_surrender: "Fake Surrender"
+SCO_fake_surrender_desc: "To ease English suspicion, we have to throw some bait.\nSurrendering some of our volunteer forces will sure ease the English a bit. But we should be careful. Our men are precious. This single action can damage our future actions."
+
+SCO_rebelion_disclosure_flag: "Already Urged Disclosure"
+SCO_currently_recruiting: "Currently Recruiting"
+SCO_currently_stealing: "An Operation is Already Underway"
+
+SCO_smuggle_weapons: "Steal Some Weapons from Arms Factories"
+SCO_smuggle_weapons_big: "Steal Weapon Shipments from Arms Factories"
+SCO_smuggle_weapons_goddam: "Hijack Weapon Transport Convoys"
+SCO_rebelion_disclosure: "Urge Recruitment Disclosure"
+SCO_hidden_rebel_recruits: "Recruit Rebels Under The Nose"
+SCO_rebel_recruits_more: "Rebel Recruitment at Public Sites"
+
+SCO_forment_nations: "Ally Nations"
+SCO_forment_nations_desc: "Civil war is now imminent. Both England and Scotland is openly getting ready. But just in case, we need allies. \n\n §WTotal Divisions: §G[?SCO.rebelion_divs_orgrebels]"
+
+SCO_rebelion_in_domininons: "Imperialist Rebelion in [From.GetNameDef]"
+
+#
+# Wars
+#
+
+CIVIL_WAR_NAME_ENG_SCO: "$SECOND$ War of Independence"
+CIVIL_WAR_NAME_SCO_ENG: "$SECOND$ War of Independence"
+
+WAR_NAME_SCO_IRE: "War of British Isles"
+WAR_NAME_IRE_SCO: "War of British Isles"
+
+WAR_NAME_USA_SCO: "War Plan Red"
+
+WAR_TAKE_CLAIM_NAME_SCO_USA: "War of Imperial Union"
+WAR_TAKE_CLAIM_NAME_SCO_CAN: "War of Imperial Union"
+WAR_TAKE_CLAIM_NAME_SCO_AST: "War of Imperial Union"
+WAR_TAKE_CLAIM_NAME_SCO_NZL: "War of Imperial Union"
+WAR_TAKE_CLAIM_NAME_SCO_SAF: "War of Imperial Union"
+WAR_TAKE_CLAIM_NAME_SCO_IRE: "War of Imperial Union"
+WAR_TAKE_CLAIM_NAME_SCO_NIR: "War of Imperial Union"
+WAR_TAKE_CLAIM_NAME_SCO_WLS: "War of Imperial Union"
+

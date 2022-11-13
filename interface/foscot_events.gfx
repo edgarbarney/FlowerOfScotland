@@ -1,0 +1,16 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_report_event_jack_change"
+		texturefile = "gfx/event_pictures/report_event_jack_change.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_neutral_change"
+		texturefile = "gfx/event_pictures/report_event_netural_change.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_fascistflag_change"
+		texturefile = "gfx/event_pictures/report_event_fascistflag_change.dds"
+	}
+}

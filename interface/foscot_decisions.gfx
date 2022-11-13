@@ -1,0 +1,14 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_decision_SCO_claim_1"
+		texturefile = "gfx/interface/decisions/decision_SCO_claim_1.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_SCO_claim_2"
+		texturefile = "gfx/interface/decisions/decision_SCO_claim_2.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_SCO_claim_3"
+		texturefile = "gfx/interface/decisions/decision_SCO_claim_3.dds"
+	}
+}

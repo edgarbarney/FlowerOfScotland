@@ -1,0 +1,1292 @@
+SCO_forment_nations = {
+	
+	SCO_ally_nir = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			has_country_flag = SCO_rebelion_imminent
+			#has_equipment = { infantry_equipment > 4999 }
+			#has_equipment = { support_equipment > 99 }
+			#has_equipment = { artillery_equipment > 249 }
+		}
+		
+		targets = { NIR }
+		
+		target_non_existing = yes
+		
+		days_remove = 3
+
+		cost = 1
+
+		fire_only_once = yes
+		
+		#target_trigger = {
+		#	has_completed_focus = celtic_industrial_effort
+		#}
+
+		cancel_if_not_visible = yes
+
+		remove_effect = {
+			SCO = {		
+				country_event = foscot.celtcon.0
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	SCO_ally_wls = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			
+			#has_equipment = { infantry_equipment > 4999 }
+			#has_equipment = { support_equipment > 99 }
+			#has_equipment = { artillery_equipment > 249 }
+		}
+		
+		targets = { WLS }
+		
+		target_non_existing = yes
+		
+		days_remove = 3
+
+		cost = 1
+
+		fire_only_once = yes
+		
+		#target_trigger = {
+		#	has_completed_focus = celtic_industrial_effort
+		#}
+
+		cancel_if_not_visible = yes
+
+		remove_effect = {		
+			SCO = {		
+				country_event = foscot.celtcon.2
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	SCO_start_uprising = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			
+			SCO = {
+				OR = {
+					has_country_flag = SCO_council_wls_acc
+					has_country_flag = SCO_council_nir_acc
+				}
+			}
+			
+			#has_equipment = { infantry_equipment > 4999 }
+			#has_equipment = { support_equipment > 99 }
+			#has_equipment = { artillery_equipment > 249 }
+		}
+		
+		targets = { ENG }
+		
+		target_non_existing = yes
+		
+		days_remove = 3
+
+		cost = 1
+
+		fire_only_once = yes
+		
+		#target_trigger = {
+		#	has_completed_focus = SCO_industrial_effort
+		#	#FROM = {z
+		#	#	NOT = { is_in_faction_with = ROOT }
+		#	#	NOT = { is_subject_of = ROOT }
+		#	#	has_civil_war = no
+		#	#	NOT = { has_country_flag = ENG_imperialist_civil_war }
+		#	#	exists = yes
+		#	#}
+		#	#NOT = { has_country_flag = ENG_CAN_suppressed_coup }
+		#}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			#custom_effect_tooltip = ENG_renew_support_for_imperialist_coup_in_canada_tt
+			#hidden_effect = { set_country_flag = ENG_prepare_coup_in_CAN }
+			#FROM = {
+			#	activate_mission = ENG_support_imperialist_coup_in_canada_mission_1
+			#	country_event = { id = mtg_britain.61 hours = 6 }
+			#}
+			#ENG = {
+			#	release = NIR
+			#	declare_war_on = {
+			#			target = NIR
+			#			type = puppet_wargoal_focus
+			#		}
+			#}
+		}
+
+		remove_effect = {
+			#release = NIR
+			#NIR = {
+			#	declare_war_on = {
+			#			target = ENG
+			#			type = puppet_wargoal_focus
+			#		}
+			#}
+			
+			SCO = {
+				set_country_flag = SCO_council_nir_acc
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+}
+
+SCO_civil_war_prep = {
+	
+	SCO_debug_startwarforsomerason = {
+		complete_effect = {
+			SCO_start_civil_war = yes
+		}
+	}
+	
+	SCO_debug_resetengsus = {
+		complete_effect = {
+			set_variable = { engsus = 0 }
+		}
+	}
+	
+	SCO_debug_addrebels = {
+		complete_effect = {
+			add_to_variable = { 
+				rebelion_divs_orgrebels = 6
+				tooltip = SCO_rebelion_divs_orgrebels_tt_inc
+			}
+		}
+	}
+	
+	SCO_discredit_rebels = {
+
+		icon = generic_decision
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = SCO_currently_stealing
+			}
+			custom_trigger_tooltip = {
+				tooltip = SCO_engsus_greater_five_tt
+				check_variable = { engsus > 5 }
+			}
+		}
+		
+		days_remove = 15
+
+		cost = 50
+
+		#fire_only_once = no
+		
+		#cancel_if_not_visible = yes
+		
+		modifier = {
+			stability_weekly = -0.1
+		}
+		
+		complete_effect = {
+			set_country_flag = SCO_currently_stealing
+		}
+		
+		remove_effect = {
+			SCO = {	
+				clr_country_flag = SCO_currently_stealing
+				
+				random_list = {
+					310 = {
+						subtract_from_variable = { 
+							engsus = 5
+							tooltip = SCO_english_sus_tt_dec
+						}
+					}
+					615 = {
+						subtract_from_variable = { 
+							engsus = 14
+							tooltip = SCO_english_sus_tt_dec
+						}
+					}
+					75 = {
+						add_to_variable = { 
+							engsus = 5
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+				}
+				
+				hidden_effect = {
+					if = {
+						limit = {
+							check_variable = { engsus < engsus_min }
+						}
+						set_variable = { engsus = engsus_min }
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	SCO_fake_arrest = {
+
+		icon = generic_decision
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = SCO_currently_stealing
+			}
+			custom_trigger_tooltip = {
+				tooltip = SCO_engsus_greater_nein_tt
+				check_variable = { engsus > 9 }
+			}
+		}
+		
+		days_remove = 15
+
+		cost = 100
+
+		#fire_only_once = no
+		
+		#cancel_if_not_visible = yes
+		
+		modifier = {
+			stability_weekly = -0.1
+		}
+		
+		complete_effect = {
+			set_country_flag = SCO_currently_stealing
+		}
+		
+		remove_effect = {
+			SCO = {	
+				clr_country_flag = SCO_currently_stealing
+				
+				random_list = {
+					310 = {
+						subtract_from_variable = { 
+							engsus = 9
+							tooltip = SCO_english_sus_tt_dec
+						}
+					}
+					615 = {
+						subtract_from_variable = { 
+							engsus = 21
+							tooltip = SCO_english_sus_tt_dec
+						}
+					}
+					75 = {
+						add_to_variable = { 
+							engsus = 5
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+				}
+				
+				hidden_effect = {
+					if = {
+						limit = {
+							check_variable = { engsus < engsus_min }
+						}
+						set_variable = { engsus = engsus_min }
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	SCO_fake_surrender = {
+
+		icon = generic_decision
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = SCO_currently_stealing
+			}
+			NOT = {
+				has_country_flag = SCO_currently_recruiting
+			}
+			custom_trigger_tooltip = {
+				tooltip = SCO_engsus_greater_fiftein_tt
+				check_variable = { engsus > 15 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = SCO_rebel_division_atleastone_tt
+				check_variable = { rebelion_divs_orgrebels > 1 }
+			}
+		}
+		
+		days_remove = 15
+
+		cost = 200
+
+		#fire_only_once = no
+		
+		#cancel_if_not_visible = yes
+		
+		modifier = {
+			stability_weekly = -0.1
+		}
+		
+		complete_effect = {
+			set_country_flag = SCO_currently_stealing
+			set_country_flag = SCO_currently_recruiting
+		}
+		
+		remove_effect = {
+			SCO = {	
+				clr_country_flag = SCO_currently_stealing
+				clr_country_flag = SCO_currently_recruiting
+				
+				subtract_from_variable = { 
+					rebelion_divs_orgrebels = 1
+					tooltip = SCO_rebelion_divs_orgrebels_tt_dec
+				}
+				
+				custom_effect_tooltip = DEFINE_newline
+				
+				random_list = {
+					310 = {
+						subtract_from_variable = { 
+							engsus = 15
+							tooltip = SCO_english_sus_tt_dec
+						}
+					}
+					615 = {
+						subtract_from_variable = { 
+							engsus = 35
+							tooltip = SCO_english_sus_tt_dec
+						}
+					}
+					75 = {
+						add_to_variable = { 
+							engsus = 10
+							tooltip = SCO_english_sus_tt_inc
+						}
+						subtract_from_variable = { 
+							rebelion_divs_orgrebels = 1
+							tooltip = SCO_rebelion_divs_orgrebels_tt_dec
+						}
+					}
+				}
+				
+				hidden_effect = {
+					if = {
+						limit = {
+							check_variable = { engsus < engsus_min }
+						}
+						set_variable = { engsus = engsus_min }
+					}
+				}
+				
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	SCO_smuggle_weapons = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = SCO_currently_stealing
+			}
+		}
+		
+		days_remove = 10
+
+		cost = 20
+
+		fire_only_once = no
+		
+		cancel_if_not_visible = yes
+		
+		complete_effect = {
+			set_country_flag = SCO_currently_stealing
+		}
+		
+		remove_effect = {
+			SCO = {		
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 300
+					producer = ENG
+				}
+				hidden_effect = {
+					ENG = {
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = -300
+							#producer = ENG
+						}
+					}
+				}
+				
+				custom_effect_tooltip = DEFINE_newline
+				
+				clr_country_flag = SCO_currently_stealing
+				
+				random_list = {
+					25 = {
+						add_to_variable = { 
+							engsus = 3
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+					50 = {
+						modifier = {
+							factor = 1.50
+							check_variable = { SCO.engsus > SCO.engsus_yellowzone }
+						}
+						modifier = {
+							factor = 1.65
+							check_variable = { SCO.engsus > SCO.engsus_redzone }
+						}
+						add_to_variable = { 
+							engsus = 6
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+					25 = {
+						add_to_variable = { 
+							engsus = 10
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	SCO_smuggle_weapons_big = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = SCO_currently_stealing
+			}
+		}
+		
+		days_remove = 10
+
+		cost = 50
+
+		fire_only_once = no
+		
+		cancel_if_not_visible = yes
+		
+		complete_effect = {
+			set_country_flag = SCO_currently_stealing
+		}
+		
+		remove_effect = {
+			SCO = {		
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+					producer = ENG
+				}
+				hidden_effect = {
+					ENG = {
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = -1000
+							#producer = ENG
+						}
+					}
+				}
+				
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 25
+					producer = ENG
+				}
+				hidden_effect = {
+					ENG = {
+						add_equipment_to_stockpile = {
+							type = motorized_equipment
+							amount = -25
+							#producer = ENG
+						}
+					}
+				}
+				
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 10
+					producer = ENG
+				}
+				hidden_effect = {
+					ENG = {
+						add_equipment_to_stockpile = {
+							type = support_equipment
+							amount = -10
+							#producer = ENG
+						}
+					}
+				}
+				
+				custom_effect_tooltip = DEFINE_newline
+				
+				clr_country_flag = SCO_currently_stealing
+				
+				random_list = {
+					25 = {
+						add_to_variable = { 
+							engsus = 6
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+					50 = {
+						modifier = {
+							factor = 1.50
+							check_variable = { SCO.engsus > SCO.engsus_yellowzone }
+						}
+						modifier = {
+							factor = 1.65
+							check_variable = { SCO.engsus > SCO.engsus_redzone }
+						}
+						add_to_variable = { 
+							engsus = 10
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+					25 = {
+						add_to_variable = { 
+							engsus = 20
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	SCO_smuggle_weapons_goddam = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = SCO_currently_stealing
+			}
+		}
+		
+		days_remove = 10
+
+		cost = 100
+
+		fire_only_once = no
+		
+		cancel_if_not_visible = yes
+		
+		complete_effect = {
+			set_country_flag = SCO_currently_stealing
+		}
+		
+		remove_effect = {
+			SCO = {		
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 5000
+					producer = ENG
+				}
+				hidden_effect = {
+					ENG = {
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = -5000
+							#producer = ENG
+						}
+					}
+				}
+				
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 50
+					producer = ENG
+				}
+				hidden_effect = {
+					ENG = {
+						add_equipment_to_stockpile = {
+							type = motorized_equipment
+							amount = -50
+							#producer = ENG
+						}
+					}
+				}
+				
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 40
+					producer = ENG
+				}
+				hidden_effect = {
+					ENG = {
+						add_equipment_to_stockpile = {
+							type = support_equipment
+							amount = -40
+							#producer = ENG
+						}
+					}
+				}
+				
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 20
+					producer = ENG
+				}
+				hidden_effect = {
+					ENG = {
+						add_equipment_to_stockpile = {
+							type = train_equipment
+							amount = -20
+							#producer = ENG
+						}
+					}
+				}
+				
+				custom_effect_tooltip = DEFINE_newline
+				
+				clr_country_flag = SCO_currently_stealing
+				
+				random_list = {
+					25 = {
+						add_to_variable = { 
+							engsus = 10
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+					50 = {
+						modifier = {
+							factor = 1.50
+							check_variable = { SCO.engsus > SCO.engsus_yellowzone }
+						}
+						modifier = {
+							factor = 1.65
+							check_variable = { SCO.engsus > SCO.engsus_redzone }
+						}
+						add_to_variable = { 
+							engsus = 21
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+					25 = {
+						add_to_variable = { 
+							engsus = 35
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	
+	SCO_rebelion_disclosure = {
+
+		icon = generic_military
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = SCO_rebelion_disclosure_flag
+			}
+		}
+		
+		days_remove = 0
+
+		cost = 50
+
+		fire_only_once = no
+		
+		cancel_if_not_visible = yes
+
+		remove_effect = {
+			custom_effect_tooltip = SCO_rebelion_disclosure_tt
+			
+			set_country_flag = SCO_rebelion_disclosure_flag
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	
+	SCO_hidden_rebel_recruits = {
+
+		icon = generic_military
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			NOT = { 
+				has_country_flag = SCO_currently_recruiting 
+			}
+			has_equipment = {
+				infantry_equipment > 899
+			}
+		}
+		
+		days_remove = 10
+
+		cost = 50
+
+		fire_only_once = no
+		
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			set_country_flag = SCO_currently_recruiting
+		}
+
+		remove_effect = {
+			SCO = {
+				hidden_effect = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = -900
+						#producer = ENG
+					}
+				}
+				
+				add_to_variable = { 
+					rebelion_divs_orgrebels = 1
+					tooltip = SCO_rebelion_divs_orgrebels_tt_inc
+				}
+				
+				custom_effect_tooltip = DEFINE_newline
+				
+				clr_country_flag = SCO_rebelion_disclosure_flag
+				
+				clr_country_flag = SCO_currently_recruiting
+				
+				random_list = {
+					25 = {
+						add_to_variable = { 
+							engsus = 1
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+					50 = {
+						modifier = {
+							factor = 0.5
+							has_country_flag = SCO_rebelion_disclosure_flag
+						}
+						modifier = {
+							factor = 1.50
+							check_variable = { SCO.engsus > SCO.engsus_yellowzone }
+						}
+						modifier = {
+							factor = 1.65
+							check_variable = { SCO.engsus > SCO.engsus_redzone }
+						}
+						add_to_variable = { 
+							engsus = 3
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+					25 = {
+						modifier = {
+							factor = 0.2
+							has_country_flag = SCO_rebelion_disclosure_flag
+						}
+						add_to_variable = { 
+							engsus = 6
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	SCO_rebel_recruits_more = {
+
+		icon = generic_military
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		available = {
+			NOT = { 
+				has_country_flag = SCO_currently_recruiting 
+			}
+			has_equipment = {
+				infantry_equipment > 2699
+			}
+		}
+		
+		days_remove = 10
+
+		cost = 100
+
+		fire_only_once = no
+		
+		cancel_if_not_visible = yes
+		
+		complete_effect = {
+			set_country_flag = SCO_currently_recruiting
+		}
+		
+		remove_effect = {
+			SCO = {
+				hidden_effect = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = -2700
+						#producer = ENG
+					}
+				}
+				
+				add_to_variable = { 
+					rebelion_divs_orgrebels = 3
+					tooltip = SCO_rebelion_divs_orgrebels_tt_inc
+				}
+				
+				custom_effect_tooltip = DEFINE_newline
+				
+				clr_country_flag = SCO_rebelion_disclosure_flag
+				
+				clr_country_flag = SCO_currently_recruiting
+				
+				random_list = {
+					25 = {
+						add_to_variable = { 
+							engsus = 3
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+					50 = {
+						modifier = {
+							factor = 0.5
+							has_country_flag = SCO_rebelion_disclosure_flag
+						}
+						modifier = {
+							factor = 1.50
+							check_variable = { SCO.engsus > SCO.engsus_yellowzone }
+						}
+						modifier = {
+							factor = 1.65
+							check_variable = { SCO.engsus > SCO.engsus_redzone }
+						}
+						add_to_variable = { 
+							engsus = 11
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+					25 = {
+						modifier = {
+							factor = 0.2
+							has_country_flag = SCO_rebelion_disclosure_flag
+						}
+						add_to_variable = { 
+							engsus = 20
+							tooltip = SCO_english_sus_tt_inc
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+}
+
+SCO_retake_dominions = {
+	
+	SCO_debug_setcosmetic_def = {
+		complete_effect = {
+			SCO_setjack_default = yes
+		}
+	}
+	
+	SCO_debug_setcosmetic_var1 = {
+		complete_effect = {
+			SCO_setjack_variant1 = yes
+		}
+	}
+	
+	SCO_debug_setcosmetic_var2 = {
+		complete_effect = {
+			SCO_setjack_variant2 = yes
+		}
+	}
+
+	SCO_rebelion_supportagents = {
+
+		activation = {
+			original_tag = SCO
+			has_completed_focus = SCO_focus_retakedominions
+			NOT = { has_country_flag = SCO_rebelion_supportagents_done }
+		}
+		
+		available = {
+			OR = {
+				has_war = yes
+				
+				has_global_flag = SCO_general_imperial_rebelion_started
+			}
+		}
+		
+		#cancel_trigger = {
+		#	has_war = yes
+		#}
+		
+		icon = eng_ally_imperialist_coup     # For GFX_decision_mission_icon
+		is_good = yes
+		days_mission_timeout = 400
+		selectable_mission = no
+		
+		complete_effect = {
+			set_country_flag = SCO_rebelion_supportagents_done
+			remove_ideas = SCO_idea_bring_dominions_SCO
+			CAN = {
+				remove_ideas = SCO_idea_bring_dominions
+			}
+			AST = {
+				remove_ideas = SCO_idea_bring_dominions
+			}
+			NZL = {
+				remove_ideas = SCO_idea_bring_dominions
+			}
+			SAF = {
+				remove_ideas = SCO_idea_bring_dominions
+			}
+		}
+		
+		timeout_effect = {
+			set_country_flag = SCO_rebelion_supportagents_done
+			remove_ideas = SCO_idea_bring_dominions_SCO
+			CAN = {
+				remove_ideas = SCO_idea_bring_dominions
+			}
+			AST = {
+				remove_ideas = SCO_idea_bring_dominions
+			}
+			NZL = {
+				remove_ideas = SCO_idea_bring_dominions
+			}
+			SAF = {
+				remove_ideas = SCO_idea_bring_dominions
+			}
+		}
+	}
+	
+	
+	SCO_rebelion_in_domininons = {
+
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			original_tag = SCO
+		}
+
+		target_root_trigger = {
+			has_completed_focus = SCO_focus_retakedominions
+			FROM = { NOT = { has_country_flag = SCO_my_imperial_rebelion_started } }
+			FROM = { NOT = { is_subject_of = ROOT } }
+		}
+		
+		target_trigger = {
+			FROM = { NOT = { is_subject_of = ROOT } }
+		}
+		
+		available = {	
+			OR = {
+				FROM = {
+					has_civil_war = yes
+				}
+			
+				network_strength = {
+					target = FROM
+					value > 80
+				}
+			}
+			
+			OR = {
+				AND = {
+					SCO = {
+						has_government = democratic
+					}
+					FROM = {
+						democratic > 0.2
+					}
+				}
+				
+				
+				AND = {
+					SCO = {
+						has_government = fascism
+					}
+					FROM = {
+						fascism > 0.2
+					}
+				}
+				
+				AND = {
+					SCO = {
+						has_government = communism
+					}
+					FROM = {
+						communism > 0.2
+					}
+				}
+				
+				AND = {
+					SCO = {
+						has_government = neutrality
+					}
+					FROM = {
+						OR = {
+							#AND = {
+								neutrality > 0.2
+							#}
+							AND = {
+								neutrality > 0.1
+								fascism > 0.1
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		targets = { CAN SAF NZL AST }
+		
+		target_non_existing = yes
+		
+		days_remove = 3
+
+		cost = 1
+
+		fire_only_once = yes
+		
+		target_trigger = {
+			#ENG = {
+			#	network_strength = {
+			#		target = FROM
+			#		value > 0.8
+			#	}
+			#}
+		}
+
+		cancel_if_not_visible = yes
+
+		remove_effect = {
+			if = {
+				limit = {
+					FROM = {
+						has_civil_war = no
+					}
+				}
+				
+				if = {
+					limit = {
+						ROOT = { has_government = fascism }
+						FROM = { NOT = { is_subject_of = ROOT } }
+					}
+					FROM = { 
+						start_civil_war = { ideology = fascism size = 0.4 } 
+						set_country_flag = SCO_my_imperial_rebelion_started
+						set_global_flag = SCO_general_imperial_rebelion_started
+					}
+					random_other_country = {
+						limit = {
+							civilwar_target = FROM.original_tag
+						}
+						add_opinion_modifier = { target = ROOT modifier = ENG_imperial_loyalist }
+						
+						set_country_flag = SCO_imperial_supporter
+						
+						SCO = {
+							create_wargoal = { 
+								type = puppet_wargoal_focus
+								target = FROM
+							}
+							add_to_war = { targeted_alliance = PREV enemy = FROM hostility_reason = asked_to_join }
+							add_to_faction = PREV
+							set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_reichskommissariat
+									end_wars = no
+									end_civil_wars = no
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = { has_government = democratic }
+						FROM = { NOT = { is_subject_of = ROOT } }
+					}
+					FROM = { 
+						start_civil_war = { ideology = democratic size = 0.4 } 
+						set_country_flag = SCO_my_imperial_rebelion_started
+						set_global_flag = SCO_general_imperial_rebelion_started
+					}
+					random_other_country = {
+						limit = {
+							civilwar_target = FROM.original_tag
+						}
+						add_opinion_modifier = { target = ROOT modifier = ENG_imperial_loyalist }
+						
+						set_country_flag = SCO_imperial_supporter
+						
+						SCO = {
+							create_wargoal = { 
+								type = puppet_wargoal_focus
+								target = FROM
+							}
+							add_to_war = { targeted_alliance = PREV enemy = FROM hostility_reason = asked_to_join }
+							add_to_faction = PREV
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_puppet
+								end_wars = no
+								end_civil_wars = no
+							}
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						ROOT = { has_government = fascism }
+						any_other_country = {
+							original_tag = FROM.original_tag
+							has_government = fascism
+							NOT = { is_subject_of = SCO }
+						}
+					}
+					
+					every_other_country = {
+						limit = {
+							original_tag = FROM.original_tag
+							has_government = fascism
+						}
+						add_opinion_modifier = { target = ROOT modifier = ENG_imperial_loyalist }
+						
+						set_country_flag = SCO_imperial_supporter
+						
+						SCO = {
+							create_wargoal = { 
+								type = puppet_wargoal_focus
+								target = FROM
+							}
+							add_to_war = { targeted_alliance = PREV enemy = FROM hostility_reason = asked_to_join }
+							add_to_faction = PREV
+							set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_reichskommissariat
+									end_wars = no
+									end_civil_wars = no
+							}
+						}
+					}
+				}
+			}
+			
+			# Check for cosmetics
+			SCO_subjects_setcosmetics = yes
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+}
