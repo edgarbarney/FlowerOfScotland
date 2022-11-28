@@ -27,9 +27,9 @@ autonomy_verge_of_release_desc: "One of the founder countries of the [overlord.G
 # Countries
 #
 
-WSX: "Wessex"
-WSX_DEF: "Wessex"
-WSX_ADJ: "Wessexian"
+CRW: "Cornwall"
+CRW_DEF: "Cornwall"
+CRW_ADJ: "Cornish"
 
 #
 # Focus Tree
