@@ -255,7 +255,7 @@ focus_tree = {
 	
 	focus = {
 		id = SCO_focus_statecommits
-		prerequisite = { focus = SCO_focus_ambicommune focus = SCO_focus_democracy focus = SCO_focus_monarchy focus = SCO_focus_celticway }
+		prerequisite = { focus = SCO_focus_ambicommune focus = SCO_focus_democracy focus = SCO_focus_monarchy focus = SCO_focus_demofascist }
 		#mutually_exclusive = { focus = SCO_focus_loneway focus = SCO_focus_celticway }
 		
 		icon = GFX_focus_hol_the_foundations_of_defense
