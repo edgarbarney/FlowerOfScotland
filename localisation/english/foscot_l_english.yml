@@ -70,11 +70,24 @@ celtic_construction_effort_3_desc: "Expansion of our infrastructure network has 
 SCO_GATHERING_STORM_DESC: "Unlike Ireland, Scotland stood loyal to the United Kingdom after the Great War. \n\nAlthough people seem relatively calm, it seems like the 'War To End All Wars' did not end anything at all. If another peace-breaking chain of events occurs, Scotland may have a change of heart."
 
 #
-# Unionists
+# Temporary States
 #
 
 SCO_British_Government: "British Government"
 SCO_British_Government_desc: "His Majesty's Government"
+
+SCO_Prov_Brit: "Provisional British Government"
+SCO_Prov_Brit_desc: "Provisional British Government"
+
+SCO_Prov_Scot: "Provisional Scottish Government"
+SCO_Prov_Scot_desc: "Provisional Scottish Government"
+
+SCO_Prov_Celt: "Provisional Celtic Government"
+SCO_Prov_Celt_desc: "Provisional Celtic Government"
+
+#
+# Unionists
+#
 
 SCO: "Scotland"
 SCO_DEF: "Scotland"
@@ -296,7 +309,7 @@ SCO_default_fascist_party_longname: "Scottish Nationalist Party"
 SCO_default_communism_party_name: "Communist Party"
 SCO_default_communism_party_longname: "Communist Party"
 
-#SCO_Archibald_Sinclair_name: "John Gilmour"
+#SCO_John_Gilmour_name: "John Gilmour"
 SCO_John_Gilmour_desc: "Unionist Uncle"
 SCO_default_democratic_party_name: "Unionist Party"
 SCO_default_democratic_party_longname: "Unionist Party"
@@ -331,8 +344,8 @@ SCO_ambitious_democratic_DEF: "Republic of Scotland"
 SCO_ambitious_democratic_ADJ: "Scottish"
 #SCO_Archibald_Sinclair_name: "Archibald H. Sinclair"
 SCO_Archibald_Sinclair_desc: "Ambitious Liberal"
-SCO_ambitious_democratic_party_name: "LPS"
-SCO_ambitious_democratic_party_longname: "Liberal Party of Scotland"
+SCO_ambitious_democratic_party_name: "ULP"
+SCO_ambitious_democratic_party_longname: "United Liberal Party of Scotland"
 
 SCO_ambitious_neutrality: "Kingdom of Scotland"
 SCO_ambitious_neutrality_DEF: "Kingdom of Scotland"
@@ -569,6 +582,8 @@ SCO_nonint_sale_337: "[337.owner.GetName] refused the sale of [337.GetNameWithFl
 
 #SCO_focus_nonintervention_tt: "[337.owner.GetNameWithFlag] will get the event '[From.GetName] is interested in the sale of [337.GetName]'\n"
 foscot.exp_nonint.0_tt: "[337.GetName] will be owned by [SCO.GetName]"
+
+SCO_nocivilpath_tt: "§RYou should choose your two focuses before the 'Establish a Government' focus or the game will choose random paths for you!§!\n"
 
 SCO_nofascist_tt: "§RDue to policies of William W. Gilmour, you cannot follow the Democra-Fascism path together with Celtic Unity path!§!\n"
 SCO_nocumnist_tt: "§RDue to policies of James Maxton, you cannot follow the Communist path together with Lone Scotland path!§!\n"

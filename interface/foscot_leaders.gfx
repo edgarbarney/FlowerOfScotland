@@ -64,4 +64,19 @@ spriteTypes = {
 		name = "GFX_portrait_SCO_British_Government"
 		texturefile = "gfx//leaders//SCO//Portrait_Scotland_British_Government.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_Prov_Brit"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_Prov_Brit.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_Prov_Scot"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_Prov_Scot.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_portrait_SCO_Prov_Celt"
+		texturefile = "gfx//leaders//SCO//Portrait_Scotland_Prov_Celt.dds"
+	}
 }

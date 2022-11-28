@@ -1,3 +1,63 @@
+SCO_dmz_neng_dumfries = {
+	log = "Demilitarised [GetName]"
+	131 = { set_demilitarized_zone = yes }
+}
+SCO_undmz_neng_dumfries = {
+	131 = { set_demilitarized_zone = no }
+}
+
+SCO_civil_war_finished = {
+	# In all ways
+	SCO = {
+		add_ideas = volunteer_only
+		country_lock_all_division_template = no
+		set_country_flag = SCO_civilwar_over
+		set_country_flag = after_first_independence_war
+		#white_peace = ENG
+	}
+	
+	if = {
+		limit = {
+			SCO = {
+				has_completed_focus = SCO_focus_dominanceway
+			}
+		}
+		
+		SCO = {
+			country_event = { id = foscot.flagchange.0 days = 1 }
+		}
+		
+		every_state = {
+			if = {
+				limit = {
+					is_core_of = SCO
+				}
+				remove_core_of = ENG
+			}
+			if = {
+				limit = {
+					is_core_of = WLS
+				}
+				remove_core_of = ENG
+				add_core_of = SCO
+			}
+			if = {
+				limit = {
+					is_core_of = NIR
+				}
+				remove_core_of = ENG
+				add_core_of = SCO
+			}
+			if = {
+				limit = {
+					is_core_of = ENG
+				}
+				add_core_of = SCO
+			}
+		} 
+	}
+}
+
 SCO_start_civil_war = {
 	#if = {
 	#	limit = {
@@ -7,6 +67,64 @@ SCO_start_civil_war = {
 	#}
 	
 	SCO = {
+		# We MUST get one of the ways. If player didn't, we will.
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = SCO_focus_dominanceway
+					has_completed_focus = SCO_focus_celticway
+					has_completed_focus = SCO_focus_loneway
+				}
+			}
+			# 33.333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333...
+			random_list = {
+				1 = {
+					complete_national_focus = SCO_focus_dominanceway
+				}
+				1 = {
+					complete_national_focus = SCO_focus_celticway
+				}
+				1 = {
+					complete_national_focus = SCO_focus_loneway
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = SCO_focus_ambicommune
+					has_completed_focus = SCO_focus_democracy 
+					has_completed_focus = SCO_focus_monarchy
+					has_completed_focus = SCO_focus_demofascist
+				}
+			}
+			# 25
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						has_completed_focus = SCO_focus_loneway
+					}
+					complete_national_focus = SCO_focus_ambicommune
+				}
+				1 = {
+					complete_national_focus = SCO_focus_democracy
+				}
+				1 = {
+					complete_national_focus = SCO_focus_monarchy
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						has_completed_focus = SCO_focus_celticway
+					}
+					complete_national_focus = SCO_focus_demofascist
+				}
+			}
+			
+		}
+		
 		add_ideas = scraping_the_barrel
 		
 		set_country_flag  = SCO_rebelion_imminent
@@ -148,17 +266,51 @@ SCO_start_civil_war = {
 			election_frequency = 48
 		}
 		
-		create_country_leader = {
-			name = "Provisional British Government"
-			desc = "SCO_Archibald_Sinclair_desc"
-			picture = GFX_portrait_SCO_Archibald_Sinclair
-			expire = "1965.1.1"
-			ideology = liberalism
-			#traits = {
-			#	inexperienced_imperialist
-			#}
+		if = {
+			limit = {
+				has_completed_focus = SCO_focus_dominanceway
+			}
+			# Oh, nevermind. We've got another "British" government
+			create_country_leader = {
+				name = "Provisional British Government"
+				desc = "SCO_Prov_Brit_desc"
+				picture = GFX_portrait_SCO_Prov_Brit
+				expire = "1965.1.1"
+				ideology = liberalism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
 		}
-		
+		else_if = {
+			limit = {
+				has_completed_focus = SCO_focus_celticway
+			}
+			# Welcome, Celtic government
+			create_country_leader = {
+				name = "Provisional Celtic Government"
+				desc = "SCO_Prov_Celt_desc"
+				picture = GFX_portrait_SCO_Prov_Celt
+				expire = "1965.1.1"
+				ideology = liberalism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+		}
+		else = {
+			# Welcome, Scottish government
+			create_country_leader = {
+				name = "Provisional Scottish Government"
+				desc = "SCO_Prov_Scot_desc"
+				picture = GFX_portrait_SCO_Prov_Scot
+				expire = "1965.1.1"
+				ideology = liberalism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+		}
 	}
 }
 

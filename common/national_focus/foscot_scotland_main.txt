@@ -86,6 +86,12 @@ focus_tree = {
 		
 		cost = 10
 		
+		available = {
+			ENG = {
+				has_completed_focus = ENG_steady_as_she_goes
+			}
+		}
+		
 		allow_branch  = {
 			SCO = {
 				NOT = {
@@ -183,6 +189,7 @@ focus_tree = {
 				set_country_flag = SCO_hidefocus_unionist
 				set_country_flag = SCO_hidefocus_influenced
 			}
+			custom_effect_tooltip = SCO_nocivilpath_tt
 		}
 		
 	}
@@ -211,7 +218,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SCO_focus_dominanceway focus = SCO_focus_celticway focus = SCO_focus_ambicommune }
 		
 		icon = GFX_goal_generic_demand_territory
-		x = -3
+		x = 3
 		y = 1
 		
 		relative_position_id = SCO_focus_ambitiousway
@@ -232,7 +239,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SCO_focus_dominanceway focus = SCO_focus_loneway focus = SCO_focus_demofascist }
 		
 		icon = GFX_goal_generic_national_unity
-		x = 3
+		x = -3
 		y = 1
 		relative_position_id = SCO_focus_ambitiousway
 		cost = 1
@@ -248,12 +255,12 @@ focus_tree = {
 	
 	focus = {
 		id = SCO_focus_statecommits
-		prerequisite = { focus = SCO_focus_dominanceway focus = SCO_focus_loneway focus = SCO_focus_celticway }
+		prerequisite = { focus = SCO_focus_ambicommune focus = SCO_focus_democracy focus = SCO_focus_monarchy focus = SCO_focus_celticway }
 		#mutually_exclusive = { focus = SCO_focus_loneway focus = SCO_focus_celticway }
 		
 		icon = GFX_focus_hol_the_foundations_of_defense
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = SCO_focus_dominanceway
 		cost = 5
 	}
@@ -262,14 +269,14 @@ focus_tree = {
 	
 	focus = {
 		id = SCO_focus_demofascist
-		prerequisite = { focus = SCO_focus_statecommits }
+		prerequisite = { focus = SCO_focus_dominanceway focus = SCO_focus_loneway }
 		mutually_exclusive = { focus = SCO_focus_ambicommune focus = SCO_focus_democracy focus = SCO_focus_monarchy focus = SCO_focus_celticway }
 		
 		icon = GFX_goal_support_fascism
 		x = 2
 		y = 1
-		relative_position_id = SCO_focus_statecommits
-		cost = 10
+		relative_position_id = SCO_focus_dominanceway
+		cost = 5
 		
 		completion_reward = {
 			
@@ -294,14 +301,14 @@ focus_tree = {
 	
 	focus = {
 		id = SCO_focus_monarchy
-		prerequisite = { focus = SCO_focus_statecommits }
+		prerequisite = { focus = SCO_focus_dominanceway focus = SCO_focus_loneway focus = SCO_focus_celticway }
 		mutually_exclusive = { focus = SCO_focus_demofascist focus = SCO_focus_ambicommune focus = SCO_focus_democracy }
 		
 		icon = GFX_focus_rom_royal_dictatorship
 		x = 6
 		y = 1
-		relative_position_id = SCO_focus_statecommits
-		cost = 10
+		relative_position_id = SCO_focus_dominanceway
+		cost = 5
 		
 		completion_reward = {
 			
@@ -326,14 +333,14 @@ focus_tree = {
 	
 	focus = {
 		id = SCO_focus_democracy
-		prerequisite = { focus = SCO_focus_statecommits }
+		prerequisite = { focus = SCO_focus_dominanceway focus = SCO_focus_loneway focus = SCO_focus_celticway }
 		mutually_exclusive = { focus = SCO_focus_demofascist focus = SCO_focus_ambicommune focus = SCO_focus_monarchy }
 		
 		icon = GFX_goal_support_democracy
 		x = -2
 		y = 1
-		relative_position_id = SCO_focus_statecommits
-		cost = 10
+		relative_position_id = SCO_focus_dominanceway
+		cost = 5
 		
 		completion_reward = {
 			
@@ -362,14 +369,14 @@ focus_tree = {
 	
 	focus = {
 		id = SCO_focus_ambicommune
-		prerequisite = { focus = SCO_focus_statecommits }
+		prerequisite = { focus = SCO_focus_dominanceway focus = SCO_focus_celticway }
 		mutually_exclusive = { focus = SCO_focus_demofascist focus = SCO_focus_monarchy focus = SCO_focus_democracy focus = SCO_focus_loneway }
 		
 		icon = GFX_goal_support_communism
 		x = -6
 		y = 1
-		relative_position_id = SCO_focus_statecommits
-		cost = 10
+		relative_position_id = SCO_focus_dominanceway
+		cost = 5
 		
 		completion_reward = {
 			
@@ -395,100 +402,30 @@ focus_tree = {
 	focus = {
 		id = SCO_focus_appointking
 		prerequisite = { focus = SCO_focus_democracy focus = SCO_focus_demofascist focus = SCO_focus_monarchy }
+		prerequisite = { focus = SCO_focus_statecommits }
 		mutually_exclusive = { focus = SCO_focus_exileroyals }
 		
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		x = 0
+		x = 2
 		y = 1
-		relative_position_id = SCO_focus_demofascist
+		relative_position_id = SCO_focus_statecommits
 		cost = 10
 		
 		completion_reward = {
 			
-		}
-	}
-	
-	focus = {
-		id = SCO_focus_retakedominions
-		prerequisite = { focus = SCO_focus_appointking }
-		
-		icon = GFX_focus_eng_bring_the_dominions_back_into_the_fold
-		x = 0
-		y = 1
-		relative_position_id = SCO_focus_appointking
-		cost = 10
-		
-		available = {
-			has_done_agency_upgrade = upgrade_psycho_warfare
-		}
-		
-		completion_reward = {
-		
-			add_ideas = SCO_idea_bring_dominions_SCO
-			CAN = {
-				add_ideas = SCO_idea_bring_dominions
-			}
-			AST = {
-				add_ideas = SCO_idea_bring_dominions
-			}
-			NZL = {
-				add_ideas = SCO_idea_bring_dominions
-			}
-			SAF = {
-				add_ideas = SCO_idea_bring_dominions
-			}
-			
-			create_operative_leader = {
-				name = "Adam 'Ontarian' McLogger"
-				GFX = GFX_portrait_jacques_duclos
-				#traits = { operative_infiltrator operative_natural_orator }
-				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
-				bypass_recruitment = yes
-				available_to_spy_master = no
-				nationalities = { SCO CAN }
-			}
-			
-			create_operative_leader = {
-				name = "Bruce 'Anti-Gravity' Shane"
-				GFX = GFX_portrait_jacques_duclos
-				#traits = { operative_infiltrator operative_natural_orator }
-				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
-				bypass_recruitment = yes
-				available_to_spy_master = no
-				nationalities = { SCO AST }
-			}
-			
-			create_operative_leader = {
-				name = "Oliver 'Kiwi' Twister"
-				GFX = GFX_portrait_jacques_duclos
-				#traits = { operative_infiltrator operative_natural_orator }
-				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
-				bypass_recruitment = yes
-				available_to_spy_master = no
-				nationalities = { SCO NZL }
-			}
-			
-			create_operative_leader = {
-				name = "Johannes 'Mzantsi' Lizzie"
-				GFX = GFX_portrait_jacques_duclos
-				#traits = { operative_infiltrator operative_natural_orator }
-				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
-				bypass_recruitment = yes
-				available_to_spy_master = no
-				nationalities = { SCO SAF }
-			}
 		}
 	}
 	
 	focus = {
 		id = SCO_focus_exileroyals
 		prerequisite = { focus = SCO_focus_democracy focus = SCO_focus_demofascist focus = SCO_focus_ambicommune }
+		prerequisite = { focus = SCO_focus_statecommits }
 		mutually_exclusive = { focus = SCO_focus_appointking }
 		
 		icon = GFX_focus_rom_abdicate
-		x = 0
+		x = -2
 		y = 1
-		relative_position_id = SCO_focus_democracy
+		relative_position_id = SCO_focus_statecommits
 		cost = 10
 		
 		completion_reward = {
@@ -877,7 +814,18 @@ focus_tree = {
 		y = 0
 		cost = 10
 		
-		relative_position_id = SCO_focus_ambitiousway
+		#relative_position_id = SCO_focus_ambitiousway
+		
+		offset = {
+			x = -18
+			y = 0
+			trigger = {
+				SCO = {
+					has_completed_focus = SCO_focus_ambitiousway	
+				}
+			}
+		}
+		
 	}
 	
 	focus = {
@@ -892,6 +840,78 @@ focus_tree = {
 		y = 1
 		relative_position_id = SCO_focus_intervention
 		cost = 1
+	}
+	
+	focus = {
+		id = SCO_focus_retakedominions
+		prerequisite = { focus = SCO_focus_dominanceway_inter }
+		
+		icon = GFX_focus_eng_bring_the_dominions_back_into_the_fold
+		x = 2
+		y = 1
+		relative_position_id = SCO_focus_dominanceway_inter
+		cost = 10
+		
+		available = {
+			has_done_agency_upgrade = upgrade_psycho_warfare
+		}
+		
+		completion_reward = {
+		
+			add_ideas = SCO_idea_bring_dominions_SCO
+			CAN = {
+				add_ideas = SCO_idea_bring_dominions
+			}
+			AST = {
+				add_ideas = SCO_idea_bring_dominions
+			}
+			NZL = {
+				add_ideas = SCO_idea_bring_dominions
+			}
+			SAF = {
+				add_ideas = SCO_idea_bring_dominions
+			}
+			
+			create_operative_leader = {
+				name = "Adam 'Ontarian' McLogger"
+				GFX = GFX_portrait_jacques_duclos
+				#traits = { operative_infiltrator operative_natural_orator }
+				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
+				bypass_recruitment = yes
+				available_to_spy_master = no
+				nationalities = { SCO CAN }
+			}
+			
+			create_operative_leader = {
+				name = "Bruce 'Anti-Gravity' Shane"
+				GFX = GFX_portrait_jacques_duclos
+				#traits = { operative_infiltrator operative_natural_orator }
+				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
+				bypass_recruitment = yes
+				available_to_spy_master = no
+				nationalities = { SCO AST }
+			}
+			
+			create_operative_leader = {
+				name = "Oliver 'Kiwi' Twister"
+				GFX = GFX_portrait_jacques_duclos
+				#traits = { operative_infiltrator operative_natural_orator }
+				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
+				bypass_recruitment = yes
+				available_to_spy_master = no
+				nationalities = { SCO NZL }
+			}
+			
+			create_operative_leader = {
+				name = "Johannes 'Mzantsi' Lizzie"
+				GFX = GFX_portrait_jacques_duclos
+				#traits = { operative_infiltrator operative_natural_orator }
+				traits = { operative_natural_orator operative_double_agent operative_seducer operative_commando }
+				bypass_recruitment = yes
+				available_to_spy_master = no
+				nationalities = { SCO SAF }
+			}
+		}
 	}
 	
 	focus = {
@@ -923,117 +943,71 @@ focus_tree = {
 		cost = 1
 	}
 	
-	#focus = {
-	#	id = SCO_focus_nonintervention
-	#	mutually_exclusive = { focus = SCO_focus_intervention }
-	#	
-	#	available = {
-	#		AND = {
-	#			any_owned_state = { is_controlled_by = PREV arms_factory > 1 }
-	#			
-	#			NOT = {
-	#				337 = {
-	#					owner = {
-	#						original_tag = SCO
-	#					}
-	#					controller = {
-	#						original_tag = SCO
-	#					}
-	#				}
-	#			}
-	#		}
-	#	}
-	#	
-	#	bypass = {
-	#		OR = {
-	#			337 = {
-	#				owner = {
-	#					original_tag = SCO
-	#				}
-	#				controller = {
-	#					original_tag = SCO
-	#				}
-	#			}
-	#			has_country_flag = SCO_nonint_sale_337
-	#		}
-	#	}
-	#	
-	#	icon = GFX_goal_generic_improve_relations
-	#	x = 4
-	#	y = 0
-	#	cost = 10
-	#	
-	#	relative_position_id = SCO_focus_intervention
-	#	
-	#	completion_reward = {
-	#		337 = {
-	#			owner = {
-	#				country_event = foscot.exp_nonint.0
-	#			}
-	#		}
-	#	}
-	#}
-
-	#focus = {
-	#	id = SCO_focus_demofascist
-	#	icon = GFX_goal_generic_allies_build_infantry
-	#	x = 1
-	#	y = 0
-	#	cost = 10
-	#	search_filters = { FOCUS_FILTER_RESEARCH }
-	#	
-	#	available_if_capitulated = yes
-	#
-	#	completion_reward = {
-	#		set_party_name = { ideology = fascism long_name = SCO_ambitious_fascist_party_longname name = SCO_ambitious_fascist_party_name }
-	#		hidden_effect = {
-	#			kill_country_leader = yes
-	#		}
-	#		set_cosmetic_tag = SCO_ambitious
-	#		create_country_leader = {
-	#			name = "William W. Gilmour"
-	#			desc = "SCO_William_Gilmour_desc"
-	#			picture = GFX_portrait_SCO_William_Gilmour
-	#			expire = "1965.1.1"
-	#			ideology = fascism_ideology
-	#			traits = {
-	#				inexperienced_imperialist
-	#			}
-	#		}
-	#		set_politics = { ruling_party = fascism elections_allowed = yes }
-	#		add_popularity = { ideology = fascism popularity = 0.15 }
-	#	}
-	#}
-	#
-	#focus = {
-	#	id = SCO_focus_ambicommune
-	#	icon = GFX_goal_generic_allies_build_infantry
-	#	x = 4
-	#	y = 0
-	#	cost = 10
-	#	search_filters = { FOCUS_FILTER_RESEARCH }
-	#	
-	#	available_if_capitulated = yes
-	#
-	#	completion_reward = {
-	#		set_party_name = { ideology = communism long_name = SCO_ambitious_communism_party_longname name = SCO_ambitious_communism_party_name }
-	#		hidden_effect = {
-	#			kill_country_leader = yes
-	#		}
-	#		set_cosmetic_tag = SCO_ambitious
-	#		create_country_leader = {
-	#			name = "James Maxton"
-	#			desc = "SCO_James_Maxton_desc"
-	#			picture = GFX_portrait_SCO_James_Maxton
-	#			expire = "1965.1.1"
-	#			ideology = leninism
-	#			traits = {
-	#				inexperienced_imperialist
-	#			}
-	#		}
-	#		set_politics = { ruling_party = communism elections_allowed = yes }
-	#		add_popularity = { ideology = communism popularity = 0.15 }
-	#	}
-	#}
+	focus = {
+		id = SCO_focus_nonintervention
+		mutually_exclusive = { focus = SCO_focus_intervention }
+		
+		icon = GFX_goal_generic_improve_relations
+		x = 15
+		y = 0
+		cost = 10
+		
+		relative_position_id = SCO_focus_intervention
+		
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = SCO_focus_faroe_ninter
+		prerequisite = { focus = SCO_focus_nonintervention }
+		
+		icon = GFX_focus_generic_attack_denmark
+		x = 2
+		y = 1
+		cost = 10
+		
+		relative_position_id = SCO_focus_nonintervention
+		
+		available = {
+			AND = {
+				any_owned_state = { is_controlled_by = PREV arms_factory > 1 }
+				
+				NOT = {
+					337 = {
+						owner = {
+							original_tag = SCO
+						}
+						controller = {
+							original_tag = SCO
+						}
+					}
+				}
+			}
+		}
+		
+		bypass = {
+			OR = {
+				337 = {
+					owner = {
+						original_tag = SCO
+					}
+					controller = {
+						original_tag = SCO
+					}
+				}
+				has_country_flag = SCO_nonint_sale_337
+			}
+		}
+		
+		completion_reward = {
+			337 = {
+				owner = {
+					country_event = { id = foscot.exp_nonint.0 days = 1 }
+				}
+			}
+		}
+	}
 	
 }

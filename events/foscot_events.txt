@@ -53,7 +53,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	mean_time_to_happen = { days = 0 }
+	
 
 	#option = { 
 	#	name = foscot.flagchange.0.choice_1
@@ -179,7 +179,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	mean_time_to_happen = { days = 0 }
+	
 
 	option = { 
 		name = foscot.exp_nonint.1.choice_1
@@ -201,7 +201,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	mean_time_to_happen = { days = 0 }
+	
 
 	option = { 
 		name = foscot.exp_nonint.2.choice_1
@@ -223,7 +223,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	mean_time_to_happen = { days = 0 }
+	
 
 	option = { 
 		name = foscot.eng_beforecivil.0.choice_1
@@ -250,7 +250,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	mean_time_to_happen = { days = 0 }
+	
 
 	option = { 
 		name = foscot.celtcon.0.choice_1
@@ -273,7 +273,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	mean_time_to_happen = { days = 0 }
+	
 
 	option = { 
 		name = foscot.celtcon.1.choice_1
@@ -293,7 +293,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	mean_time_to_happen = { days = 0 }
+	
 
 	option = { 
 		name = foscot.celtcon.2.choice_1
@@ -316,7 +316,7 @@ country_event = {
 	
 	is_triggered_only = yes
 
-	mean_time_to_happen = { days = 0 }
+	
 
 	option = { 
 		name = foscot.celtcon.3.choice_1
