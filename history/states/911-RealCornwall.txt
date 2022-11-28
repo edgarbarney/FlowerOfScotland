@@ -1,0 +1,24 @@
+state= {
+	id=911
+	name="STATE_911"
+	manpower = 1221013
+	
+	state_category = town
+
+	history= {
+		owner = ENG
+		victory_points = { 6526 1 }
+		buildings = {
+			infrastructure = 1
+			anti_air_building = 1
+		}
+		add_core_of = ENG
+		add_core_of = WSX
+	}
+
+	provinces= {
+		6526
+ 	}
+
+	local_supplies=0.0 
+}

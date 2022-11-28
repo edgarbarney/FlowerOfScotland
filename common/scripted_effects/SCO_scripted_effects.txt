@@ -1,9 +1,13 @@
 SCO_dmz_neng_dumfries = {
 	log = "Demilitarised [GetName]"
 	131 = { set_demilitarized_zone = yes }
+	909 = { set_demilitarized_zone = yes }
+	910 = { set_demilitarized_zone = yes }
 }
 SCO_undmz_neng_dumfries = {
 	131 = { set_demilitarized_zone = no }
+	909 = { set_demilitarized_zone = no }
+	910 = { set_demilitarized_zone = no }
 }
 
 SCO_civil_war_finished = {

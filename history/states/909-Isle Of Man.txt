@@ -1,0 +1,36 @@
+state={
+	id=909
+	name="STATE_909"
+	provinces={
+		3311 
+	}
+	
+	history={
+		owner = ENG
+		victory_points = {
+			3311 1 
+		}
+		buildings = {
+			air_base = 2
+			3311 = {
+				naval_base = 1
+
+			}
+		}
+		add_core_of = ENG
+		1939.1.1 = {
+			buildings = {
+				dockyard = 5
+				industrial_complex = 2
+
+			}
+
+		}
+
+	}
+	
+	manpower=51216
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

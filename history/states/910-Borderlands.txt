@@ -1,0 +1,21 @@
+state={
+	id=910
+	name="STATE_910"
+	provinces={
+		9314 11218 11378 
+	}
+	
+	history={
+		add_core_of = SCO
+		add_core_of = ENG
+		owner = SCO
+		victory_points = {
+			11218 1 
+		}
+	}
+	
+	manpower=323400
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}
