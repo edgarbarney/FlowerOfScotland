@@ -6,14 +6,15 @@ state= {
 	state_category = town
 
 	history= {
-		owner = CRW
+		#owner = CRW
+		owner = ENG
 		victory_points = { 6526 1 }
 		buildings = {
 			infrastructure = 1
 			anti_air_building = 1
 		}
 		add_core_of = ENG
-		add_core_of = CRW
+		#add_core_of = CRW
 	}
 
 	provinces= {

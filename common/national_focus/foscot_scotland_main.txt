@@ -190,6 +190,8 @@ focus_tree = {
 				set_country_flag = SCO_hidefocus_influenced
 			}
 			custom_effect_tooltip = SCO_nocivilpath_tt
+			custom_effect_tooltip = DEFINE_newline
+			custom_effect_tooltip = SCO_ambitious_unlock_tt
 		}
 		
 	}
@@ -263,6 +265,14 @@ focus_tree = {
 		y = 2
 		relative_position_id = SCO_focus_dominanceway
 		cost = 5
+		
+		completion_reward = {
+			SCO_set_party_names_after_civilwar = yes
+		    SCO_set_party_leaders_after_civilwar = yes
+			
+			
+		}
+		
 	}
 	
 	
@@ -280,19 +290,6 @@ focus_tree = {
 		
 		completion_reward = {
 			
-			set_party_name = { ideology = fascism long_name = SCO_ambitious_fascist_party_longname name = SCO_ambitious_fascist_party_name }
-			
-			create_country_leader = {
-				name = "William W. Gilmour"
-				desc = "SCO_William_Gilmour_desc"
-				picture = GFX_portrait_SCO_William_Gilmour
-				expire = "1965.1.1"
-				ideology = fascism_ideology
-				traits = {
-					inexperienced_imperialist
-				}
-			}
-		
 			hidden_effect = {
 				#set_cosmetic_tag = SCO_ambitious
 			}
@@ -311,20 +308,7 @@ focus_tree = {
 		cost = 5
 		
 		completion_reward = {
-			
-			set_party_name = { ideology = neutrality long_name = SCO_ambitious_neutrality_party_name name = SCO_ambitious_neutrality_party_longname }
-			
-			create_country_leader = {
-				name = "James Maxton"
-				desc = "SCO_James_Maxton_desc"
-				picture = GFX_portrait_SCO_James_Maxton
-				expire = "1965.1.1"
-				ideology = leninism
-				traits = {
-					inexperienced_imperialist
-				}
-			}
-		
+
 			hidden_effect = {
 				#set_cosmetic_tag = SCO_ambitious
 			}
@@ -344,23 +328,6 @@ focus_tree = {
 		
 		completion_reward = {
 			
-			set_party_name = { ideology = democratic long_name = SCO_ambitious_democratic_party_longname name = SCO_ambitious_democratic_party_name }
-			
-			hidden_effect = {
-				kill_country_leader = yes
-			}
-			
-			create_country_leader = {
-				name = "Archibald H. Sinclair"
-				desc = "SCO_Archibald_Sinclair_desc"
-				picture = GFX_portrait_SCO_Archibald_Sinclair
-				expire = "1965.1.1"
-				ideology = liberalism
-				traits = {
-					inexperienced_imperialist
-				}
-			}
-			
 			hidden_effect = {
 				#set_cosmetic_tag = SCO_ambitious
 			}
@@ -379,19 +346,6 @@ focus_tree = {
 		cost = 5
 		
 		completion_reward = {
-			
-			set_party_name = { ideology = communism long_name = SCO_ambitious_communism_party_longname name = SCO_ambitious_communism_party_name }
-			
-			create_country_leader = {
-				name = "James Maxton"
-				desc = "SCO_James_Maxton_desc"
-				picture = GFX_portrait_SCO_James_Maxton
-				expire = "1965.1.1"
-				ideology = leninism
-				traits = {
-					inexperienced_imperialist
-				}
-			}
 		
 			hidden_effect = {
 				#set_cosmetic_tag = SCO_ambitious

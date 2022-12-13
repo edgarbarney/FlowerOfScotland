@@ -3,4 +3,9 @@ spriteTypes = {
 		name = "GFX_idea_sco_freedom"
 		texturefile = "gfx/interface/ideas/idea_sco_freedom.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_idea_eng_london"
+		texturefile = "gfx/interface/ideas/idea_eng_london.dds"
+	}
 }

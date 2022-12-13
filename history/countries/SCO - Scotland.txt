@@ -206,6 +206,7 @@ set_variable = { engsus_min = 0 }
 
 set_variable = { engsus_yellowzone = 35 }
 set_variable = { engsus_redzone = 70 }
+set_variable = { SCO.engsus_acclelerated = 20 }
 set_variable = { last_english_sus = 0 } #Just Used For Texts
 set_variable = { rebelion_divs_orgrebels = 0 }
 set_variable = { rebelion_divs_marines = 0 }

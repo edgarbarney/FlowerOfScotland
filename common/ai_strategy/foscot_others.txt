@@ -1,0 +1,38 @@
+GER_protecc_skottieland = {
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = ITA
+		}
+	}
+	enable = {
+		SCO = {
+			has_completed_focus = SCO_focus_demofascist # Set from the national focus
+		}
+	}
+	abort = {
+		surrender_progress > 0.8
+		SCO = { has_war = no }
+	}
+
+	ai_strategy = {
+		type = protect
+		id = "SCO"
+		value = 200
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "SCO"
+		value = 200
+	}
+	ai_strategy = {
+		type = support
+		id = "SCO"
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "SCO"
+		value = 200
+	}
+}

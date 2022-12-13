@@ -105,10 +105,21 @@ on_actions = {
 				}
 				
 				SCO_civil_war_finished = yes
+				
+				SCO = {
+					inherit_technology = ENG
+					white_peace = ENG
+					
+					annex_country = {
+						target = ENG
+						transfer_troops = no
+					}
+				}
 			}
 			
 			# Check for cosmetics
 			SCO_subjects_setcosmetics = yes
+			
 		}
 	}
 	
@@ -164,15 +175,15 @@ on_actions = {
 				
 				if = {
 					limit = {
-						OR = {
+						#OR = {
 							check_variable = { rebelion_divs_orgrebels > rebellion_max_divs }
 							#has_equipment = { infantry_equipment > rebellion_max_eq }
 							
-							date > 1937.01.01
-						}
+						#	date > 1937.01.01
+						#}
 					}
 					
-					set_country_flag  = SCO_rebelion_imminent
+					SCO_civil_war_fuse = yes
 					
 					#swap_ruler_traits = { remove = power_of_the_british_empire add = power_of_the_british_empire_2 }
 				}

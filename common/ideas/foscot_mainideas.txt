@@ -1,5 +1,73 @@
 ideas = {
 	country = {
+		ENG_idea_london = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				war_support_factor = 0.2
+				forced_surrender_limit = 100
+			}
+
+			picture = eng_london
+			
+			removal_cost = -1
+			
+			cancel = {
+				NOT = {
+					126 = { is_controlled_by = ENG }
+				}
+			}
+		}
+		
+		SCO_idea_for_freedom = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				#production_factory_max_efficiency_factor = 1
+				production_factory_efficiency_gain_factor = 3
+			}
+			
+			targeted_modifier = {
+				tag = ENG
+				attack_bonus_against = 0.5
+				defense_bonus_against = 0.7
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.7 instant = yes
+					
+				}
+			}
+
+			picture = sco_freedom
+			
+			removal_cost = -1
+			
+			
+			#cancel = {
+			#	OR = {
+			#		num_of_factories > 35
+			#		date > 1937.01.01
+			#	}
+			#}
+			
+		}
+	
 		SCO_idea_freedom = {
 
 			allowed = {

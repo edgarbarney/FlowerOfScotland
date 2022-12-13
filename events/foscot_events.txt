@@ -5,6 +5,7 @@ add_namespace = foscot.exp_nonint
 add_namespace = foscot.eng_beforecivil
 add_namespace = foscot.flagchange
 add_namespace = foscot.celtcon
+add_namespace = foscot.fallofunion
 
 # Namespace:
 ## foscot
@@ -41,6 +42,57 @@ add_namespace = foscot.celtcon
 # Namespace:
 ## foscot.exp_nonint
 #
+
+country_event = {
+	id = foscot.fallofunion.0
+	title = foscot.fallofunion.0.title
+	desc = foscot.fallofunion.0.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+
+	
+
+	#option = { 
+	#	name = foscot.flagchange.0.choice_1
+	#	
+	#	ai_chance = {
+	#		factor = 0
+	#	}
+	#	
+	#	hidden_effect = {
+	#		SCO_setflag_default = yes
+	#		SCO_setjack_default = yes
+	#	}
+	#}
+	option = { 
+		name = foscot.fallofunion.0.choice_1
+		
+		ai_chance = {
+			factor = 10
+		}
+		SCO = {
+			#hidden_effect = {
+				release = NIR
+			#}
+		}
+	}
+	#option = { 
+	#	name = foscot.flagchange.0.choice_3
+	#	
+	#	ai_chance = {
+	#		factor = 0
+	#	}
+	#	
+	#	hidden_effect = {
+	#		SCO_setflag_variant2 = yes
+	#		SCO_setjack_variant2 = yes
+	#	}
+	#}
+}
 
 country_event = {
 	id = foscot.flagchange.0

@@ -359,6 +359,18 @@ SCO_ambitious_neutrality_party_longname: "The King's Party"
 # Dominant Ways of Ambitious
 #
 
+SCO_dom_ambitious_fascist_party_name: "BDFP"
+SCO_dom_ambitious_fascist_party_longname: "British Democratic Fascist Party"
+
+SCO_dom_ambitious_communism_party_name: "BLP"
+SCO_dom_ambitious_communism_party_longname: "British Labour Party"
+
+SCO_dom_ambitious_democratic_party_name: "ULP"
+SCO_dom_ambitious_democratic_party_longname: "United Liberal Party of Britain"
+
+SCO_dom_ambitious_neutrality_party_name: "KP"
+SCO_dom_ambitious_neutrality_party_longname: "The King's Party"
+
 SCO_dom_fascism: "Great British Empire"
 SCO_dom_fascism_DEF: "the Great British Empire"
 SCO_dom_fascism_ADJ: "British"
@@ -506,6 +518,9 @@ SCO_idea_bring_dominions_desc: "After the civil-war, we have to rebuild the empi
 SCO_idea_bring_dominions_SCO: "British Domination"
 SCO_idea_bring_dominions_SCO_desc: "The British, after the civil-war, are seeking rebulding of the empire. We're being infleunced highly, watched closely."
 
+ENG_idea_london: "Big Ben's Chimes"
+ENG_idea_london_desc: "London is still ours! Unless the London falls, we shall never surrender! If these traitors want to 'take over Britain', they must scrape us away from the land if they can!"
+
 #
 # Leader Traits
 #
@@ -583,13 +598,18 @@ SCO_nonint_sale_337: "[337.owner.GetName] refused the sale of [337.GetNameWithFl
 #SCO_focus_nonintervention_tt: "[337.owner.GetNameWithFlag] will get the event '[From.GetName] is interested in the sale of [337.GetName]'\n"
 foscot.exp_nonint.0_tt: "[337.GetName] will be owned by [SCO.GetName]"
 
-SCO_nocivilpath_tt: "§RYou should choose your two focuses before the 'Establish a Government' focus or the game will choose random paths for you!§!\n"
+SCO_nocivilpath_tt: "§RYou should choose your two focuses preceding 'Establish a Government' before the civil war starts, or the game will choose random paths for you!§!\n"
+
+SCO_ambitious_unlock_tt: "Unlocks §Y'Road to Independence'§W decisions."
 
 SCO_nofascist_tt: "§RDue to policies of William W. Gilmour, you cannot follow the Democra-Fascism path together with Celtic Unity path!§!\n"
 SCO_nocumnist_tt: "§RDue to policies of James Maxton, you cannot follow the Communist path together with Lone Scotland path!§!\n"
 
 SCO_english_sus_tt_inc: "§W\nincrease in English Suspicion by $RIGHT|-$§R"
 SCO_english_sus_tt_dec: "§W\ndecrease in English Suspicion by $RIGHT|+$§R"
+
+SCO_start_civil_war_tt: "§RThe Civil War will start!"
+SCO_start_civil_war_tt: "§RThe Civil War will start!"
 
 SCO_rebelion_disclosure_tt: "Decreases Recruitment Oversuspicion Chance."
 SCO_rebelion_divs_orgrebels_tt_inc: "§WGain $RIGHT|+0$ Organised Rebel Division to Deploy After Civil War.\n"
@@ -628,12 +648,16 @@ foscot.flagchange.0.option_3: "§WWe should keep the same\ngood old Union Flag."
 foscot.eng_beforecivil.0.title: "British Armed Forces Request Manpower"
 foscot.eng_beforecivil.0.desc: "EVENT TEST"
 
+foscot.fallofunion.0.title: "Northern Ireland Declares Independence!"
+foscot.fallofunion.0.desc: "After our war of rebuilding a better union for all of us, Northern Ireland declared independence! These traitors will probably join the Republic of Ireland but for now, we've gotta focus on rebuilding our beautiful country."
+foscot.fallofunion.0.choice_1: "We'll see about that. But, later."
+
 #
 # Decisions
 #
 
 SCO_civil_war_prep: "Road to Independence"
-SCO_civil_war_prep_desc: "We've got to choose our own path in the new world. Our nation should be free at all costs!\nWe must prepare for the inevitable. Though, we should be careful. If the English get suspicious, they can start taking hurtful measures. \n\n [SCO_english_sus_desc_main] \n §WTotal Divisions: §G[?SCO.rebelion_divs_orgrebels] \n\n§WBe careful. When Total Divisions exceed §R[?SCO.rebellion_max_divs]§W, English Suspicion reach §R100%§W or the date comes to §R1937§W, the English will start accelerated preparation. When that happens, we should stop our underground preparations and start our own side."
+SCO_civil_war_prep_desc: "We've got to choose our own path in the new world. Our nation should be free at all costs!\nWe must prepare for the inevitable. Though, we should be careful. If the English get suspicious, they can start taking hurtful measures. \n\n [SCO_english_sus_desc_main] \n §WTotal Divisions: §G[?SCO.rebelion_divs_orgrebels] \n\n§WBe careful. When Total Divisions exceed §R[?SCO.rebellion_max_divs]§W, English Suspicion reach §R100%§W or about 320 days pass after the first action§W, the English will start accelerated preparation. When that happens, we should stop our underground preparations and start our own side."
 
 SCO_english_sus_desc_grn: "English Suspicion: §G[?SCO.engsus]%  §W(Minimum: §R[?SCO.engsus_min]%)"
 SCO_english_sus_desc_ylw: "English Suspicion: §Y[?SCO.engsus]%  §W(Minimum: §R[?SCO.engsus_min]%)"
@@ -643,6 +667,9 @@ SCO_engsus_greater_five_tt: "Need at least least §Y5%§W English Suspicion\n"
 SCO_engsus_greater_nein_tt: "Need at least least §Y9%§W English Suspicion\n"
 SCO_engsus_greater_fiftein_tt: "Need at least least §Y15%§W English Suspicion\n"
 SCO_rebel_division_atleastone_tt: "Need at least §Y2§W Organised Rebel Division\n"
+
+SCO_civil_cry_for_war: "England Pushes the Civil War"
+SCO_civil_cry_for_war_desc: "After what we've done, the civil war is inevitable. The English started pushing us and the people aren't very happy about it."
 
 SCO_fake_arrest: "Arrange Fake Arrests"
 SCO_fake_arrest_desc: "To ease English suspicion, we have to throw some bait.\nArresting volunteers for our cause (They will be pardoned after we got our independence, of course) can help resolving this issue."
@@ -654,12 +681,14 @@ SCO_fake_surrender_desc: "To ease English suspicion, we have to throw some bait.
 SCO_rebelion_disclosure_flag: "Already Urged Disclosure"
 SCO_currently_recruiting: "Currently Recruiting"
 SCO_currently_stealing: "An Operation is Already Underway"
+SCO_rebelion_imminent: "Accelerated Preparations has started"
+SCO_civil_war_end: "Scottish-English Civil War has started"
 
 SCO_smuggle_weapons: "Steal Some Weapons from Arms Factories"
 SCO_smuggle_weapons_big: "Steal Weapon Shipments from Arms Factories"
 SCO_smuggle_weapons_goddam: "Hijack Weapon Transport Convoys"
 SCO_rebelion_disclosure: "Urge Recruitment Disclosure"
-SCO_hidden_rebel_recruits: "Recruit Rebels Under The Nose"
+SCO_hidden_rebel_recruits: "Recruit Rebels at Small Places"
 SCO_rebel_recruits_more: "Rebel Recruitment at Public Sites"
 
 SCO_forment_nations: "Ally Nations"

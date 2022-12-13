@@ -1,11 +1,11 @@
 characters={
-	WSX_aa2={
+	CRW_aa2={
 		advisor={
 			slot = high_command
-			idea_token = WSX_aa2
+			idea_token = CRW_aa2
 			ledger  = army 
 				allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					army_armored_2 
@@ -21,13 +21,13 @@ characters={
 			}
 		}
 	}
-	WSX_awt={
+	CRW_awt={
 		advisor={
 			slot = theorist
-			idea_token = WSX_awt
+			idea_token = CRW_awt
 			ledger  = air 
 				allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					air_warfare_theorist 
@@ -40,12 +40,12 @@ characters={
 			}
 		}
 	}
-	WSX_coi={
+	CRW_coi={
 		advisor={
 			slot = political_advisor
-			idea_token = WSX_coi
+			idea_token = CRW_coi
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					captain_of_industry 
@@ -58,12 +58,12 @@ characters={
 			}
 		}
 	}
-	WSX_stc={
+	CRW_stc={
 		advisor={
 			slot = political_advisor
-			idea_token = WSX_stc
+			idea_token = CRW_stc
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					smooth_talking_charmer 
@@ -76,12 +76,12 @@ characters={
 			}
 		}
 	}
-	WSX_acgs={
+	CRW_acgs={
 		advisor={
 			slot = air_chief
-			idea_token = WSX_acgs
+			idea_token = CRW_acgs
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					air_chief_ground_support_2 
@@ -97,12 +97,12 @@ characters={
 			}
 		}
 	}
-	WSX_nccr={
+	CRW_nccr={
 		advisor={
 			slot = navy_chief
-			idea_token = WSX_nccr
+			idea_token = CRW_nccr
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					navy_chief_commerce_raiding_2 
@@ -118,13 +118,13 @@ characters={
 			}
 		}
 	}
-	WSX_ncs={
+	CRW_ncs={
 		advisor={
 			slot = high_command
-			idea_token = WSX_ncs
+			idea_token = CRW_ncs
 			ledger  = navy 
 				allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					navy_capital_ship_2 
@@ -140,13 +140,13 @@ characters={
 			}
 		}
 	}
-	WSX_nt={
+	CRW_nt={
 		advisor={
 			slot = theorist
-			idea_token = WSX_nt
+			idea_token = CRW_nt
 			ledger  = navy 
 				allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					naval_theorist 
@@ -159,12 +159,12 @@ characters={
 			}
 		}
 	}
-	WSX_communist_guy={
+	CRW_communist_guy={
 		advisor={
 			slot = political_advisor
-			idea_token = WSX_communist_guy
+			idea_token = CRW_communist_guy
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					communist_revolutionary 
@@ -185,12 +185,12 @@ characters={
 			}
 		}
 	}
-	WSX_acr={
+	CRW_acr={
 		advisor={
 			slot = air_chief
-			idea_token = WSX_acr
+			idea_token = CRW_acr
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					air_chief_reform_2 
@@ -206,12 +206,12 @@ characters={
 			}
 		}
 	}
-	WSX_pot={
+	CRW_pot={
 		advisor={
 			slot = political_advisor
-			idea_token = WSX_pot
+			idea_token = CRW_pot
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					prince_of_terror 
@@ -224,12 +224,12 @@ characters={
 			}
 		}
 	}
-	WSX_aco2={
+	CRW_aco2={
 		advisor={
 			slot = army_chief
-			idea_token = WSX_aco2
+			idea_token = CRW_aco2
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					army_chief_organizational_2 
@@ -245,13 +245,13 @@ characters={
 			}
 		}
 	}
-	WSX_mt={
+	CRW_mt={
 		advisor={
 			slot = theorist
-			idea_token = WSX_mt
+			idea_token = CRW_mt
 			ledger  = army 
 				allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					military_theorist 
@@ -264,13 +264,13 @@ characters={
 			}
 		}
 	}
-	WSX_ar={
+	CRW_ar={
 		advisor={
 			slot = high_command
-			idea_token = WSX_ar
+			idea_token = CRW_ar
 			ledger  = army 
 				allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					army_regrouping_2 
@@ -286,12 +286,12 @@ characters={
 			}
 		}
 	}
-	WSX_fascist_guy={
+	CRW_fascist_guy={
 		advisor={
 			slot = political_advisor
-			idea_token = WSX_fascist_guy
+			idea_token = CRW_fascist_guy
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					fascist_demagogue 
@@ -312,12 +312,12 @@ characters={
 			}
 		}
 	}
-	WSX_acd2={
+	CRW_acd2={
 		advisor={
 			slot = army_chief
-			idea_token = WSX_acd2
+			idea_token = CRW_acd2
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					army_chief_defensive_2 
@@ -333,12 +333,12 @@ characters={
 			}
 		}
 	}
-	WSX_ncm={
+	CRW_ncm={
 		advisor={
 			slot = navy_chief
-			idea_token = WSX_ncm
+			idea_token = CRW_ncm
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					navy_chief_maneuver_2 
@@ -354,13 +354,13 @@ characters={
 			}
 		}
 	}
-	WSX_ai2={
+	CRW_ai2={
 		advisor={
 			slot = high_command
-			idea_token = WSX_ai2
+			idea_token = CRW_ai2
 			ledger  = army 
 				allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					army_infantry_2 
@@ -376,13 +376,13 @@ characters={
 			}
 		}
 	}
-	WSX_acas={
+	CRW_acas={
 		advisor={
 			slot = high_command
-			idea_token = WSX_acas
+			idea_token = CRW_acas
 			ledger  = air 
 				allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					air_close_air_support_2 
@@ -398,12 +398,12 @@ characters={
 			}
 		}
 	}
-	WSX_democratic_guy={
+	CRW_democratic_guy={
 		advisor={
 			slot = political_advisor
-			idea_token = WSX_democratic_guy
+			idea_token = CRW_democratic_guy
 			allowed  = {
-					original_tag  = WSX
+					original_tag  = CRW
 				}
 				traits  = {
 					democratic_reformer 

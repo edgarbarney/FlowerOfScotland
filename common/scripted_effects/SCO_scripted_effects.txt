@@ -10,6 +10,114 @@ SCO_undmz_neng_dumfries = {
 	910 = { set_demilitarized_zone = no }
 }
 
+SCO_set_party_names_after_civilwar = {
+
+	if = {
+		limit = {
+			has_completed_focus = SCO_focus_dominanceway
+		}
+		
+		set_party_name = { ideology = democratic long_name = SCO_dom_ambitious_democratic_party_longname name = SCO_dom_ambitious_democratic_party_name }
+		
+		set_party_name = { ideology = communism long_name = SCO_dom_ambitious_communism_party_longname name = SCO_dom_ambitious_communism_party_name }
+		
+		set_party_name = { ideology = neutrality long_name = SCO_dom_ambitious_neutrality_party_longname name = SCO_dom_ambitious_neutrality_party_name }
+		
+		set_party_name = { ideology = fascism long_name = SCO_dom_ambitious_fascist_party_longname name = SCO_dom_ambitious_fascist_party_name }
+	}
+	else_if = {
+		limit = {
+			has_completed_focus = SCO_focus_celticway
+		}
+		# Welcome, Celtic government
+		set_party_name = { ideology = democratic long_name = SCO_celt_ambitious_democratic_party_longname name = SCO_celt_ambitious_democratic_party_name }
+		
+		set_party_name = { ideology = communism long_name = SCO_celt_ambitious_communism_party_longname name = SCO_celt_ambitious_communism_party_name }
+		
+		set_party_name = { ideology = neutrality long_name = SCO_celt_ambitious_neutrality_party_longname name = SCO_celt_ambitious_neutrality_party_name }
+		
+		set_party_name = { ideology = fascism long_name = SCO_celt_ambitious_fascist_party_longname name = SCO_celt_ambitious_fascist_party_name }
+	}
+	else = {
+		# Welcome, Scottish government
+		set_party_name = { ideology = democratic long_name = SCO_ambitious_democratic_party_longname name = SCO_ambitious_democratic_party_name }
+		
+		set_party_name = { ideology = communism long_name = SCO_ambitious_communism_party_longname name = SCO_ambitious_communism_party_name }
+		
+		set_party_name = { ideology = neutrality long_name = SCO_ambitious_neutrality_party_longname name = SCO_ambitious_neutrality_party_name }
+		
+		set_party_name = { ideology = fascism long_name = SCO_ambitious_fascist_party_longname name = SCO_ambitious_fascist_party_name }
+	}
+}
+
+SCO_set_party_leaders_after_civilwar = 
+{
+
+	hidden_effect = {
+		kill_country_leader = yes
+	}
+			
+	create_country_leader = {
+		name = "Archibald H. Sinclair"
+		desc = "SCO_Archibald_Sinclair_desc"
+		picture = GFX_portrait_SCO_Archibald_Sinclair
+		expire = "1965.1.1"
+		ideology = liberalism
+		traits = {
+			inexperienced_imperialist
+		}
+	}
+	
+	create_country_leader = {
+		name = "James Maxton"
+		desc = "SCO_James_Maxton_desc"
+		picture = GFX_portrait_SCO_James_Maxton
+		expire = "1965.1.1"
+		ideology = leninism
+		traits = {
+			inexperienced_imperialist
+		}
+	}
+	
+	create_country_leader = {
+		name = "John MacCormick"
+		desc = "SCO_John_MacCormick_desc"
+		picture = GFX_portrait_SCO_John_MacCormick
+		expire = "1965.1.1"
+		ideology = leninism
+		traits = {
+			inexperienced_imperialist
+		}
+	}
+	
+	create_country_leader = {
+		name = "William W. Gilmour"
+		desc = "SCO_William_Gilmour_desc"
+		picture = GFX_portrait_SCO_William_Gilmour
+		expire = "1965.1.1"
+		ideology = fascism_ideology
+		traits = {
+			inexperienced_imperialist
+		}
+	}
+}
+
+SCO_civil_war_fuse = {
+	SCO = {
+		set_country_flag = SCO_rebelion_imminent
+		
+		if = {
+			limit = {
+					NOT = {
+						has_active_mission = SCO_civil_war_ignited
+				}
+			}
+			activate_mission = SCO_civil_war_ignited
+			custom_effect_tooltip = DEFINE_newline
+		}
+	}
+}
+
 SCO_civil_war_finished = {
 	# In all ways
 	SCO = {
@@ -18,6 +126,7 @@ SCO_civil_war_finished = {
 		set_country_flag = SCO_civilwar_over
 		set_country_flag = after_first_independence_war
 		#white_peace = ENG
+		remove_ideas = SCO_idea_for_freedom
 	}
 	
 	if = {
@@ -58,11 +167,29 @@ SCO_civil_war_finished = {
 				}
 				add_core_of = SCO
 			}
-		} 
+		}
+
+		SCO = {
+			country_event = {
+				id = foscot.fallofunion.0
+				days = 2
+				random_days = 1
+				random_hours = 16
+			}
+		}
 	}
 }
 
+# For convenience
 SCO_start_civil_war = {
+	custom_effect_tooltip = SCO_start_civil_war_tt
+	
+	hidden_effect = {
+		SCO_start_civil_war_realscript = yes
+	}
+}
+
+SCO_start_civil_war_realscript = {
 	#if = {
 	#	limit = {
 	#		has_country_leader_with_trait = champion_of_peace_5
@@ -138,7 +265,13 @@ SCO_start_civil_war = {
 				has_completed_focus = SCO_focus_dominanceway
 			}
 			set_cosmetic_tag = SCO_dom_provision
+			
+			ENG = {
+				add_ideas = { ENG_idea_london }
+			}
 		}
+		
+		add_ideas = SCO_idea_for_freedom
 		
 		ENG = {
 			set_autonomy = {
@@ -263,11 +396,65 @@ SCO_start_civil_war = {
 			kill_country_leader = yes
 		}
 		
-		set_politics = {
-			ruling_party = democratic
-			elections_allowed = no
-			last_election = "1936.1.1"
-			election_frequency = 48
+		if = {
+			limit = {
+				has_completed_focus = SCO_focus_democracy
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+				last_election = "1936.1.1"
+				election_frequency = 48
+			}
+			set_political_party  = {
+				ideology = democratic
+				popularity = 50
+			}
+		}
+		else_if = {
+			limit = {
+				has_completed_focus = SCO_focus_demofascist
+			}
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+				last_election = "1936.1.1"
+				election_frequency = 48
+			}
+			set_political_party  = {
+				ideology = fascism
+				popularity = 50
+			}
+		}
+		else_if = {
+			limit = {
+				has_completed_focus = SCO_focus_ambicommune
+			}
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+				last_election = "1936.1.1"
+				election_frequency = 48
+			}
+			set_political_party  = {
+				ideology = communism
+				popularity = 50
+			}
+		}
+		else_if = {
+			limit = {
+				has_completed_focus = SCO_focus_monarchy
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+				last_election = "1936.1.1"
+				election_frequency = 48
+			}
+			set_political_party  = {
+				ideology = neutrality
+				popularity = 50
+			}
 		}
 		
 		if = {
@@ -280,7 +467,37 @@ SCO_start_civil_war = {
 				desc = "SCO_Prov_Brit_desc"
 				picture = GFX_portrait_SCO_Prov_Brit
 				expire = "1965.1.1"
-				ideology = liberalism
+				ideology = conservatism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+			create_country_leader = {
+				name = "Provisional British Government"
+				desc = "SCO_Prov_Brit_desc"
+				picture = GFX_portrait_SCO_Prov_Brit
+				expire = "1965.1.1"
+				ideology = gen_nazism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+			create_country_leader = {
+				name = "Provisional British Government"
+				desc = "SCO_Prov_Brit_desc"
+				picture = GFX_portrait_SCO_Prov_Brit
+				expire = "1965.1.1"
+				ideology = marxism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+			create_country_leader = {
+				name = "Provisional British Government"
+				desc = "SCO_Prov_Brit_desc"
+				picture = GFX_portrait_SCO_Prov_Brit
+				expire = "1965.1.1"
+				ideology = despotism
 				#traits = {
 				#	inexperienced_imperialist
 				#}
@@ -296,7 +513,37 @@ SCO_start_civil_war = {
 				desc = "SCO_Prov_Celt_desc"
 				picture = GFX_portrait_SCO_Prov_Celt
 				expire = "1965.1.1"
-				ideology = liberalism
+				ideology = conservatism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+			create_country_leader = {
+				name = "Provisional Celtic Government"
+				desc = "SCO_Prov_Celt_desc"
+				picture = GFX_portrait_SCO_Prov_Celt
+				expire = "1965.1.1"
+				ideology = gen_nazism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+			create_country_leader = {
+				name = "Provisional Celtic Government"
+				desc = "SCO_Prov_Celt_desc"
+				picture = GFX_portrait_SCO_Prov_Celt
+				expire = "1965.1.1"
+				ideology = marxism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+			create_country_leader = {
+				name = "Provisional Celtic Government"
+				desc = "SCO_Prov_Celt_desc"
+				picture = GFX_portrait_SCO_Prov_Celt
+				expire = "1965.1.1"
+				ideology = despotism
 				#traits = {
 				#	inexperienced_imperialist
 				#}
@@ -309,7 +556,37 @@ SCO_start_civil_war = {
 				desc = "SCO_Prov_Scot_desc"
 				picture = GFX_portrait_SCO_Prov_Scot
 				expire = "1965.1.1"
-				ideology = liberalism
+				ideology = conservatism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+			create_country_leader = {
+				name = "Provisional Scottish Government"
+				desc = "SCO_Prov_Scot_desc"
+				picture = GFX_portrait_SCO_Prov_Scot
+				expire = "1965.1.1"
+				ideology = gen_nazism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+			create_country_leader = {
+				name = "Provisional Scottish Government"
+				desc = "SCO_Prov_Scot_desc"
+				picture = GFX_portrait_SCO_Prov_Scot
+				expire = "1965.1.1"
+				ideology = marxism
+				#traits = {
+				#	inexperienced_imperialist
+				#}
+			}
+			create_country_leader = {
+				name = "Provisional Scottish Government"
+				desc = "SCO_Prov_Scot_desc"
+				picture = GFX_portrait_SCO_Prov_Scot
+				expire = "1965.1.1"
+				ideology = despotism
 				#traits = {
 				#	inexperienced_imperialist
 				#}
