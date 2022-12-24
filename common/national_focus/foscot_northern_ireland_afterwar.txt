@@ -1,18 +1,14 @@
 focus_tree = {
-	id = foscot_celtic_beforewar
+	id = foscot_northern_ireland_afterwar
 	
 	country = {
 		factor = 0
 		
 		modifier = {
-			add = 20
-			OR = {
-				AND = {
-					tag = NIR
-					NOT = { has_country_flag = NIR_independent_after_sco_civil }
-				}
-				tag = WLS
-				tag = WSX
+			add = 100
+			AND = {
+				tag = NIR
+				has_country_flag = NIR_independent_after_sco_civil
 			}
 		}
 	}
@@ -21,11 +17,11 @@ focus_tree = {
 	reset_on_civilwar = no
 
 	initial_show_position = {
-		focus = celtic_industrial_effort
+		focus = NIR_industrial_effort
 	}
 	
 	focus =  {
-		id = celtic_naval_effort
+		id = NIR_naval_effort
 		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 2
 		y = -1
@@ -153,7 +149,7 @@ focus_tree = {
 	}
 
 	focus =  {
-		id = celtic_industrial_effort
+		id = NIR_industrial_effort
 		icon = GFX_goal_generic_production
 		x = 0
 		y = -1
@@ -184,12 +180,12 @@ focus_tree = {
 	}
 
 	focus =  {
-		id = celtic_construction_effort
+		id = NIR_construction_effort
 		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = celtic_industrial_effort }
+		prerequisite = { focus = NIR_industrial_effort }
 		x = 0
 		y = 1
-		relative_position_id = celtic_industrial_effort
+		relative_position_id = NIR_industrial_effort
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY  }
@@ -259,12 +255,12 @@ focus_tree = {
 	}
 
 	focus =  {
-		id = celtic_production_effort
+		id = NIR_production_effort
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = celtic_industrial_effort }
+		prerequisite = { focus = NIR_industrial_effort }
 		x = 2
 		y = 1
-		relative_position_id = celtic_industrial_effort
+		relative_position_id = NIR_industrial_effort
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY  }
@@ -333,12 +329,12 @@ focus_tree = {
 	}
 
 	focus =  {
-		id = celtic_construction_effort_2
+		id = NIR_construction_effort_2
 		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = celtic_construction_effort }
+		prerequisite = { focus = NIR_construction_effort }
 		x = 0
 		y = 1
-		relative_position_id = celtic_construction_effort
+		relative_position_id = NIR_construction_effort
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY  }
@@ -407,12 +403,12 @@ focus_tree = {
 	}
 
 	focus =  {
-		id = celtic_production_effort_2
+		id = NIR_production_effort_2
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = celtic_production_effort }
+		prerequisite = { focus = NIR_production_effort }
 		x = 0
 		y = 1
-		relative_position_id = celtic_production_effort
+		relative_position_id = NIR_production_effort
 		cost = 10
 		
 		search_filters = { FOCUS_FILTER_INDUSTRY  }
@@ -481,12 +477,12 @@ focus_tree = {
 	}
 
 	focus =  {
-		id = celtic_infrastructure_effort
+		id = NIR_infrastructure_effort
 		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = celtic_construction_effort_2 }
+		prerequisite = { focus = NIR_construction_effort_2 }
 		x = 0
 		y = 1
-		relative_position_id = celtic_construction_effort_2
+		relative_position_id = NIR_construction_effort_2
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -577,12 +573,12 @@ focus_tree = {
 	}
 
 	focus =  {
-		id = celtic_production_effort_3
+		id = NIR_production_effort_3
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = celtic_production_effort_2 }
+		prerequisite = { focus = NIR_production_effort_2 }
 		x = 0
 		y = 1
-		relative_position_id = celtic_production_effort_2
+		relative_position_id = NIR_production_effort_2
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY  }
@@ -651,12 +647,12 @@ focus_tree = {
 	}
 
 	focus =  {
-		id = celtic_infrastructure_effort_2
+		id = NIR_infrastructure_effort_2
 		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = celtic_infrastructure_effort }
+		prerequisite = { focus = NIR_infrastructure_effort }
 		x = 0
 		y = 1
-		relative_position_id = celtic_infrastructure_effort
+		relative_position_id = NIR_infrastructure_effort
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -747,12 +743,12 @@ focus_tree = {
 	}
 
 	focus =  {
-		id = celtic_construction_effort_3
+		id = NIR_construction_effort_3
 		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = celtic_infrastructure_effort }
+		prerequisite = { focus = NIR_infrastructure_effort }
 		x = 2
 		y = 1
-		relative_position_id = celtic_infrastructure_effort
+		relative_position_id = NIR_infrastructure_effort
 		cost = 10
 
 		search_filters = { FOCUS_FILTER_INDUSTRY  }
@@ -818,5 +814,70 @@ focus_tree = {
 				}
 			}
 		}
+	}
+	
+	# Industry End
+	
+	focus = {
+		id = NIR_focus_independence
+		mutually_exclusive = { focus = NIR_focus_helpexlies focus = NIR_focus_irelandcollab }
+		
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		x = 15
+		y = -1
+		
+		offset = {
+			x = -15
+			y = 0
+		}
+		
+		cost = 5
+		
+		completion_reward = {
+
+		}
+		
+	}
+	
+	focus = {
+		id = NIR_focus_helpexlies
+		mutually_exclusive = { focus = NIR_focus_independence focus = NIR_focus_irelandcollab }
+		
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 17
+		y = -1
+		
+		offset = {
+			x = -15
+			y = 0
+		}
+		
+		cost = 5
+		
+		completion_reward = {
+
+		}
+		
+	}
+	
+	focus = {
+		id = NIR_focus_irelandcollab
+		mutually_exclusive = { focus = NIR_focus_helpexlies focus = NIR_focus_independence }
+		
+		icon = GFX_goal_generic_major_alliance
+		x = 13
+		y = -1
+		
+		offset = {
+			x = -15
+			y = 0
+		}
+		
+		cost = 5
+		
+		completion_reward = {
+
+		}
+		
 	}
 }

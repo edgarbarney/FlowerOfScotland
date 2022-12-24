@@ -1,3 +1,415 @@
+CAN_enforce_loyalty_by_exile = {
+	CAN_enforce_loyalty = yes
+	
+	CAN = {
+		set_cosmetic_tag = CAN_exile
+		set_country_flag = loyal_after_exile
+	}
+}
+
+AST_enforce_loyalty_by_exile = {
+	AST_enforce_loyalty = yes
+	
+	AST = {
+		set_cosmetic_tag = AST_exile
+		set_country_flag = loyal_after_exile
+	}
+}
+
+NZL_enforce_loyalty_by_exile = {
+	NZL_enforce_loyalty = yes
+	
+	NZL = {
+		set_cosmetic_tag = NZL_exile
+		set_country_flag = loyal_after_exile
+	}
+}
+
+SAF_enforce_loyalty_by_exile = {
+	SAF_enforce_loyalty = yes
+	
+	SAF = {
+		set_cosmetic_tag = SAF_exile
+		set_country_flag = loyal_after_exile
+	}
+}
+
+RAJ_enforce_loyalty_by_exile = {
+	RAJ_enforce_loyalty = yes
+	
+	RAJ = {
+		set_cosmetic_tag = RAJ_exile
+		set_country_flag = loyal_after_exile
+	}
+}
+
+# Should be run under overlord scope
+MAL_set_exiled_puppet = {
+	set_autonomy = {
+		target = MAL
+		autonomy_state = autonomy_integrated_puppet
+		end_wars = no
+		end_civil_wars = no
+	}
+	MAL = {
+		set_cosmetic_tag = MAL_exile
+		set_country_flag = loyal_after_exile
+	}
+}
+
+ENG_set_countries_before_exile = {
+	every_country = {
+		if = {
+			limit = {
+				is_subject_of = ENG
+				NOT = { original_tag = SCO }
+			}
+			set_country_flag = was_former_english_dom
+		}
+	}
+	
+	SCO = { clr_country_flag = was_former_english_dom }
+	
+	#Can
+	if = {
+		limit = {
+			CAN = {
+				has_completed_focus = CAN_patriation
+			}
+		}
+		CAN = {
+			clr_country_flag = was_former_english_dom
+		}
+	}
+	else_if = {
+		limit = {
+			CAN = {
+				has_completed_focus = CAN_strengthen_the_commonwealth_ties
+			}
+		}
+		CAN = {
+			set_country_flag = was_former_english_dom
+		}
+	}
+	
+	#Ast
+	if = {
+		limit = {
+			AST = {
+				has_completed_focus = AST_never_another_gallipoli
+			}
+		}
+		AST = {
+			clr_country_flag = was_former_english_dom
+		}
+	}
+	else_if = {
+		limit = {
+			AST = {
+				has_completed_focus = AST_support_the_policy_of_appeasement
+			}
+		}
+		AST = {
+			set_country_flag = was_former_english_dom
+		}
+	}
+	
+	#Nzl
+	if = {
+		limit = {
+			NZL = {
+				has_completed_focus = NZL_statute_of_westminster
+			}
+		}
+		NZL = {
+			clr_country_flag = was_former_english_dom
+		}
+	}
+	else_if = {
+		limit = {
+			NZL = {
+				has_completed_focus = NZL_strengthen_the_commonwealth
+			}
+		}
+		NZL = {
+			set_country_flag = was_former_english_dom
+		}
+	}
+	
+	#Saf
+	if = {
+		limit = {
+			SAF = {
+				has_completed_focus = SAF_abandon_westminster
+			}
+		}
+		SAF = {
+			clr_country_flag = was_former_english_dom
+		}
+	}
+	else_if = {
+		limit = {
+			SAF = {
+				has_completed_focus = SAF_support_the_policy_of_appeasement
+			}
+		}
+		SAF = {
+			set_country_flag = was_former_english_dom
+		}
+	}
+	
+	#Raj
+	if = {
+		limit = {
+			RAJ = {
+				OR = {
+					has_completed_focus = RAJ_swaraj
+					has_completed_focus = RAJ_quit_india_movement
+				}
+			}
+		}
+		RAJ = {
+			clr_country_flag = was_former_english_dom
+		}
+	}
+	else_if = {
+		limit = {
+			RAJ = {
+				has_completed_focus = RAJ_indian_national_congress
+			}
+		}
+		RAJ = {
+			set_country_flag = was_former_english_dom
+		}
+	}
+}
+
+ENG_get_exiled = {
+	log = "Exile trial is started by Root: [ROOT.GetName] This: [THIS.GetName]"
+	
+	ENG = {
+		if = {
+			limit = {
+				CAN = {
+					NOT = { has_country_flag = CAN_refused_exile_commonwealth }
+				}
+			}
+			CAN = {
+				log = "Fired for [THIS.GetName]"
+				country_event = {
+					id = foscot.britishexile.0
+					days = 2
+					random_hours = 18
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				AST = {
+					NOT = { has_country_flag = AST_refused_exile_commonwealth }
+				}
+			}
+			AST = {
+				log = "Fired for [THIS.GetName]"
+				country_event = {
+					id = foscot.britishexile.0
+					days = 2
+					random_hours = 18
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NZL = {
+					NOT = { has_country_flag = NZL_refused_exile_commonwealth }
+				}
+			}
+			NZL = {
+				log = "Fired for [THIS.GetName]"
+				country_event = {
+					id = foscot.britishexile.0
+					days = 2
+					random_hours = 18
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				SAF = {
+					NOT = { has_country_flag = SAF_refused_exile_commonwealth }
+				}
+			}
+			SAF = {
+				log = "Fired for [THIS.GetName]"
+				country_event = {
+					id = foscot.britishexile.0
+					days = 2
+					random_hours = 18
+				}
+			}
+		}
+		
+		log = "Trial Ended for Exile"
+		
+		# Factions
+		
+		# God, I wish I could just use C++
+		#if = {
+		#	limit = {
+		#		CAN = {
+		#			has_global_flag = CAN_created_exile_commonwealth
+		#		}
+		#	}
+		#	CAN = {
+		#		if = {
+		#			limit = {
+		#				AST = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = AST
+		#		}
+		#		if = {
+		#			limit = {
+		#				NZL = {
+		#					is_subject_of = NZL
+		#				}
+		#			}
+		#			add_to_faction = NZL
+		#		}
+		#		if = {
+		#			limit = {
+		#				SAF = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = SAF
+		#		}
+		#	}
+		#}
+		#
+		#if = {
+		#	limit = {
+		#		AST = {
+		#			has_global_flag = AST_created_exile_commonwealth
+		#		}
+		#	}
+		#	AST = {
+		#		if = {
+		#			limit = {
+		#				CAN = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = CAN
+		#		}
+		#		if = {
+		#			limit = {
+		#				NZL = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = NZL
+		#		}
+		#		if = {
+		#			limit = {
+		#				SAF = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = SAF
+		#		}
+		#	}
+		#}
+		#
+		#if = {
+		#	limit = {
+		#		NZL = {
+		#			has_global_flag = NZL_created_exile_commonwealth
+		#		}
+		#	}
+		#	NZL = {
+		#		if = {
+		#			limit = {
+		#				CAN = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = CAN
+		#		}
+		#		if = {
+		#			limit = {
+		#				AST = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = AST
+		#		}
+		#		if = {
+		#			limit = {
+		#				SAF = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = SAF
+		#		}
+		#	}
+		#}
+		#
+		#if = {
+		#	limit = {
+		#		SAF = {
+		#			has_global_flag = SAF_created_exile_commonwealth
+		#		}
+		#	}
+		#	SAF = {
+		#		if = {
+		#			limit = {
+		#				CAN = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = CAN
+		#		}
+		#		if = {
+		#			limit = {
+		#				AST = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = AST
+		#		}
+		#		if = {
+		#			limit = {
+		#				NZL = {
+		#					is_subject_of = ENG
+		#				}
+		#			}
+		#			add_to_faction = NZL
+		#		}
+		#	}
+		#}
+		
+		#create_faction = "ENG_commonwealth_of_nations"
+		#else_if = {
+		#	limit = {
+		#		FRA = {
+		#			has_government = democratic
+		#		}
+		#	}
+		#	become_exiled_in = { target = FRA }
+		#}
+		#else_if = {
+		#	limit = {
+		#		USA = {
+		#			has_government = democratic
+		#		}
+		#	}
+		#	become_exiled_in = { target = USA }
+		#}
+	}
+}
+
 SCO_dmz_neng_dumfries = {
 	log = "Demilitarised [GetName]"
 	131 = { set_demilitarized_zone = yes }
@@ -64,7 +476,7 @@ SCO_set_party_leaders_after_civilwar =
 		expire = "1965.1.1"
 		ideology = liberalism
 		traits = {
-			inexperienced_imperialist
+			liberal_warrior
 		}
 	}
 	
@@ -75,7 +487,7 @@ SCO_set_party_leaders_after_civilwar =
 		expire = "1965.1.1"
 		ideology = leninism
 		traits = {
-			inexperienced_imperialist
+			ironfist_leninist
 		}
 	}
 	
@@ -84,9 +496,9 @@ SCO_set_party_leaders_after_civilwar =
 		desc = "SCO_John_MacCormick_desc"
 		picture = GFX_portrait_SCO_John_MacCormick
 		expire = "1965.1.1"
-		ideology = leninism
+		ideology = despotism
 		traits = {
-			inexperienced_imperialist
+			#inexperienced_imperialist
 		}
 	}
 	
@@ -97,7 +509,7 @@ SCO_set_party_leaders_after_civilwar =
 		expire = "1965.1.1"
 		ideology = fascism_ideology
 		traits = {
-			inexperienced_imperialist
+			democratic_fascist
 		}
 	}
 }
@@ -259,6 +671,7 @@ SCO_start_civil_war_realscript = {
 		add_ideas = scraping_the_barrel
 		
 		set_country_flag  = SCO_rebelion_imminent
+		set_country_flag  = SCO_rebelion_started
 		
 		if = {
 			limit = {
@@ -666,6 +1079,103 @@ SCO_puppet_setcosmetics = {
 
 SCO_subjects_setcosmetics = {
 	every_country =  {
+		
+		## 'British' Exiles
+		
+		#meta_effect = {
+		#	text = {
+		#		if = {
+		#			limit = {
+		#					OR = {
+		#						has_idea = ENG_idea_british_exiles
+		#						has_country_flag = loyal_after_exile
+		#					}
+		#				}
+		#			}
+		#		
+		#		log = "Printed [TAGOFCOUNTRY] for [GetTag]"
+		#		set_cosmetic_tag = [TAGOFCOUNTRY]_exile
+		#	}
+		#	TAGOFCOUNTRY = [THIS.GetTag]
+		#}
+		
+		if = {
+			limit = {
+				AND = { 
+					original_tag = CAN
+					OR = {
+						has_idea = ENG_idea_british_exiles
+						has_country_flag = loyal_after_exile
+					}
+				}
+			}
+			set_cosmetic_tag = CAN_exile
+		}
+		
+		if = {
+			limit = {
+				AND = { 
+					original_tag = AST
+					OR = {
+						has_idea = ENG_idea_british_exiles
+						has_country_flag = loyal_after_exile
+					}
+				}
+			}
+			set_cosmetic_tag = AST_exile
+		}
+		
+		if = {
+			limit = {
+				AND = { 
+					original_tag = NZL
+					OR = {
+						has_idea = ENG_idea_british_exiles
+						has_country_flag = loyal_after_exile
+					}
+				}
+			}
+			set_cosmetic_tag = NZL_exile
+		}
+		
+		if = {
+			limit = {
+				AND = { 
+					original_tag = SAF
+					OR = {
+						has_idea = ENG_idea_british_exiles
+						has_country_flag = loyal_after_exile
+					}
+				}
+			}
+			set_cosmetic_tag = SAF_exile
+		}
+		
+		if = {
+			limit = {
+				AND = { 
+					original_tag = RAJ
+					OR = {
+						has_idea = ENG_idea_british_exiles
+						has_country_flag = loyal_after_exile
+					}
+				}
+			}
+			set_cosmetic_tag = RAJ_exile
+		}
+		
+		if = {
+			limit = {
+				AND = { 
+					original_tag = MAL
+					OR = {
+						has_idea = ENG_idea_british_exiles
+						has_country_flag = loyal_after_exile
+					}
+				}
+			}
+			set_cosmetic_tag = MAL_exile
+		}
 		
 		#Default
 		if = {

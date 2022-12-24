@@ -191,6 +191,21 @@ ENG = {
 	set_global_flag = ENG_became_england
 }
 
+RAJ = {
+	retire_country_leader = yes
+	
+	create_country_leader = {
+		name = "Lord Willingdon"
+		desc = "SCO_Lord_Willingdon_desc"
+		picture = GFX_portrait_RAJ_Lord_Willingdon
+		expire = "1965.1.1"
+		ideology = despotism
+		traits = {
+		#	inexperienced_imperialist
+		}
+	}
+}
+
 add_ideas = {
 	SCO_idea_english_push
 }

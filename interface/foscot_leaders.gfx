@@ -79,4 +79,9 @@ spriteTypes = {
 		name = "GFX_portrait_SCO_Prov_Celt"
 		texturefile = "gfx//leaders//SCO//Portrait_Scotland_Prov_Celt.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_portrait_RAJ_Lord_Willingdon"
+		texturefile = "gfx//leaders//SCO//Portrait_Raj_Lord_Willingdon.dds"
+	}
 }

@@ -29,32 +29,58 @@ SCO_influenced_usa = {
 #great britain, scottish dominance
 
 SCO_dom = {
-	color = rgb { 40  40  215 }
+	color = rgb { 1  15  115 }
 	color_ui = rgb { 255 255 155 }
 }
 
 # Variant flag
 SCO_dom_VAR = {
-	color = rgb { 40  40  215 }
+	color = rgb { 1  15  115 }
 	color_ui = rgb { 255 255 155 }
 }
 
 # Variant flag, Old union jack
 #Fascist :Red background, Blue Blot
 SCO_dom_VAR2 = {
-	color = rgb { 40  40  215 }
+	color = rgb { 1  15  115 }
 	color_ui = rgb { 255 255 155 }
 }
 
 #Civil Var
 SCO_dom_provision = {
-	color = rgb { 40  40  215 }
+	color = rgb { 1  15  115 }
 	color_ui = rgb { 255 255 155 }
 }
 
 #
 #Subjects
 #
+
+#'British' Exiles
+CAN_exile = {
+	color = rgb { 200 0 0 }
+	color_ui = rgb { 155 62 51 }
+}
+AST_exile = {
+	color = rgb { 200 0 0 }
+	color_ui = rgb { 155 62 51 }
+}
+NZL_exile = {
+	color = rgb { 200 0 0 }
+	color_ui = rgb { 155 62 51 }
+}
+SAF_exile = {
+	color = rgb { 200 0 0 }
+	color_ui = rgb { 155 62 51 }
+}
+RAJ_exile = {
+	color = rgb { 200 0 0 }
+	color_ui = rgb { 155 62 51 }
+}
+MAL_exile = {
+	color = rgb { 200 0 0 }
+	color_ui = rgb { 155 62 51 }
+}
 
 #Australia, Dominated by 'United Kingdom'
 AST_SCOUK = {

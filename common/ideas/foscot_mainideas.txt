@@ -26,6 +26,29 @@ ideas = {
 			}
 		}
 		
+		ENG_idea_british_exiles = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				power_balance_weekly = 0.008 # British 
+			}
+
+			picture = hol_caved_to_the_british
+			
+			removal_cost = -1
+			
+			cancel = {
+				ENG = { exists = yes }
+			}
+		}
+		
 		SCO_idea_for_freedom = {
 
 			allowed = {
@@ -147,7 +170,7 @@ ideas = {
 				operative_slot = 5
 				intel_network_gain_factor  = 0.3
 				boost_ideology_mission_factor = 0.5
-				own_operative_capture_chance_factor = -0.6
+				own_operative_capture_chance_factor = -2
 			}
 
 			picture = stiff_upper_lip
@@ -176,7 +199,7 @@ ideas = {
 
 			modifier = {
 				intelligence_agency_defense = -2.0
-				enemy_operative_capture_chance_factor = -0.5
+				enemy_operative_capture_chance_factor = -1
 			}
 
 			picture = stiff_upper_lip

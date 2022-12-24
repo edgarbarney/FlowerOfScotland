@@ -19,8 +19,8 @@ leader_traits = {
 		political_power_factor = 0.2
 		subversive_activites_upkeep = -0.25
 		drift_defence_factor = 0.15
-		fascism_drift = 0.012
-		democratic_drift = 0.01
+		fascism_drift = 0.14
+		democratic_drift = 0.10
 		communism_drift = -0.04
 		neutrality_drift = -0.01
 	}
@@ -33,6 +33,8 @@ leader_traits = {
 		subversive_activites_upkeep = -0.25
 		fascism_drift = -0.01
 		communism_drift = 0.01
+		enemy_justify_war_goal_time = -0.1
+		justify_war_goal_time = 0.5
 		
 		#ai_will_do = {
 		#	factor = 1

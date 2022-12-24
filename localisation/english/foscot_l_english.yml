@@ -64,6 +64,47 @@ celtic_construction_effort_3: "Construction Effort III"
 celtic_construction_effort_3_desc: "Expansion of our infrastructure network has significantly improved our capacity for construction."
 
 # ==========================
+# NORTHERN IRELAND
+# ==========================
+
+#
+# Focus Tree
+#
+
+NIR_naval_effort: "Naval Effort"
+NIR_naval_effort_tt: "Not enough building slots for §YNaval Dockyards§!"
+NIR_naval_effort_desc: "The expansion of our navy should be our first priority. Assign all available resources to new Dockyards and research into light surface ships."
+
+NIR_industrial_effort: "Industrial Effort"
+NIR_industrial_effort_desc: "Focus all our political efforts on building up the civilian industry in a great leap forward."
+NIR_industrial_effort_2: "Industrial Effort II"
+NIR_industrial_effort_2_desc: "With iron will and a relentless work ethic, we can mobilize the people in another great industrial effort."
+NIR_construction_effort: "Construction Effort"
+NIR_construction_effort_tt: "Not enough building slots for §YCivilian Factories§!"
+NIR_construction_effort_desc: "Civilian industrial capacity must not be underestimated even when war looms over the world."
+NIR_production_effort: "Armament Effort"
+NIR_production_effort_tt: "Not enough building slots for §YMilitary Factory§!"
+NIR_production_effort_desc: "If you can build tractors, you can build tanks! We must not allow our military production capacity to lag behind."
+NIR_construction_effort_2: "Construction Effort II"
+NIR_construction_effort_2_desc: "Continuing to expand our factories will allow us to speed up production of goods for trade and further construction efforts."
+NIR_production_effort_2: "Armament Effort II"
+NIR_production_effort_2_desc: "Trying to adapt civilian factories to produce military equipment is inefficient. We should focus on preparing military production now."
+NIR_production_effort_3: "Armament Effort III"
+NIR_production_effort_3_desc: "Continued efforts to expand our military factories are necessary to meet the demands for new equipment."
+NIR_infrastructure_effort: "Infrastructure Effort"
+NIR_infrastructure_effort_desc: "A country without proper infrastructure cannot pursue advanced projects or constructions."
+NIR_infrastructure_effort_tt: "Not enough building slots for §YInfrastructure§!"
+NIR_infrastructure_effort_2: "Infrastructure Effort II"
+NIR_infrastructure_effort_2_desc: "Extending our infrastructure further will enable the transports and communications necessary for high-tech clandestine projects."
+NIR_construction_effort_3: "Construction Effort III"
+NIR_construction_effort_3_desc: "Expansion of our infrastructure network has significantly improved our capacity for construction."
+
+
+NIR_focus_irelandcollab: "Collaborate with Ireland"
+NIR_focus_independence:  "An Independent Ulster Republic"
+NIR_focus_helpexlies:  "Go with British Exiles"
+
+# ==========================
 # SCOTLAND
 # ==========================
 
@@ -110,6 +151,32 @@ SCO_communism_DEF: "the Commonwealth of Alba"
 SCO_communism_ADJ: "Alban"
 
 # Puppets
+
+#'British' Exiles
+
+CAN_exile: "Dominion of Canada"
+CAN_exile_DEF: "the Dominion of Canada"
+CAN_exile_ADJ: "Canadian"
+
+AST_exile: "Dominion of Australia"
+AST_exile_DEF: "the Dominion of Australia"
+AST_exile_ADJ: "Australian"
+
+NZL_exile: "Dominion of New Zealand"
+NZL_exile_DEF: "the Dominion of New Zealand"
+NZL_exile_ADJ: "Kiwi"
+
+SAF_exile: "Dominion of South Africa"
+SAF_exile_DEF: "the Dominion of South Africa"
+SAF_exile_ADJ: "South African"
+
+RAJ_exile: "British Dominion of Raj"
+RAJ_exile_DEF: "the Dominion of Raj"
+RAJ_exile_ADJ: "Indian"
+
+MAL_exile: "British Malaya"
+MAL_exile_DEF: "British Malaya"
+MAL_exile_ADJ: "Malaysian"
 
 AST_SCOUK: "Australia"
 AST_SCOUK_DEF: "Australia"
@@ -200,6 +267,9 @@ NZL_SCOUK_VAR2_autonomy_dominion: "New Zealand"
 NZL_SCOUK_VAR2_autonomy_dominion_DEF: "the Dominion of New Zealand"
 NZL_SCOUK_VAR2_subject: "$OVERLORDADJ$ Territories of New Zealand"
 NZL_SCOUK_VAR2_subject_DEF: "$OVERLORDADJ$ New Zealand"
+
+#SCO_Lord_Willingdon_name: "Lord Willingdon"
+SCO_Lord_Willingdon_desc: "Lord"
 
 RAJ_SCOUK: "Raj"
 RAJ_SCOUK_DEF: "the Raj"
@@ -421,20 +491,20 @@ SCO_dom_VAR2_neutrality_DEF: "the Empire of Britain"
 SCO_dom_VAR2_neutrality_ADJ: "Imperial"
 
 #Civil war
-SCO_dom_provision_fascism: "British Fascist Comitee"
-SCO_dom_provision_fascism_DEF: "the British Fascist Comitee"
+SCO_dom_provision_fascism: "British Fascist Committee"
+SCO_dom_provision_fascism_DEF: "the British Fascist Committee"
 SCO_dom_provision_fascism_ADJ: "British"
 
-SCO_dom_provision_communism: "Union of Britain"
-SCO_dom_provision_communism_DEF: "Union of Britain"
+SCO_dom_provision_communism: "British Revolutionary Forces"
+SCO_dom_provision_communism_DEF: "British Revolutionary Forces"
 SCO_dom_provision_communism_ADJ: "British"
 
 SCO_dom_provision_democratic: "Provisional British Government"
-SCO_dom_provision_democratic_DEF: "the United Kingdom"
+SCO_dom_provision_democratic_DEF: "the Provisional British Government"
 SCO_dom_provision_democratic_ADJ: "British"
 
 SCO_dom_provision_neutrality: "Provisional British Government"
-SCO_dom_provision_neutrality_DEF: "Provisional British Government"
+SCO_dom_provision_neutrality_DEF: "the Provisional British Government"
 SCO_dom_provision_neutrality_ADJ: "British"
 
 # 
@@ -521,12 +591,27 @@ SCO_idea_bring_dominions_SCO_desc: "The British, after the civil-war, are seekin
 ENG_idea_london: "Big Ben's Chimes"
 ENG_idea_london_desc: "London is still ours! Unless the London falls, we shall never surrender! If these traitors want to 'take over Britain', they must scrape us away from the land if they can!"
 
+ENG_idea_british_exiles: "British Exiles"
+ENG_idea_british_exiles_desc: "Former 'British' royals and government is now housed in our country. Keeping the power balance is pretty exhausting for both sides."
+
 #
 # Leader Traits
 #
 
 power_of_the_british_empire: "Power of the British Empire"
 power_of_the_british_empire_2: "Power of the British Empire"
+
+liberal_warrior: "Liberal Warrior"
+liberal_warrior_desc: "'Freedom is the key, and we'll break every bone of a hand if it tries to touch it!'"
+
+ironfist_leninist: "Ironfist Leninist"
+ironfist_leninist_desc: "Despite being pacifist revolutionary, he will protect his homeland's freedom at all costs."
+
+democratic_fascist: "Democratic Fascist"
+democratic_fascist_desc: "Democracy is key, Nation is the lock. Democracy is nothing without the nation, and to open our Nation's potential, we need democracy."
+
+imperial_ambitionist: "Imperial Ambitionist"
+imperial_ambitionist_Desc: "A strong thinker about the world conquests."
 
 # 
 # Focus tree
@@ -602,6 +687,8 @@ SCO_nocivilpath_tt: "§RYou should choose your two focuses preceding 'Establish 
 
 SCO_ambitious_unlock_tt: "Unlocks §Y'Road to Independence'§W decisions."
 
+SCO_referendum_tt: "An §Yelection§W will be held and a §Ygovernment§W will be established."
+
 SCO_nofascist_tt: "§RDue to policies of William W. Gilmour, you cannot follow the Democra-Fascism path together with Celtic Unity path!§!\n"
 SCO_nocumnist_tt: "§RDue to policies of James Maxton, you cannot follow the Communist path together with Lone Scotland path!§!\n"
 
@@ -614,6 +701,17 @@ SCO_start_civil_war_tt: "§RThe Civil War will start!"
 SCO_rebelion_disclosure_tt: "Decreases Recruitment Oversuspicion Chance."
 SCO_rebelion_divs_orgrebels_tt_inc: "§WGain $RIGHT|+0$ Organised Rebel Division to Deploy After Civil War.\n"
 SCO_rebelion_divs_orgrebels_tt_dec: "§WLose $RIGHT|-0$ Organised Rebel Division to Deploy After Civil War.\n"
+
+#
+# Flags
+#
+
+SCO_civilwar_over: "Civil War is Over"
+SCO_rebelion_disclosure_flag: "Already Urged Disclosure"
+SCO_currently_recruiting: "Currently Recruiting"
+SCO_currently_stealing: "An Operation is Already Underway"
+SCO_rebelion_imminent: "Accelerated Preparations has started"
+SCO_rebelion_started: "Civil War has Started"
 
 #
 # Events
@@ -652,6 +750,24 @@ foscot.fallofunion.0.title: "Northern Ireland Declares Independence!"
 foscot.fallofunion.0.desc: "After our war of rebuilding a better union for all of us, Northern Ireland declared independence! These traitors will probably join the Republic of Ireland but for now, we've gotta focus on rebuilding our beautiful country."
 foscot.fallofunion.0.choice_1: "We'll see about that. But, later."
 
+foscot.rebuildingcountry.0.title: "A government has been established!"
+foscot.rebuildingcountry.0.desc: "After the elections, people have chosen their representatives and [SCO.GetRulingPartyLong] has formed a government."
+foscot.rebuildingcountry.0.choice_1: "Excellent."
+
+foscot.britishexile.0.title: "British government requests Shelter"
+foscot.britishexile.0.desc: "After the fall of Brtain to the new rule, British Government requests us to house them. This will surely destabilise our nation a bit, though will help the Empire's stability overall.\nNew rulers of Britain will not like this, of course. Do we care about them, anyway?"
+foscot.britishexile.0.choice_1: "Welcome, our brethren! Legitimate rulers of Britain!"
+foscot.britishexile.0.choice_2: "Britain is not fallen at all! Are you sure you're British?"
+
+#
+# Balance Of Power
+#
+
+CAN_exile_balance: "British Exile Influence"
+
+CAN_exile_canadians: "Canadian Government"
+CAN_exile_brits: "British Government in Exile"
+
 #
 # Decisions
 #
@@ -677,12 +793,6 @@ SCO_discredit_rebels: "Discredit Rebels"
 SCO_discredit_rebels_desc: "To ease English suspicion, we have to throw some bait.\nPublicly discrediting rebels can destabilise our people a bit, but the English can calm down a bit, too."
 SCO_fake_surrender: "Fake Surrender"
 SCO_fake_surrender_desc: "To ease English suspicion, we have to throw some bait.\nSurrendering some of our volunteer forces will sure ease the English a bit. But we should be careful. Our men are precious. This single action can damage our future actions."
-
-SCO_rebelion_disclosure_flag: "Already Urged Disclosure"
-SCO_currently_recruiting: "Currently Recruiting"
-SCO_currently_stealing: "An Operation is Already Underway"
-SCO_rebelion_imminent: "Accelerated Preparations has started"
-SCO_civil_war_end: "Scottish-English Civil War has started"
 
 SCO_smuggle_weapons: "Steal Some Weapons from Arms Factories"
 SCO_smuggle_weapons_big: "Steal Weapon Shipments from Arms Factories"

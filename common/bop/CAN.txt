@@ -1,0 +1,72 @@
+CAN_exile_balance = {
+    initial_value = 0.0
+    left_side = CAN_exile_canadians
+    right_side = CAN_exile_brits
+    decision_category = CAN_exile_power_balance_decisions
+    range = {
+        id = CAN_exile_mid_range
+        min = -0.3
+        max = 0.3
+        modifier = {
+            war_support_weekly = 0.5
+        }
+    }
+
+    side = {
+        id = CAN_exile_canadians
+        icon = GFX_idea_can_defence_of_canada_regulations_democratic
+        range = {
+            id = CAN_exile_canadians_ext_range
+            min = -1
+            max = -0.9
+            modifier = {
+                war_support_weekly = 0.1
+            }
+        }
+		range = {
+            id = CAN_exile_canadians_high_range
+            min = -0.9
+            max = -0.6
+            modifier = {
+                war_support_weekly = 0.2
+            }
+        }
+		range = {
+            id = CAN_exile_canadians_low_range
+            min = -0.6
+            max = -0.3
+            modifier = {
+                war_support_weekly = 0.3
+            }
+        }
+    }
+	
+    side = {
+        id = CAN_exile_brits
+        icon = GFX_idea_hol_caved_to_the_british
+		range = {
+            id = CAN_exile_brits_low_range
+            min = 0.3
+            max = 0.6
+            modifier = {
+                war_support_weekly = 0.5
+            }
+        }
+        range = {
+            id = CAN_exile_brits_high_range
+            min = 0.6
+            max = 0.9
+            modifier = {
+                war_support_weekly = 0.5
+            }
+        }
+		range = {
+            id = CAN_exile_brits_ext_range
+            min = 0.9
+            max = 1
+            modifier = {
+                war_support_weekly = 0.9
+            }
+        }
+    }
+}

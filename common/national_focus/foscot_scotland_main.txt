@@ -125,7 +125,7 @@ focus_tree = {
 		
 		completion_reward = {
 			hidden_effect = {
-				unlock_national_focus = SCO_focus_dominanceway_inter
+				#unlock_national_focus = SCO_focus_dominanceway_inter
 			}
 		}
 	}
@@ -143,7 +143,7 @@ focus_tree = {
 		
 		completion_reward = {
 			hidden_effect = {
-				unlock_national_focus = SCO_focus_dominanceway_inter
+				#unlock_national_focus = SCO_focus_dominanceway_inter
 			}
 		}
 	}
@@ -209,7 +209,7 @@ focus_tree = {
 		
 		completion_reward = {
 			hidden_effect = {
-				unlock_national_focus = SCO_focus_dominanceway_inter
+				#unlock_national_focus = SCO_focus_dominanceway_inter
 			}
 		}
 	}
@@ -229,7 +229,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = SCO_nocumnist_tt
 			hidden_effect = {
-				unlock_national_focus = SCO_focus_loneway_inter
+				#unlock_national_focus = SCO_focus_loneway_inter
 			}
 		}
 		
@@ -249,7 +249,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = SCO_nofascist_tt
 			hidden_effect = {
-				unlock_national_focus = SCO_focus_celticway_inter
+				#unlock_national_focus = SCO_focus_celticway_inter
 			}
 		}
 	}
@@ -266,10 +266,30 @@ focus_tree = {
 		relative_position_id = SCO_focus_dominanceway
 		cost = 5
 		
+		available = {
+			#AND = { 
+				SCO = { is_subject = no }
+				OR = { 
+					SCO = { has_country_flag = SCO_civilwar_over }
+					SCO = { NOT = { has_country_flag = SCO_rebelion_started } }
+				}
+			#}
+		}
+		
 		completion_reward = {
-			SCO_set_party_names_after_civilwar = yes
-		    SCO_set_party_leaders_after_civilwar = yes
+			custom_effect_tooltip = SCO_referendum_tt
+			custom_effect_tooltip = DEFINE_newline
 			
+			hidden_effect = {
+				SCO_set_party_names_after_civilwar = yes
+				SCO_set_party_leaders_after_civilwar = yes
+			}
+			
+			country_event = {
+				id = foscot.rebuildingcountry.0
+				days = 2
+				random_hours = 8
+			}
 			
 		}
 		

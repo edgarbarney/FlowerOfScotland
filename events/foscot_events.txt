@@ -6,6 +6,9 @@ add_namespace = foscot.eng_beforecivil
 add_namespace = foscot.flagchange
 add_namespace = foscot.celtcon
 add_namespace = foscot.fallofunion
+add_namespace = foscot.rebuildingcountry #after civil war
+
+add_namespace = foscot.britishexile
 
 # Namespace:
 ## foscot
@@ -44,6 +47,437 @@ add_namespace = foscot.fallofunion
 #
 
 country_event = {
+	id = foscot.britishexile.0
+	title = foscot.britishexile.0.title
+	desc = foscot.britishexile.0.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = foscot.britishexile.0.choice_1
+		
+		ai_chance = {
+			factor = 10
+		}
+		
+		if = {
+			limit = {
+				ROOT = {
+					original_tag = CAN
+				}
+			}
+			CAN = {
+				add_ideas = ENG_idea_british_exiles
+				set_cosmetic_tag = CAN_exile
+				
+				create_faction = "ENG_commonwealth_of_nations"
+				set_global_flag = CAN_created_exile_commonwealth
+				
+				clr_country_flag = was_former_english_dom
+				
+				if = {
+					limit = {
+						332 = {
+							OR = {
+								is_owned_by = ENG
+								is_owned_by = SCO
+							}
+						}
+					}
+					332 = {
+						transfer_state_to = CAN
+					}
+				}
+				if = {
+					limit = {
+						331 = {
+							OR = {
+								is_owned_by = ENG
+								is_owned_by = SCO
+							}
+						}
+					}
+					331 = {
+						transfer_state_to = CAN
+					}
+				}
+				
+				set_power_balance = { id = CAN_exile_balance set_value = 0.1 }
+				
+				hidden_effect = {
+					every_country = {
+						if = {
+							limit = {
+								has_country_flag = was_former_english_dom
+							}
+							CAN = {
+								add_to_faction = PREV
+							}
+							if = {
+								limit = { original_tag = MAL }
+								CAN = {
+									MAL_set_exiled_puppet = yes
+								}
+							}
+							if = {
+								limit = { original_tag = CAN }
+								CAN_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = AST }
+								AST_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = NZL }
+								NZL_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = SAF }
+								SAF_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = RAJ }
+								RAJ_enforce_loyalty_by_exile = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					original_tag = AST
+				}
+			}
+			AST = {
+				add_ideas = ENG_idea_british_exiles
+				set_cosmetic_tag = AST_exile
+				
+				create_faction = "ENG_commonwealth_of_nations"
+				set_global_flag = AST_created_exile_commonwealth
+				
+				clr_country_flag = was_former_english_dom
+				
+				hidden_effect = {		
+					every_country = {
+						if = {
+							limit = {
+								has_country_flag = was_former_english_dom
+							}
+							AST = {
+								add_to_faction = PREV
+							}
+							if = {
+								limit = { original_tag = MAL }
+								AST = {
+									MAL_set_exiled_puppet = yes
+								}
+							}
+							if = {
+								limit = { original_tag = CAN }
+								CAN_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = AST }
+								AST_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = NZL }
+								NZL_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = SAF }
+								SAF_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = RAJ }
+								RAJ_enforce_loyalty_by_exile = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					original_tag = NZL
+				}
+			}
+			NZL = {
+				add_ideas = ENG_idea_british_exiles
+				set_cosmetic_tag = NZL_exile
+				
+				create_faction = "ENG_commonwealth_of_nations"
+				set_global_flag = NZL_created_exile_commonwealth
+				
+				clr_country_flag = was_former_english_dom
+				
+				hidden_effect = {
+					every_country = {
+						if = {
+							limit = {
+								has_country_flag = was_former_english_dom
+							}
+							NZL = {
+								add_to_faction = PREV
+							}
+							if = {
+								limit = { original_tag = MAL }
+								NZL = {
+									MAL_set_exiled_puppet = yes
+								}
+							}
+							if = {
+								limit = { original_tag = CAN }
+								CAN_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = AST }
+								AST_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = NZL }
+								NZL_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = SAF }
+								SAF_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = RAJ }
+								RAJ_enforce_loyalty_by_exile = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					original_tag = SAF
+				}
+			}
+			SAF = {
+				add_ideas = ENG_idea_british_exiles
+				set_cosmetic_tag = SAF_exile
+				
+				create_faction = "ENG_commonwealth_of_nations"
+				set_global_flag = SAF_created_exile_commonwealth
+				
+				clr_country_flag = was_former_english_dom
+				
+				hidden_effect = {
+					every_country = {
+						if = {
+							limit = {
+								has_country_flag = was_former_english_dom
+							}
+							SAF = {
+								add_to_faction = PREV
+							}
+							if = {
+								limit = { original_tag = MAL }
+								SAF = {
+									MAL_set_exiled_puppet = yes
+								}
+							}
+							if = {
+								limit = { original_tag = CAN }
+								CAN_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = AST }
+								AST_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = NZL }
+								NZL_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = SAF }
+								SAF_enforce_loyalty_by_exile = yes
+							}
+							if = {
+								limit = { original_tag = RAJ }
+								RAJ_enforce_loyalty_by_exile = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = foscot.britishexile.0.choice_2
+		trigger = {
+			NOT = { has_country_flag = was_former_english_dom }
+		}
+		
+		if = {
+			limit = {
+				ROOT = {
+					original_tag = CAN
+				}
+			}
+			CAN = {
+				set_country_flag = CAN_refused_exile_commonwealth
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					original_tag = AST
+				}
+			}
+			AST = {
+				set_country_flag = AST_refused_exile_commonwealth
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					original_tag = NZL
+				}
+			}
+			NZL = {
+				set_country_flag = NZL_refused_exile_commonwealth
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					original_tag = SAF
+				}
+			}
+			SAF = {
+				set_country_flag = SAF_refused_exile_commonwealth
+			}
+		}
+		
+		# Retry other countries
+		ENG_get_exiled = yes
+		
+		ai_chance = {
+			factor = 2
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = foscot.britishexile.1
+	title = foscot.britishexile.1.title
+	desc = foscot.britishexile.1.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = foscot.britishexile.1.choice_1
+		
+		trigger = {
+			has_country_flag = was_former_english_dom
+		}
+		
+		ai_chance = {
+			factor = 10
+		}
+		CAN = {
+			add_ideas = ENG_idea_british_exiles
+			set_cosmetic_tag = CAN_exile
+			
+			create_faction = "ENG_commonwealth_of_nations"
+			set_global_flag = CAN_created_exile_commonwealth
+		}
+	}
+}
+
+country_event = {
+	id = foscot.rebuildingcountry.0
+	title = foscot.rebuildingcountry.0.title
+	desc = foscot.rebuildingcountry.0.desc
+	
+	#major = yes
+	
+    picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = foscot.rebuildingcountry.0.choice_1
+		
+		ai_chance = {
+			factor = 10
+		}
+		
+		set_cosmetic_tag = SCO_dom
+		
+		meta_effect = {
+			text = {
+				if = {
+					limit = {
+						has_completed_focus = SCO_focus_democracy
+					}
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+						last_election = [CURDATE]
+						election_frequency = 48
+					}
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = SCO_focus_demofascist
+					}
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = yes
+						last_election = [CURDATE]
+						election_frequency = 48
+					}
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = SCO_focus_ambicommune
+					}
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+						last_election = [CURDATE]
+						election_frequency = 48
+					}
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = SCO_focus_monarchy
+					}
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+						last_election = [CURDATE]
+						election_frequency = 48
+					}
+				}
+			}
+			CURDATE = "[?global.date.GetDateStringNoHour]"
+		}
+	}
+}
+
+country_event = {
 	id = foscot.fallofunion.0
 	title = foscot.fallofunion.0.title
 	desc = foscot.fallofunion.0.desc
@@ -75,9 +509,22 @@ country_event = {
 			factor = 10
 		}
 		SCO = {
-			#hidden_effect = {
+			NIR = {
+				set_country_flag = NIR_independent_after_sco_civil
+			}
+			hidden_effect = {
 				release = NIR
-			#}
+			}
+			NIR = {
+				load_focus_tree = foscot_northern_ireland_afterwar
+			}
+			# For tooltip, hehe
+			set_autonomy = {
+				target = NIR
+				autonomy_state = autonomy_free
+				end_wars = yes
+				end_civil_wars = yes
+			}
 		}
 	}
 	#option = { 
