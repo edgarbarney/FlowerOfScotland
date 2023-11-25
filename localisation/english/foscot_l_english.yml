@@ -20,6 +20,17 @@ autonomy_verge_of_release: "Constituent Country"
 autonomy_verge_of_release_desc: "One of the founder countries of the [overlord.GetName]"
 
 # ==========================
+# Other Countries
+# ==========================
+
+BAF: "British African Authority"
+BAF_DEF: "British African Authority"
+BAF_ADJ: "African"
+
+#BAF_Lord_Killearn: "Lord Killearn"
+BAF_Lord_Killearn_desc: "Miles Lampson, 1st Baron Killearn"
+
+# ==========================
 # Other Celts
 # ==========================
 
@@ -270,6 +281,12 @@ NZL_SCOUK_VAR2_subject_DEF: "$OVERLORDADJ$ New Zealand"
 
 #SCO_Lord_Willingdon_name: "Lord Willingdon"
 SCO_Lord_Willingdon_desc: "Lord"
+
+RAJ_VANILLA_UK_democratic: "British Raj"
+RAJ_VANILLA_UK_democratic_DEF: "the British Raj"
+RAJ_VANILLA_UK_neutrality: "British Raj"
+RAJ_VANILLA_UK_neutrality_DEF: "the British Raj"
+RAJ_VANILLA_UK_subject: "British Raj"
 
 RAJ_SCOUK: "Raj"
 RAJ_SCOUK_DEF: "the Raj"

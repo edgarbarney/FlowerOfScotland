@@ -3,21 +3,21 @@ on_actions = {
 	on_puppet = {
 		effect = {
 			SCO_puppet_setcosmetics = yes
-			SCO_subjects_setcosmetics = yes
+			SCO_subjects_setupsubs = yes
 		}
 	}
 
 	on_release_as_puppet = {
 		effect = {
 			SCO_puppet_setcosmetics = yes
-			SCO_subjects_setcosmetics = yes
+			SCO_subjects_setupsubs = yes
 		}
 	}
 
 	on_subject_autonomy_level_change = {
 		effect = {
 			SCO_puppet_setcosmetics = yes
-			SCO_subjects_setcosmetics = yes
+			SCO_subjects_setupsubs = yes
 		}
 	}
 	
@@ -86,7 +86,7 @@ on_actions = {
 	#		}
 	#		
 	#		# Check for cosmetics
-	#		SCO_subjects_setcosmetics = yes
+	#		SCO_subjects_setupsubs = yes
 	#	}
 	#}
 	
@@ -123,7 +123,7 @@ on_actions = {
 			}
 			
 			# Check for cosmetics
-			SCO_subjects_setcosmetics = yes
+			SCO_subjects_setupsubs = yes
 		}
 	}
 	
@@ -219,7 +219,7 @@ on_actions = {
 		effect = {
 		
 			# Check for cosmetics
-			SCO_subjects_setcosmetics = yes
+			SCO_subjects_setupsubs = yes
 		
 			if = {
 				limit = {

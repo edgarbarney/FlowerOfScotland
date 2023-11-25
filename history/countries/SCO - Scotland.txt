@@ -192,6 +192,8 @@ ENG = {
 }
 
 RAJ = {
+	set_cosmetic_tag = RAJ_VANILLA_UK
+
 	retire_country_leader = yes
 	
 	create_country_leader = {

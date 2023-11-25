@@ -1,0 +1,94 @@
+﻿capital = 907 #Cairo
+#oob = ""
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	fuel_silos = 1
+}
+
+set_convoys = 20
+
+recruit_character = BAF_acr
+recruit_character = BAF_stc
+recruit_character = BAF_awt
+recruit_character = BAF_pot
+recruit_character = BAF_mt
+recruit_character = BAF_ncm
+recruit_character = BAF_nt
+recruit_character = BAF_acd2
+recruit_character = BAF_fascist_guy
+recruit_character = BAF_ncs
+recruit_character = BAF_nccr
+recruit_character = BAF_aco2
+recruit_character = BAF_communist_guy
+recruit_character = BAF_ai2
+recruit_character = BAF_ar
+recruit_character = BAF_coi
+recruit_character = BAF_acas
+recruit_character = BAF_acgs
+recruit_character = BAF_aa2
+recruit_character = BAF_democratic_guy
+
+1939.1.1 = {
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+
+		#doctrines
+		grand_battle_plan = 1
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 97
+	fascism = 2
+	communism = 1
+}
+
+create_country_leader = {
+	name = "Lord Killearn"
+	desc = "BAF_Lord_Killearn_desc"
+	picture = GFX_portrait_BAF_Lord_Killearn
+	expire = "1965.1.1"
+	ideology = liberalism
+	#traits = {
+	#	power_of_the_british_empire
+	#}
+}
+
+add_to_tech_sharing_group = commonwealth_research
+
+BAF_add_cores = yes
+

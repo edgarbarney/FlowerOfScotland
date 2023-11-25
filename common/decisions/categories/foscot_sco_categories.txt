@@ -21,7 +21,10 @@ SCO_forment_nations = {
 		SCO = {
 			has_completed_focus = SCO_focus_ambitiousway
 			has_country_flag  = SCO_rebelion_imminent
-			NOT = { has_country_flag  = SCO_civilwar_over }
+			OR = {
+				NOT = { has_country_flag  = SCO_civilwar_over }
+				NOT = { has_country_flag  = SCO_rebelion_started }
+			}
 		}
 	}
 }

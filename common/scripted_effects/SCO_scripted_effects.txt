@@ -56,6 +56,19 @@ MAL_set_exiled_puppet = {
 		set_country_flag = loyal_after_exile
 	}
 }
+# Should be run under overlord scope
+BAF_set_exiled_puppet = {
+	set_autonomy = {
+		target = BAF
+		autonomy_state = autonomy_integrated_puppet
+		end_wars = no
+		end_civil_wars = no
+	}
+	BAF = {
+		set_cosmetic_tag = BAF_exile
+		set_country_flag = loyal_after_exile
+	}
+}
 
 ENG_set_countries_before_exile = {
 	every_country = {
@@ -68,7 +81,18 @@ ENG_set_countries_before_exile = {
 		}
 	}
 	
-	SCO = { clr_country_flag = was_former_english_dom }
+	SCO = { 
+		clr_country_flag = was_former_english_dom
+	}
+	
+	ENG = {
+		release = BAF
+	}
+	
+	#British Afrika
+	BAF = {
+		set_country_flag = was_former_english_dom
+	}
 	
 	#Can
 	if = {
@@ -250,163 +274,6 @@ ENG_get_exiled = {
 		}
 		
 		log = "Trial Ended for Exile"
-		
-		# Factions
-		
-		# God, I wish I could just use C++
-		#if = {
-		#	limit = {
-		#		CAN = {
-		#			has_global_flag = CAN_created_exile_commonwealth
-		#		}
-		#	}
-		#	CAN = {
-		#		if = {
-		#			limit = {
-		#				AST = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = AST
-		#		}
-		#		if = {
-		#			limit = {
-		#				NZL = {
-		#					is_subject_of = NZL
-		#				}
-		#			}
-		#			add_to_faction = NZL
-		#		}
-		#		if = {
-		#			limit = {
-		#				SAF = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = SAF
-		#		}
-		#	}
-		#}
-		#
-		#if = {
-		#	limit = {
-		#		AST = {
-		#			has_global_flag = AST_created_exile_commonwealth
-		#		}
-		#	}
-		#	AST = {
-		#		if = {
-		#			limit = {
-		#				CAN = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = CAN
-		#		}
-		#		if = {
-		#			limit = {
-		#				NZL = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = NZL
-		#		}
-		#		if = {
-		#			limit = {
-		#				SAF = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = SAF
-		#		}
-		#	}
-		#}
-		#
-		#if = {
-		#	limit = {
-		#		NZL = {
-		#			has_global_flag = NZL_created_exile_commonwealth
-		#		}
-		#	}
-		#	NZL = {
-		#		if = {
-		#			limit = {
-		#				CAN = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = CAN
-		#		}
-		#		if = {
-		#			limit = {
-		#				AST = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = AST
-		#		}
-		#		if = {
-		#			limit = {
-		#				SAF = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = SAF
-		#		}
-		#	}
-		#}
-		#
-		#if = {
-		#	limit = {
-		#		SAF = {
-		#			has_global_flag = SAF_created_exile_commonwealth
-		#		}
-		#	}
-		#	SAF = {
-		#		if = {
-		#			limit = {
-		#				CAN = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = CAN
-		#		}
-		#		if = {
-		#			limit = {
-		#				AST = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = AST
-		#		}
-		#		if = {
-		#			limit = {
-		#				NZL = {
-		#					is_subject_of = ENG
-		#				}
-		#			}
-		#			add_to_faction = NZL
-		#		}
-		#	}
-		#}
-		
-		#create_faction = "ENG_commonwealth_of_nations"
-		#else_if = {
-		#	limit = {
-		#		FRA = {
-		#			has_government = democratic
-		#		}
-		#	}
-		#	become_exiled_in = { target = FRA }
-		#}
-		#else_if = {
-		#	limit = {
-		#		USA = {
-		#			has_government = democratic
-		#		}
-		#	}
-		#	become_exiled_in = { target = USA }
-		#}
 	}
 }
 
@@ -562,6 +429,10 @@ SCO_civil_war_finished = {
 			if = {
 				limit = {
 					is_core_of = WLS
+					OR = {
+						is_owned_by = WLS
+						is_owned_by = ENG
+					}
 				}
 				remove_core_of = ENG
 				add_core_of = SCO
@@ -569,6 +440,10 @@ SCO_civil_war_finished = {
 			if = {
 				limit = {
 					is_core_of = NIR
+					OR = {
+						is_owned_by = NIR
+						is_owned_by = ENG
+					}
 				}
 				remove_core_of = ENG
 				add_core_of = SCO
@@ -1077,7 +952,7 @@ SCO_puppet_setcosmetics = {
 	}
 }
 
-SCO_subjects_setcosmetics = {
+SCO_subjects_setupsubs = {
 	every_country =  {
 		
 		## 'British' Exiles
@@ -1442,6 +1317,39 @@ SCO_subjects_setcosmetics = {
 				}
 				set_cosmetic_tag = SAF_SCOUK_VAR2
 			}
+		}
+	}
+}
+
+BAF_add_cores = {
+	ENG = {
+		every_owned_state = {
+			if = {
+				limit = {
+					is_on_continent = africa
+				}
+				add_core_of = BAF
+			}
+		}
+	}
+	EGY = {
+		every_core_state = {
+			add_core_of = BAF
+		}
+	}
+	ISR = {
+		every_core_state = {
+			add_core_of = BAF
+		}
+	}
+	PAL = {
+		every_core_state = {
+			add_core_of = BAF
+		}
+	}
+	JOR = {
+		every_core_state = {
+			add_core_of = BAF
 		}
 	}
 }

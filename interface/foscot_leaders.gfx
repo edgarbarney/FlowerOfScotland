@@ -84,4 +84,10 @@ spriteTypes = {
 		name = "GFX_portrait_RAJ_Lord_Willingdon"
 		texturefile = "gfx//leaders//SCO//Portrait_Raj_Lord_Willingdon.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_portrait_BAF_Lord_Killearn"
+		texturefile = "gfx//leaders//SCO//Portrait_BritAfrica_Lord_Killearn.dds"
+	}
+	
 }

@@ -12,9 +12,14 @@ SCO_forment_nations = {
 			}
 		}
 		days_mission_timeout = 60
-	
+		
+		cancel_if_not_visible = yes
+
 		visible = {
-			has_country_flag = SCO_rebelion_imminent
+			AND = {
+				has_country_flag = SCO_rebelion_imminent
+				NOT = { has_country_flag = SCO_rebelion_started }
+			}
 		}	
 		timeout_effect = {
 			#if = {
@@ -1399,7 +1404,7 @@ SCO_retake_dominions = {
 			}
 			
 			# Check for cosmetics
-			SCO_subjects_setcosmetics = yes
+			SCO_subjects_setupsubs = yes
 		}
 
 		ai_will_do = {
